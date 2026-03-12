@@ -1,10 +1,12 @@
 @use '../abstracts/_variables' as *;
 
 .header {
-    align-items: center;
-    padding-bottom: 0.5rem;
+    position: sticky;
+    top: 0;
+    margin-bottom: 4rem;
     background-color: $dark-bg;
     border-bottom: 1px solid white;
+    z-index: 100;
 
     &__nav{
         display: flex;

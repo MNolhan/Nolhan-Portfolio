@@ -4,7 +4,9 @@
 @use "./abstracts/_container" as *;
 @use "./layouts/__header" as *;
 @use "./layouts/__footer" as *;
+@use "./pages/_home" as *;
 
 body{
+    margin : 0;
     background-color: $dark-bg;
 }
