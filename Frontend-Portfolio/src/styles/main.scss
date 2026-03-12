@@ -1,5 +1,6 @@
 @use "./abstracts/_variables" as *;
 @use "./components/__button" as *;
+@use "./components/__card" as *;
 
 body{
     background-color: $dark-bg;

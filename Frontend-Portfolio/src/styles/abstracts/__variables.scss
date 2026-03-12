@@ -1,15 +1,14 @@
 // -- Color variables --
 $primary-color: rgb(255, 68, 56);
-$primary-background-color: rgba($primary-color, 0.15);
+$primary-background-color: rgba($primary-color, 0.075);
 
 $secondary-color: rgb(107, 107, 107);
-$secondary-background-color: rgba($secondary-color, 0.15);
+$secondary-background-color: rgba($secondary-color, 0.075);
 
 $dark-bg: #151515;
 $light-bg: #f5f5f5;
 
 // -- Border --
-
 $border-radius-small: 5px;
 $border-radius-medium: 10px;
 $border-radius-large: 20px;
@@ -22,11 +21,9 @@ $border-color-light: white;
 $border-color-dark: black;
 
 // -- Font --
-
 $font-family-primary: 'Arial', sans-serif;
 $font-family-secondary: 'Helvetica', sans-serif;
 
 // -- Transition --
-
 $transition-duration: 0.3s;
 $transition-timing-function: ease-in-out;
