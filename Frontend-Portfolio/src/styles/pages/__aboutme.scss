@@ -3,7 +3,7 @@
 .Aboutme{
     scroll-margin-top: 9.5rem;
     font-family: $font-family-primary;
-    min-height: 90vh;
+    min-height: calc(100vh - 5rem);
 
     &__title {
         display:flex;
