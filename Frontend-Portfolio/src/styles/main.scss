@@ -3,6 +3,7 @@
 @use "./components/__card" as *;
 @use "./abstracts/_container" as *;
 @use "./layouts/__header" as *;
+@use "./layouts/__footer" as *;
 
 body{
     background-color: $dark-bg;
