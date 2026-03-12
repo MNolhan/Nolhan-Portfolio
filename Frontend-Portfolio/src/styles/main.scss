@@ -5,6 +5,7 @@
 @use "./layouts/__header" as *;
 @use "./layouts/__footer" as *;
 @use "./pages/_home" as *;
+@use "./pages/_aboutme" as *;
 
 body{
     margin : 0;

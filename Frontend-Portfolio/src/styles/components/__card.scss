@@ -6,6 +6,8 @@
     border-radius: $border-radius-small;
     border-width: $border-width-small;
     border-style: solid;
+    width: 10rem;
+    text-align: center;
     border-color: $primary-color;
     background-color: $primary-background-color;
     transition: all $transition-duration $transition-timing-function;
@@ -13,6 +15,13 @@
     &-title {
         font-size: 2rem;
         color: $primary-color;
+        margin: 1rem 0 0 0;
+    }
+
+    &-description{
+        font-size: 1rem;
+        color: white;
+        margin: 0 0 1rem 0;
     }
 
     &:hover {
