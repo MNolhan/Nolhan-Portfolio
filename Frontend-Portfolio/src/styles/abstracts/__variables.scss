@@ -27,3 +27,10 @@ $font-family-secondary: 'Helvetica', sans-serif;
 // -- Transition --
 $transition-duration: 0.3s;
 $transition-timing-function: ease-in-out;
+
+// -- Media Queries --
+$mediascreen-s: 480px;
+$mediascreen-m: 768px;
+$mediascreen-l: 992px;
+$mediascreen-xl: 1200px;
+$mediascreen-xxl: 1600px;
