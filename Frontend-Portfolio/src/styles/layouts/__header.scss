@@ -1,0 +1,51 @@
+@use '../abstracts/_variables' as *;
+
+.header {
+    align-items: center;
+    padding-bottom: 0.5rem;
+    background-color: $dark-bg;
+    border-bottom: 1px solid white;
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        font-family: $font-family-primary;
+
+        &__logo{
+            display: flex;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+
+            &--first{
+                color: $primary-color;
+            }
+
+            &--second{
+                color: white;
+            }
+        }
+
+        &-links{
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        &-link{
+            color:  white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+
+            &:hover{
+                border-bottom: 1px solid $primary-color;
+                color: $primary-color;
+            }
+        }
+    }
+}
