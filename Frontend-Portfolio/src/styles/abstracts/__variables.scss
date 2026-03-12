@@ -21,7 +21,8 @@ $border-color-light: white;
 $border-color-dark: black;
 
 // -- Font --
-$font-family-primary: 'Arial', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+$font-family-primary: 'Jersey 25', sans-serif;
 $font-family-secondary: 'Helvetica', sans-serif;
 
 // -- Transition --
