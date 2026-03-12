@@ -5,7 +5,7 @@ import Me from "../assets/me.jpg";
 
 export default function Home() {
     return (
-        <div className="home">
+        <>
             <Header />
                 <section className="home">
                     <div className="container">
@@ -22,14 +22,12 @@ export default function Home() {
                                         <span>Designer</span>
                                     </p>
                                 </h1>
-                                <p className="home__description">Développeur full-stack JavaScript & PHP, je conçois des applications 
-                                    modernes, performantes et durables. De l'architecture au déploiement, j'accorde une attention 
-                                    rigoureuse à la qualité du code, à la fluidité de l'expérience utilisateur et à la fiabilité 
-                                    de chaque fonctionnalité.
+                                <p className="home__description">Développeur full-stack passionné par la création d'applications web modernes.
+Je travaille principalement avec React, Node.js et Laravel pour concevoir des plateformes performantes, évolutives et bien architecturées. J'accorde une grande importance à la qualité du code, aux bonnes pratiques et à l'expérience utilisateur.
                                 </p>
                                 <div className="home__list">
                                     <Bouton variant="primary">Projects</Bouton>
-                                    <Bouton variant="secondary">Contact</Bouton>
+                                    <Bouton variant="secondary">Télécharger Mon CV</Bouton>
                                 </div>
                             </div>
                             <div className="home__content--right">
@@ -39,6 +37,6 @@ export default function Home() {
                     </div>
                 </section>
             <Foot />
-        </div>
+        </>
     );
 }
