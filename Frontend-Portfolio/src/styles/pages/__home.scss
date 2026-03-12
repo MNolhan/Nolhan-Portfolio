@@ -1,0 +1,148 @@
+@use '../abstracts/_variables' as *;
+
+.home {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    font-family: $font-family-primary;
+
+    &__subtitle{
+        display: flex;
+        font-size: 2rem;
+        margin: 2.5rem 0 1rem 0;
+    }
+
+    &__title{
+        display: flex;
+        font-size: 4rem;
+        margin: 0;
+
+        &__typing {
+            position: relative;
+            display: inline-block;
+            height: 1.2em;
+            min-width: 13ch; 
+            color: $primary-color;
+            overflow: hidden;
+            z-index: 10;
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 3px solid #ff4438;
+                width: 0;
+                opacity: 0;
+            }
+
+            span:nth-child(1) {
+                animation: typingDeveloper 6s steps(9) infinite;
+            }
+
+            span:nth-child(2) {
+                animation: typingDesigner 6s steps(8) infinite;
+            }
+    }
+
+
+
+    }
+
+    &--first{
+            color: white;
+        }
+
+    &--second{
+        color: $primary-color;
+        margin-left: 0.5rem;
+    }
+
+    &__description{
+        font-size: 1.25rem;
+        max-width: 500px;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+    &__list{
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__image{
+        width: 425px;
+        height: 425px;
+        margin: 1.5rem 0;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 2rem;
+        justify-content: flex-end;
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &--right{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@keyframes typingDeveloper {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  15% {
+    width: 10ch;
+    opacity: 1;
+  }
+  30% {
+    width: 10ch;
+    opacity: 1;
+  }
+  45% {
+    width: 0;
+    opacity: 1;
+  }
+  46%,
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes typingDesigner {
+  0%,
+  49% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 0;
+    opacity: 1;
+  }
+  65% {
+    width: 8ch;
+    opacity: 1;
+  }
+  80% {
+    width: 8ch;
+    opacity: 1;
+  }
+  95% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
