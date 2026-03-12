@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../components/layouts/header"
 import Foot from "../components/layouts/footer"
 import Home from "../pages/home";
+import Aboutme from "../pages/aboutme";
 
 export default function AppRouter() {
   return (
@@ -10,6 +11,7 @@ export default function AppRouter() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+      <Aboutme />
       <Foot />
     </BrowserRouter>
   );
