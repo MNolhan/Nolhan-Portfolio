@@ -1,0 +1,30 @@
+@use '../abstracts/_variables' as *;
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 1rem;
+
+    &-primary {
+        background-color: $primary-background-color;
+        border-color: $primary-color;
+        color: white;
+    }
+
+    &-secondary {
+        background-color: $secondary-background-color;
+        border-color: $secondary-color;
+        color: white;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
