@@ -21,9 +21,17 @@ $border-color-light: white;
 $border-color-dark: black;
 
 // -- Font --
-$font-family-primary: 'Arial', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+$font-family-primary: 'Jersey 25', sans-serif;
 $font-family-secondary: 'Helvetica', sans-serif;
 
 // -- Transition --
 $transition-duration: 0.3s;
 $transition-timing-function: ease-in-out;
+
+// -- Media Queries --
+$mediascreen-s: 480px;
+$mediascreen-m: 768px;
+$mediascreen-l: 992px;
+$mediascreen-xl: 1200px;
+$mediascreen-xxl: 1600px;

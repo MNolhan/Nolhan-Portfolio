@@ -1,0 +1,18 @@
+@use "_variables" as *;
+
+.container {
+    width: $mediascreen-xl;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: $mediascreen-xl) {
+    .container {
+        width: $mediascreen-m;
+    }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+    .container {
+        width: 90%;
+    }
+}
