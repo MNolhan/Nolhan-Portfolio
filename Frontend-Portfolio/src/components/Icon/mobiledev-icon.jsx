@@ -1,14 +1,8 @@
 export default function MobileAppIcon() {
   return (
-    <svg width="40" height="40" viewBox="0 0 64 64" fill="none"
-         xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="10" width="24" height="44" rx="4"
-            stroke="#ffffff" strokeWidth="2" fill="none"/>
-      <line x1="24" y1="18" x2="40" y2="18"
-            stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="32" cy="46" r="2" fill="#ffffff"/>
-      <rect x="26" y="24" width="12" height="12" rx="2"
-            stroke="#ffffff" strokeWidth="2" fill="none"/>
-    </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+      </svg>
   );
 }
