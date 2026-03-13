@@ -1,0 +1,10 @@
+@use '../abstracts/_variables' as *;
+
+.icone{
+    background-color: $primary-color;
+    padding: 0.25rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    border-radius: $border-radius-medium;
+    text-align: center;   
+}
