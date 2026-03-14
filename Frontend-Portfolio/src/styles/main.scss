@@ -14,3 +14,7 @@ body{
     margin : 0;
     background-color: $dark-bg;
 }
+
+html {
+    scroll-behavior: smooth;
+}
