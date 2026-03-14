@@ -6,8 +6,15 @@
 @use "./layouts/__footer" as *;
 @use "./pages/_home" as *;
 @use "./pages/_aboutme" as *;
+@use "./components/_serviceCard" as *;
+@use "./components/_scrollwatcher" as *;
+@use "./pages/_service" as *;
 
 body{
     margin : 0;
     background-color: $dark-bg;
+}
+
+html {
+    scroll-behavior: smooth;
 }

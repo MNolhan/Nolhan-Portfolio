@@ -4,10 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0;
     background-color: $dark-bg;
     font-family: $font-family-primary;
     border-top: $border-width-small solid white;
+    margin-top: 5rem;
 
     &__content{
         display: flex;
