@@ -3,7 +3,7 @@
 .home {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 11rem);
+    min-height: calc(100vh - 8rem);
     font-family: $font-family-primary;
 
     &__subtitle{
