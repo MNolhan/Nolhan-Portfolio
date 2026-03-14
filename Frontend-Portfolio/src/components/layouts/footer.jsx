@@ -12,7 +12,7 @@ export default function Footer() {
                     <h1 className="footer__content-title">Let's Build Something</h1>
                     <p className="footer__content-description">Une idée, un besoin ou un projet ? Parlons-en et voyons comment je peux le transformer en solution concrète.</p>
                     <div className="footer__list">
-                        <Bouton variant="primary">Contact</Bouton><br></br>
+                        <Bouton variant="primary" as="a" href="#contact">Contact</Bouton><br></br>
                         <Bouton variant="secondary">Mention Légales</Bouton>
                         <Bouton variant="secondary">Gestion des Cookies</Bouton>
                     </div>
