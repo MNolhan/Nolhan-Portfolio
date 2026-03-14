@@ -1,0 +1,92 @@
+@use '../abstracts/_variables' as *;
+
+.projectCard{
+    border: $border-width-small solid rgba($primary-color, 0.25);
+    border-radius: $border-radius-large;
+    max-width: 24rem;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    
+    &__title{
+        color: $text-color-light;
+        font-size: $Fontsize-xl;
+        margin: 1rem 2rem 0 2rem;
+    }
+
+    &__description{
+        color: $text-color-light;
+        font-size: $Fontsize-s;
+        margin: 1rem 2rem 0 2rem;
+        min-height: 90px;
+    }
+
+    &__type{
+        color: $primary-color;
+        font-size: $Fontsize-s;
+        margin: 1.5rem 2rem 0 2rem;
+    }
+
+    &__langages-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        margin: 0 2rem 2rem 2rem;
+        text-align: center;
+    }
+
+    &__langage{
+        border: $border-width-small solid $primary-color;
+        background-color: $primary-background-color;
+        padding: 0.5rem;
+        margin:0;
+        font-size: $Fontsize-xs;
+        border-radius: $border-radius-large;
+        color: $primary-color;
+        transition: all 0.5s ease-in-out;
+        cursor : pointer;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    &__image{
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        img{
+            position: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        background-color: $primary-color;
+        color: $text-color-light;
+        font-size: $Fontsize-s;
+        text-decoration: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: $border-radius-small;
+        cursor: pointer;
+    }
+
+    &:hover{
+        border: $border-width-small solid $primary-color;
+        transform: scale(1.025);
+
+        .projectCard__title{
+            color: $primary-color;
+        }
+
+        img{
+            transform: scale(1.05);
+        }
+    }
+}
