@@ -1,6 +1,28 @@
 import Card from "../components/ui/card";
 
 export default function Aboutme(){
+
+    const startDate = new Date("2023-10-01");
+    const today = new Date();
+
+    let yearsExperience = today.getFullYear() - startDate.getFullYear();
+
+    if (
+        today.getMonth() < startDate.getMonth() ||
+        (today.getMonth() === startDate.getMonth() &&
+        today.getDate() < startDate.getDate())
+    ) {
+        yearsExperience--;
+    }
+
+    let message
+
+    if (yearsExperience > 1){
+        message = "Années d'expériences"
+    } else {
+        message = "Année d'expérience"
+    }
+
     return(
         <>
             <div className="Aboutme" id="Aboutme">
@@ -31,7 +53,7 @@ export default function Aboutme(){
                     </p>
                     <div className="Aboutme__list">
                         <Card Description="Projet(s) réalisé(s) ">1</Card>
-                        <Card Description="Année(s) d'expérience(s)">3</Card>
+                        <Card Description={message}>{yearsExperience}</Card>
                         <Card Description="Client(s)">0</Card>
                     </div>
                 </div>
