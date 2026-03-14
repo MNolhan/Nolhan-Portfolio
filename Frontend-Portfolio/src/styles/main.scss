@@ -10,6 +10,7 @@
 @use "./components/_scrollwatcher" as *;
 @use "./pages/_service" as *;
 @use "./pages/_project" as *;
+@use "./components/_projectCard" as *;
 
 body{
     margin : 0;
