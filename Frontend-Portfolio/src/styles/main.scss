@@ -11,6 +11,8 @@
 @use "./pages/_service" as *;
 @use "./pages/_project" as *;
 @use "./components/_projectCard" as *;
+@use "./pages/_contact" as *;
+@use "./components/_contactCard" as *;
 
 body{
     margin : 0;

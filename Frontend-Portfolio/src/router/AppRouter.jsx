@@ -6,6 +6,7 @@ import Home from "../pages/home";
 import Aboutme from "../pages/aboutme";
 import Service from "../pages/service";
 import Project from "../pages/project";
+import Contact from "../pages/contact";
 
 export default function AppRouter() {
   return (
@@ -19,6 +20,7 @@ export default function AppRouter() {
         <Aboutme />
         <Service />
         <Project />
+        <Contact />
       </div>
       <Foot />
     </BrowserRouter>
