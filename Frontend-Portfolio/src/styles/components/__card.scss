@@ -13,14 +13,14 @@
     transition: all $transition-duration $transition-timing-function;
 
     &-title {
-        font-size: 2rem;
+        font-size: $Fontsize-xl;
         color: $primary-color;
         margin: 1rem 0 0 0;
     }
 
     &-description{
         font-size: 1rem;
-        color: white;
+        color: $text-color-light;
         margin: 0 0 1rem 0;
     }
 

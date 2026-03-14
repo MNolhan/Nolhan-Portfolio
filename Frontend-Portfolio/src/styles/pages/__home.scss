@@ -8,13 +8,13 @@
 
     &__subtitle{
         display: flex;
-        font-size: 2rem;
+        font-size: $Fontsize-xl;
         margin-bottom: 1.5rem;
     }
 
     &__title{
         display: flex;
-        font-size: 4rem;
+        font-size: $Fontsize-3xl;
         margin: 0;
 
         &__typing {
@@ -32,7 +32,7 @@
                 top: 0;
                 white-space: nowrap;
                 overflow: hidden;
-                border-right: 3px solid #ff4438;
+                border-right: 3px solid $primary-color;
                 width: 0;
                 opacity: 0;
             }
@@ -60,7 +60,7 @@
     }
 
     &__description{
-        font-size: 1.25rem;
+        font-size: $Fontsize-s;
         max-width: 600px;
         color: white;
         margin-bottom: 2rem;

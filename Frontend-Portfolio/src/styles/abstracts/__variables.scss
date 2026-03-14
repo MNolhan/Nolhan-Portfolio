@@ -8,6 +8,9 @@ $secondary-background-color: rgba($secondary-color, 0.075);
 $dark-bg: #151515;
 $light-bg: #f5f5f5;
 
+$text-color-light: white;
+$text-color-dark: black;
+
 // -- Border --
 $border-radius-small: 5px;
 $border-radius-medium: 10px;
@@ -24,6 +27,15 @@ $border-color-dark: black;
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 $font-family-primary: 'Jersey 25', sans-serif;
 $font-family-secondary: 'Helvetica', sans-serif;
+
+$Fontsize-xs: 1rem;
+$Fontsize-s: 1.25rem;
+$Fontsize-m: 1.5rem;
+$Fontsize-l: 1.75rem;
+$Fontsize-xl: 2rem;
+$Fontsize-2xl: 3rem;
+$Fontsize-3xl: 4rem;
+
 
 // -- Transition --
 $transition-duration: 0.3s;

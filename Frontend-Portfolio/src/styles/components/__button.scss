@@ -9,19 +9,19 @@
     cursor: pointer;
     text-decoration: none;
     transition: all $transition-duration $transition-timing-function;
-    font-size: 1.25rem;
+    font-size: $Fontsize-s;
     font-family: $font-family-primary;
 
     &-primary {
         background-color: $primary-background-color;
         border-color: $primary-color;
-        color: white;
+        color: $text-color-light;
     }
 
     &-secondary {
         background-color: $secondary-background-color;
         border-color: $secondary-color;
-        color: white;
+        color: $text-color-light;
     }
 
     &:hover {

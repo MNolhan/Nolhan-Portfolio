@@ -7,12 +7,12 @@
 
     &__title {
         display:flex;
-        font-size: 4rem;
+        font-size: $Fontsize-3xl;
         margin: 1rem 0;
         margin-bottom: 2rem;
 
         &--first{
-            color: white;
+            color: $text-color-light;
             margin: 0;
         }
 
@@ -25,8 +25,8 @@
 
     &__description{
         display: flex;
-        color: white;
-        font-size: 1.25rem; 
+        color: $text-color-light;
+        font-size: $Fontsize-s; 
         margin-bottom: 3rem;
     }
 
