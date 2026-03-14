@@ -1,14 +1,14 @@
-@use "../abstracts/_variables" as *;
+@use '../abstracts/_variables' as *;
 
-.Aboutme{
+.project{
     scroll-margin-top: 9.5rem;
     font-family: $font-family-primary;
 
     &__title {
         display:flex;
+        justify-content: center;
         font-size: $Fontsize-3xl;
-        margin: 0;
-        margin-bottom: 2rem;
+        margin: 0 0 1.5rem 0;
 
         &--first{
             color: $text-color-light;
@@ -22,16 +22,10 @@
         }
     }
 
-    &__description{
-        display: flex;
-        color: $text-color-light;
-        font-size: $Fontsize-s; 
-        margin-bottom: 3rem;
-    }
-
-    &__list{
+    &__subtitle{
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        font-size: $Fontsize-l;
+        color: $text-color-light;
     }
 }

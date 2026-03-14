@@ -9,6 +9,7 @@
 @use "./components/_serviceCard" as *;
 @use "./components/_scrollwatcher" as *;
 @use "./pages/_service" as *;
+@use "./pages/_project" as *;
 
 body{
     margin : 0;
@@ -17,4 +18,10 @@ body{
 
 html {
     scroll-behavior: smooth;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
 }

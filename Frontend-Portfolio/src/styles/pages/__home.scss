@@ -3,7 +3,6 @@
 .home {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 8rem);
     font-family: $font-family-primary;
 
     &__subtitle{
@@ -74,7 +73,7 @@
     &__image{
         width: 425px;
         height: 425px;
-        margin: 1.5rem 0;
+        margin: 1.5rem 0 0 0;
         border-radius: 50%;
         object-fit: cover;
         margin-left: 2rem;
