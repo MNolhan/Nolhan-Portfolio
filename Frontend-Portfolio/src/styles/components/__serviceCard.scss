@@ -37,13 +37,17 @@
     }
 
     &:hover{
-        background-color: $primary-background-color;
+        background: linear-gradient(145deg, $primary-background-color, $dark-bg);
         border: 1px solid $primary-color;
         transform: scale(1.025);
+
+        .serviceCard__title{
+            color: $primary-color;
+        }
     }
 }
 
 @keyframes spin {
     0%   { transform: rotate(0deg); }
-    100% { transform: rotate(1080deg); }
+    100% { transform: rotate(720deg); }
 }
