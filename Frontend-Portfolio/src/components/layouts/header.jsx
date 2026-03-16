@@ -16,8 +16,10 @@ export default function Header() {
                             <li><a href="#service" class="header__nav-link">Services</a></li>
                             <li><a href="#project" class="header__nav-link">Projets</a></li>
                             <li><a href="#contact" class="header__nav-link">Contact</a></li>
-                            <li><a href="#" class="header__nav-link">Login</a></li>
-                            <li><Bouton variant="primary">Sign Up</Bouton></li>
+                            <div className="header__user-button">
+                                <li><Bouton variant="secondary">Login</Bouton></li>
+                                <li><Bouton variant="primary" as="button">Sign Up</Bouton></li>
+                            </div>
                         </ul>
                     </div>
                 </nav>
