@@ -36,3 +36,26 @@
         gap: 1rem;  
     }
 }
+
+@media screen and (max-width: $mediascreen-xl) {
+    .service{
+        text-align: center;
+
+        &__card-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+    .service{
+        text-align: center;
+
+        &__card-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }
+}

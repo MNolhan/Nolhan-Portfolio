@@ -36,3 +36,22 @@
         gap: 1rem; 
     }
 }
+
+@media screen and (max-width: $mediascreen-xl) {
+    .project{
+        &__card-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+    .project{
+        &__card-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }
+}

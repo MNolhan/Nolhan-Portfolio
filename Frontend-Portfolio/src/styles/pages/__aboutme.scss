@@ -35,3 +35,36 @@
         gap: 1rem;
     }
 }
+
+@media screen and (max-width: $mediascreen-xl) {
+    .Aboutme{
+        &__title {
+            justify-content: center;
+        }
+
+        &__description{
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    
+}
+
+@media screen and (max-width: $mediascreen-m) {
+    .Aboutme{
+        &__title {
+            justify-content: center;
+        }
+
+        &__description{
+            justify-content: center;
+            text-align: center;
+        }
+
+        &__list{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+}
