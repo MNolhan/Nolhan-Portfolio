@@ -51,10 +51,10 @@ export default function Header() {
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Mot de passe" />
 
-                <button>Se connecter</button>
+                <Bouton variant="secondary">Se connecter</Bouton>
 
                 <form method="dialog">
-                    <button>Fermer</button>
+                    <Bouton variant="primary">Fermer</Bouton>
                 </form>
             </dialog>
 
@@ -66,10 +66,10 @@ export default function Header() {
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Mot de passe" />
 
-                <button>S'inscrire</button>
+                <Bouton variant="secondary">S'inscrire</Bouton>
 
                 <form method="dialog">
-                    <button>Fermer</button>
+                    <Bouton variant="primary">Fermer</Bouton>
                 </form>
             </dialog>
         </>

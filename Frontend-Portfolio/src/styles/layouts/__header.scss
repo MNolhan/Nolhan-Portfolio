@@ -61,3 +61,49 @@ dialog::backdrop{
     backdrop-filter: blur(8px);
     background: rgba(0,0,0,0.3);
 }
+
+#Login, #Signup{
+    background-color: $dark-bg;
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media screen and (max-width: $mediascreen-xl) {
+    .header{
+        &__nav{
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2%;
+            gap: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+    .header{    
+        &__nav{
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 7%;
+            gap: 0; 
+
+            &-links{
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &__user-button{
+            flex-direction: column;
+            gap : 1rem;
+            align-items: center;
+        }
+    }
+}
