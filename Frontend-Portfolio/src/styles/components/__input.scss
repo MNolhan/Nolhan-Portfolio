@@ -1,0 +1,21 @@
+@use '../abstracts/_variables' as *;
+
+.auth-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: $border-radius-small;
+    border-width: $border-width-small;
+    border-style: solid;
+    border-color: $border-color-light;
+    background-color: $dark-bg;
+    color: $text-color-light;
+    font-size: $Fontsize-s;
+    font-family: $font-family-primary;
+    transition: all $transition-duration $transition-timing-function;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 5px rgba($primary-color, 0.5);
+    }
+}
