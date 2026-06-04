@@ -24,12 +24,21 @@ const PostSchema = z.object({
 });
 
 router.post("/", rateLimiter,async (req, res) => {
+
+    let email, password;
+
+    try {
+        ({ email, password } = PostSchema.parse(req.body));
+    } catch (error) {
+        res.status(400);
+        res.json({ message: "Données de connexion invalides" });
+        return;
+    }
+
     try {
 
-        const { email, password } = PostSchema.parse(req.body);
-
         const [rows] = await pool.query( 
-            "SELECT id, name, firstname, email, password FROM users WHERE email = ?", 
+            "SELECT id, name, firstname, email, password, role FROM users WHERE email = ?", 
             [email]
         );
 
@@ -46,7 +55,7 @@ router.post("/", rateLimiter,async (req, res) => {
             if (decryptpassword){
                 res.status(200)
 
-                const payload = { userId: user.id, email: user.email, name : user.name, firstname : user.firstname }; 
+                const payload = { userId: user.id, email: user.email, name : user.name, firstname : user.firstname, role : user.role }; 
 
                 const token = jwt.sign(payload, SecretKey, { expiresIn: "1h" });
                 res.json({ token });
@@ -62,7 +71,7 @@ router.post("/", rateLimiter,async (req, res) => {
     } catch (error) {
 
         res.status(500);
-        res.json({ error: error.message });
+        res.json({ message: error.message });
 
     }
 });

@@ -1,7 +1,90 @@
 import Bouton from "../ui/button"
-import Input from "../ui/input"
+import Login from "./login"
+import Register from "./register"
 
 export default function Header() {
+
+    const token = localStorage.getItem("token");
+    let data = null;
+    
+    if (token) {
+        try {
+            data = JSON.parse(atob(token.split(".")[1]));
+        }
+        catch (error) {
+            console.error("Error parsing token:", error);
+            localStorage.removeItem("token");
+        }
+    }
+
+    let userbutton;
+
+    if (!localStorage.getItem("token")) {
+        
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="secondary"
+                        onClick={() =>
+                            document.getElementById("Login").showModal()
+                        }
+                    >
+                        Login
+                    </Bouton>
+                </li>
+                <li>
+                    <Bouton variant="primary"
+                        onClick={() =>
+                            document.getElementById("Signup").showModal()
+                        }
+                    >
+                        Sign Up
+                    </Bouton>
+                </li>
+            </div>
+        );
+
+    } else if (localStorage.getItem("token") && data.role === "ADMIN") {
+        
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="secondary">
+                        Admin Panel
+                    </Bouton>
+                </li>
+                <li>
+                    <Bouton variant="primary"
+
+                        onClick={() => {
+                            localStorage.removeItem("token");
+                            window.location.reload();
+                        }}
+                    >
+                        Logout
+                    </Bouton>
+                </li>
+            </div>
+        );
+
+    } else {
+        
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="primary"
+                        onClick={() => {
+                            localStorage.removeItem("token");
+                            window.location.reload();
+                        }}
+                    >
+                        Logout
+                    </Bouton>
+                </li>
+            </div>
+        );
+    }
+
     return (
         <>
             <header className="header">
@@ -18,72 +101,14 @@ export default function Header() {
                                 <li><a href="#service" className="header__nav-link">Services</a></li>
                                 <li><a href="#project" className="header__nav-link">Projets</a></li>
                                 <li><a href="#contact" className="header__nav-link">Contact</a></li>
-
-                                <div className="header__user-button">
-                                    <li>
-                                        <Bouton variant="secondary"
-                                            onClick={() =>
-                                                document.getElementById("Login").showModal()
-                                            }
-                                        >
-                                            Login
-                                        </Bouton>
-                                    </li>
-                                    <li>
-                                        <Bouton variant="primary"
-                                            onClick={() =>
-                                                document.getElementById("Signup").showModal()
-                                            }
-                                        >
-                                            Sign Up
-                                        </Bouton>
-                                    </li>
-                                </div>
-
+                                {userbutton}
                             </ul>
                         </div>
                     </nav>
                 </div>
             </header>
-
-            <dialog className="auth-popup auth-popup--login" id="Login">
-                <h2 className="auth-popup auth-popup__title">Connexion</h2>
-                <div className="auth-popup auth-popup__content">
-                    <div className="auth-popup auth-popup__inputs">
-                        <Input type="email" placeholder="Email"/>
-                        <Input type="password" placeholder="Mot de passe"/>
-                    </div>
-
-                    <div className="auth-popup auth-popup__buttons">
-                        <Bouton variant="secondary">Se connecter</Bouton>
-
-                        <form method="dialog">
-                            <Bouton variant="primary">Fermer</Bouton>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
-
-
-            <dialog className="auth-popup auth-popup--signup" id="Signup">
-                <h2 className="auth-popup auth-popup__title">Créer un compte</h2>
-                <div className="auth-popup auth-popup__content">
-                    <div className="auth-popup auth-popup__inputs">
-                        <Input type="text" placeholder="Nom"/>
-                        <Input type="text" placeholder="Prénom"/>
-                        <Input type="email" placeholder="Email"/>
-                        <Input type="password" placeholder="Mot de passe"/>
-                    </div>
-
-                    <div className="auth-popup auth-popup__buttons">
-                        <Bouton variant="secondary">S'inscrire</Bouton>
-
-                        <form method="dialog">
-                            <Bouton variant="primary">Fermer</Bouton>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
+            <Login />
+            <Register />
         </>
     );
 }

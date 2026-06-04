@@ -25,10 +25,18 @@ const userSchema = z.object({
 router.post("/", async (req, res) => {
 
     const data = req.body;
+    let name, firstname, email, password;
+
+    try {
+        ({ name, firstname, email, password } = userSchema.parse(req.body));
+    } catch (error) {
+        res.status(400);
+        res.json({ message: "Données invalides" });
+        return;
+    }
 
     try {
 
-        const { name, firstname, email, password } = userSchema.parse(req.body);
         const hashpassword = await bcrypt.hash(password, 10);
 
         const [result] = await pool.query(
@@ -42,7 +50,7 @@ router.post("/", async (req, res) => {
     } catch (error) {
 
         res.status(500)
-        res.json({ error: error.message });
+        res.json({ message: error.message });
 
     }
 });
