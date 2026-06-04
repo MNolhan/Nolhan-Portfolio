@@ -39,7 +39,7 @@ export default function Login() {
 
     return (
         <dialog className="auth-popup auth-popup--login" id="Login">
-            <h2 className="auth-popup__title">Connexion</h2>
+            <h1 className="auth-popup__title">Connexion</h1>
 
             <form className="auth-popup__content" onSubmit={handleSubmit}>
                 <div className="auth-popup__inputs">

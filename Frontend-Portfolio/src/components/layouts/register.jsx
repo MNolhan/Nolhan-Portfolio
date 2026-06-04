@@ -42,7 +42,7 @@ export default function Register() {
 
     return (
         <dialog className="auth-popup auth-popup--signup" id="Signup">
-            <h2 className="auth-popup__title">Créer un compte</h2>
+            <h1 className="auth-popup__title">Créer un compte</h1>
 
             <form className="auth-popup__content" onSubmit={handleSubmit}>
                 <div className="auth-popup__inputs">
