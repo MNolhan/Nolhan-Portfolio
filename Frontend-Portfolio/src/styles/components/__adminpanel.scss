@@ -1,0 +1,36 @@
+@use '../abstracts/_variables' as *;
+
+.admin-panel {
+    align-items: center;
+    background-color: $dark-bg;
+    border: none;
+    padding : 2rem;
+    border-radius: 1rem;
+
+    &__content{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 0 1rem 0;
+        gap: 2rem;
+    }
+
+    &__title{
+        font-size: $Fontsize-xl;
+        color: $text-color-light;
+        font-family: $font-family-primary;
+        text-align: center;
+    }
+
+    &__buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 0rem;
+    }
+
+    &--popup {
+        border: $border-width-small solid $border-color-light;
+        min-width: 25%;
+    }
+}
