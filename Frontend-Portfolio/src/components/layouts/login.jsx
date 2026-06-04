@@ -21,13 +21,14 @@ export default function Login() {
 
             if (response.ok) {
                 localStorage.setItem("token", data.token);
-                window.location.reload();
                 setMessage("Connexion réussie !");
                 setEmail("");
                 setPassword("");
+                setTimeout(() => { window.location.reload(); }, 1000);
                 return;
             }
 
+            setPassword("");
             setMessage(data.message);
 
         } catch (error) {

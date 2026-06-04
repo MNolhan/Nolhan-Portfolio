@@ -27,9 +27,11 @@ export default function Register() {
                 setFirstname("");
                 setEmail("");
                 setPassword("");
+                setTimeout(() => { window.location.reload(); }, 1000);
                 return;
             }
 
+            setPassword("");
             setMessage(data.message);
 
         } catch (error) {
