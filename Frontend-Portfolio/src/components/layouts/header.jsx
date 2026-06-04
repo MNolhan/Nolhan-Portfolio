@@ -1,5 +1,6 @@
 import Bouton from "../ui/button"
-import Input from "../ui/input"
+import Login from "./login"
+import Register from "./register"
 
 export default function Header() {
     return (
@@ -45,45 +46,8 @@ export default function Header() {
                     </nav>
                 </div>
             </header>
-
-            <dialog className="auth-popup auth-popup--login" id="Login">
-                <h2 className="auth-popup auth-popup__title">Connexion</h2>
-                <div className="auth-popup auth-popup__content">
-                    <div className="auth-popup auth-popup__inputs">
-                        <Input type="email" placeholder="Email"/>
-                        <Input type="password" placeholder="Mot de passe"/>
-                    </div>
-
-                    <div className="auth-popup auth-popup__buttons">
-                        <Bouton variant="secondary">Se connecter</Bouton>
-
-                        <form method="dialog">
-                            <Bouton variant="primary">Fermer</Bouton>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
-
-
-            <dialog className="auth-popup auth-popup--signup" id="Signup">
-                <h2 className="auth-popup auth-popup__title">Créer un compte</h2>
-                <div className="auth-popup auth-popup__content">
-                    <div className="auth-popup auth-popup__inputs">
-                        <Input type="text" placeholder="Nom"/>
-                        <Input type="text" placeholder="Prénom"/>
-                        <Input type="email" placeholder="Email"/>
-                        <Input type="password" placeholder="Mot de passe"/>
-                    </div>
-
-                    <div className="auth-popup auth-popup__buttons">
-                        <Bouton variant="secondary">S'inscrire</Bouton>
-
-                        <form method="dialog">
-                            <Bouton variant="primary">Fermer</Bouton>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
+            <Login />
+            <Register />
         </>
     );
 }
