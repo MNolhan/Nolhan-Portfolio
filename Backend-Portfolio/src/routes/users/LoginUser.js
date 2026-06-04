@@ -29,7 +29,7 @@ router.post("/", rateLimiter,async (req, res) => {
         const { email, password } = PostSchema.parse(req.body);
 
         const [rows] = await pool.query( 
-            "SELECT id, name, firstname, email, password FROM users WHERE email = ?", 
+            "SELECT id, name, firstname, email, password, role FROM users WHERE email = ?", 
             [email]
         );
 
@@ -46,7 +46,7 @@ router.post("/", rateLimiter,async (req, res) => {
             if (decryptpassword){
                 res.status(200)
 
-                const payload = { userId: user.id, email: user.email, name : user.name, firstname : user.firstname }; 
+                const payload = { userId: user.id, email: user.email, name : user.name, firstname : user.firstname, role : user.role }; 
 
                 const token = jwt.sign(payload, SecretKey, { expiresIn: "1h" });
                 res.json({ token });

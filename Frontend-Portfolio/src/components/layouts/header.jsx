@@ -4,6 +4,19 @@ import Register from "./register"
 
 export default function Header() {
 
+    const token = localStorage.getItem("token");
+    let data = null;
+    
+    if (token) {
+        try {
+            data = JSON.parse(atob(token.split(".")[1]));
+        }
+        catch (error) {
+            console.error("Error parsing token:", error);
+            localStorage.removeItem("token");
+        }
+    }
+
     let userbutton;
 
     if (!localStorage.getItem("token")) {
@@ -30,7 +43,32 @@ export default function Header() {
                 </li>
             </div>
         );
+
+    } else if (localStorage.getItem("token") && data.role === "ADMIN") {
+        
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="secondary">
+                        Admin Panel
+                    </Bouton>
+                </li>
+                <li>
+                    <Bouton variant="primary"
+
+                        onClick={() => {
+                            localStorage.removeItem("token");
+                            window.location.reload();
+                        }}
+                    >
+                        Logout
+                    </Bouton>
+                </li>
+            </div>
+        );
+
     } else {
+        
         userbutton = (
             <div className="header__user-button">
                 <li>
