@@ -4,15 +4,15 @@
     align-items: center;
     background-color: $dark-bg;
     border: none;
-    padding : 1rem;
+    padding : 2rem;
     border-radius: 1rem;
 
     &__content{
         align-items: center;
         display: flex;
         flex-direction: column;
+        padding: 1.5rem 0 1rem 0;
         gap: 2rem;
-        padding: 1rem;
     }
 
     &__title{
