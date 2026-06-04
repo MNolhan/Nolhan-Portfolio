@@ -3,6 +3,50 @@ import Login from "./login"
 import Register from "./register"
 
 export default function Header() {
+
+    let userbutton;
+
+    if (!localStorage.getItem("token")) {
+        
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="secondary"
+                        onClick={() =>
+                            document.getElementById("Login").showModal()
+                        }
+                    >
+                        Login
+                    </Bouton>
+                </li>
+                <li>
+                    <Bouton variant="primary"
+                        onClick={() =>
+                            document.getElementById("Signup").showModal()
+                        }
+                    >
+                        Sign Up
+                    </Bouton>
+                </li>
+            </div>
+        );
+    } else {
+        userbutton = (
+            <div className="header__user-button">
+                <li>
+                    <Bouton variant="primary"
+                        onClick={() => {
+                            localStorage.removeItem("token");
+                            window.location.reload();
+                        }}
+                    >
+                        Logout
+                    </Bouton>
+                </li>
+            </div>
+        );
+    }
+
     return (
         <>
             <header className="header">
@@ -19,28 +63,7 @@ export default function Header() {
                                 <li><a href="#service" className="header__nav-link">Services</a></li>
                                 <li><a href="#project" className="header__nav-link">Projets</a></li>
                                 <li><a href="#contact" className="header__nav-link">Contact</a></li>
-
-                                <div className="header__user-button">
-                                    <li>
-                                        <Bouton variant="secondary"
-                                            onClick={() =>
-                                                document.getElementById("Login").showModal()
-                                            }
-                                        >
-                                            Login
-                                        </Bouton>
-                                    </li>
-                                    <li>
-                                        <Bouton variant="primary"
-                                            onClick={() =>
-                                                document.getElementById("Signup").showModal()
-                                            }
-                                        >
-                                            Sign Up
-                                        </Bouton>
-                                    </li>
-                                </div>
-
+                                {userbutton}
                             </ul>
                         </div>
                     </nav>
