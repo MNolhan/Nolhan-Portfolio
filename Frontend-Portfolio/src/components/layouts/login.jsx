@@ -51,7 +51,12 @@ export default function Login() {
 
                 <div className="auth-popup__buttons">
                     <Bouton variant="secondary" type="submit">Se connecter</Bouton>
-                    <Bouton variant="primary" type="button" onClick={() => document.getElementById("Login").close()}>
+                    <Bouton variant="primary" type="button" onClick={() => {
+                        document.getElementById("Login").close();
+                        setMessage("");
+                        setEmail("");
+                        setPassword("");
+                    }}>
                         Fermer
                     </Bouton>
                 </div>

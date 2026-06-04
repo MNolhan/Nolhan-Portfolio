@@ -56,7 +56,14 @@ export default function Register() {
 
                 <div className="auth-popup__buttons">
                     <Bouton variant="secondary" type="submit">S'inscrire</Bouton>
-                    <Bouton variant="primary" type="button" onClick={() => document.getElementById("Signup").close()}>
+                    <Bouton variant="primary" type="button" onClick={() => {
+                        document.getElementById("Signup").close();
+                        setMessage("");
+                        setName("");
+                        setFirstname("");
+                        setEmail("");
+                        setPassword("");
+                    }}>
                         Fermer
                     </Bouton>
                 </div>
