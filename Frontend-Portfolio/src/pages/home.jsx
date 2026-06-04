@@ -25,7 +25,9 @@ export default function Home() {
                                 à la qualité du code, aux bonnes pratiques et à l'expérience utilisateur.
                             </p>
                             <div className="home__list">
-                                <Bouton variant="primary">Projects</Bouton>
+                                <a href="#project">
+                                    <Bouton variant="primary">Projects</Bouton>
+                                </a>
                                 <Bouton variant="secondary">Télécharger Mon CV</Bouton>
                             </div>
                         </div>
