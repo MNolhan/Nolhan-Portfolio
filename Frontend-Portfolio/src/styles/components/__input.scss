@@ -23,3 +23,14 @@
         box-shadow: 0 0 5px rgba($primary-color, 0.5);
     }
 }
+
+option{
+        background-color: $dark-bg;
+        border: none;
+    }
+
+textarea {
+    resize: vertical;
+    min-height: 40px;
+    max-height: 120px;
+}
