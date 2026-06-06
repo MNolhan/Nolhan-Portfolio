@@ -1,6 +1,17 @@
+import { useState, useEffect } from "react";
 import Card from "../components/ui/card";
 
 export default function Aboutme() {
+  const [count, setCount] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:3000/CountProject")
+      .then(res => res.json())
+      .then(data => setCount(data.count))
+      .catch(() => setCount("ERROR"));
+    }, 
+  []);
+
   const startDate = new Date("2023-10-01");
   const today = new Date();
 
@@ -60,7 +71,7 @@ export default function Aboutme() {
             la créativité.
           </p>
           <div className="Aboutme__list">
-            <Card Description="Projet(s) réalisé(s) ">1</Card>
+            <Card Description="Projet(s) réalisé(s) ">{count}</Card>
             <Card Description={message}>{yearsExperience}</Card>
             <Card Description="Client(s)">0</Card>
           </div>

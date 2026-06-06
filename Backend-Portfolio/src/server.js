@@ -9,7 +9,8 @@ import DeleteUser from './routes/users/DeleteUser.js';
 import LoginUser from './routes/users/LoginUser.js';
 import CreateProject from './routes/projects/CreateProject.js';
 import ReadProject from './routes/projects/ReadProject.js';
-import DeleteProject from './routes/projects/DeleteProject.js'
+import DeleteProject from './routes/projects/DeleteProject.js';
+import CountProject from './routes/projects/CountProject.js';
 
 dotenv.config();
 const app = express();
@@ -35,8 +36,9 @@ app.use('/UpdateUser', UpdateUser);
 app.use('/DeleteUser', DeleteUser);
 app.use('/Login', LoginUser);
 app.use('/CreateProject', CreateProject);
-app.use('/ReadProject', ReadProject)
-app.use('/DeleteProject', DeleteProject)
+app.use('/ReadProject', ReadProject);
+app.use('/DeleteProject', DeleteProject);
+app.use('/CountProject', CountProject);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
