@@ -46,10 +46,10 @@ export default function Register() {
 
             <form className="auth-popup__content" onSubmit={handleSubmit}>
                 <div className="auth-popup__inputs">
-                    <Input type="text" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)} />
-                    <Input type="text" placeholder="Prenom" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
-                    <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <Input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="input" type="text" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input className="input" type="text" placeholder="Prenom" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                    <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="input" type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 {message && <p className="auth-popup__message">{message}</p>}
