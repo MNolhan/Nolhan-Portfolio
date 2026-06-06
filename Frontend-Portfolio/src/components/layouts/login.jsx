@@ -43,7 +43,7 @@ export default function Login() {
             <form className="auth-popup__content" onSubmit={handleSubmit}>
                 <div className="auth-popup__inputs">
                     <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input className="input" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="input" type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 {message && <p className="auth-popup__message">{message}</p>}
