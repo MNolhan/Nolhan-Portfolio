@@ -1,36 +1,36 @@
-@use '../abstracts/_variables' as *;
+@use "../abstracts/_variables" as *;
 
-.input{
-    padding: 0.75rem;
-    background-color: $primary-background-color;
-    border: $border-width-small solid rgba($primary-color, 0.25);
-    border-radius: $border-radius-medium;
-    font-family: $font-family-primary;
-    font-size: $Fontsize-xs;
-    color: $text-color-light;
-    
-    &::placeholder{
-        color: $text-color-grey;
-    }
+.input {
+  padding: 0.75rem;
+  background-color: $primary-background-color;
+  border: $border-width-small solid rgba($primary-color, 0.25);
+  border-radius: $border-radius-medium;
+  font-family: $font-family-primary;
+  font-size: $Fontsize-xs;
+  color: $text-color-light;
 
-    &:hover{
-        border: $border-width-small solid rgba($primary-color, 0.75);
-    }
+  &::placeholder {
+    color: $text-color-grey;
+  }
 
-    &:focus {
-        outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 5px rgba($primary-color, 0.5);
-    }
+  &:hover {
+    border: $border-width-small solid rgba($primary-color, 0.75);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba($primary-color, 0.5);
+  }
 }
 
-option{
-        background-color: $dark-bg;
-        border: none;
-    }
+option {
+  background-color: $dark-bg;
+  border: none;
+}
 
 textarea {
-    resize: vertical;
-    min-height: 40px;
-    max-height: 120px;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 120px;
 }

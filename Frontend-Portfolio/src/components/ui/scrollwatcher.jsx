@@ -1,5 +1,3 @@
-export default function scrollwatcher(){
-    return(
-        <div class="scroll-watcher"></div>
-    );
+export default function scrollwatcher() {
+  return <div class="scroll-watcher"></div>;
 }

@@ -1,62 +1,62 @@
-@use '../abstracts/_variables' as *;
+@use "../abstracts/_variables" as *;
 
-.project{
-    scroll-margin-top: 9.5rem;
-    font-family: $font-family-primary;
+.project {
+  scroll-margin-top: 9.5rem;
+  font-family: $font-family-primary;
 
-    &__title {
-        display:flex;
-        justify-content: center;
-        font-size: $Fontsize-3xl;
-        margin: 0 0 1.5rem 0;
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: $Fontsize-3xl;
+    margin: 0 0 1.5rem 0;
 
-        &--first{
-            color: $text-color-light;
-            margin: 0;
-        }
-
-        &--second{
-            color: $primary-color;
-            margin: 0;
-            margin-left: 1rem;
-        }
+    &--first {
+      color: $text-color-light;
+      margin: 0;
     }
 
-    &__subtitle{
-        display: flex;
-        justify-content: center;
-        font-size: $Fontsize-l;
-        color: $text-color-light;
+    &--second {
+      color: $primary-color;
+      margin: 0;
+      margin-left: 1rem;
     }
+  }
 
-    &__card-list {
-        margin-top: 4rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem; 
-    }
+  &__subtitle {
+    display: flex;
+    justify-content: center;
+    font-size: $Fontsize-l;
+    color: $text-color-light;
+  }
 
-    &__message {
-        color : $text-color-light;
-        font-size: $Fontsize-s;
-    }
+  &__card-list {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__message {
+    color: $text-color-light;
+    font-size: $Fontsize-s;
+  }
 }
 
 @media screen and (max-width: $mediascreen-xl) {
-    .project{
-        &__card-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
+  .project {
+    &__card-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
+  }
 }
 
 @media screen and (max-width: $mediascreen-m) {
-    .project{
-        &__card-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            justify-items: center;
-        }
+  .project {
+    &__card-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
     }
+  }
 }

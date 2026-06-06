@@ -1,70 +1,68 @@
 @use "../abstracts/_variables" as *;
 
-.Aboutme{
-    scroll-margin-top: 9.5rem;
-    font-family: $font-family-primary;
+.Aboutme {
+  scroll-margin-top: 9.5rem;
+  font-family: $font-family-primary;
 
-    &__title {
-        display:flex;
-        font-size: $Fontsize-3xl;
-        margin: 0;
-        margin-bottom: 2rem;
+  &__title {
+    display: flex;
+    font-size: $Fontsize-3xl;
+    margin: 0;
+    margin-bottom: 2rem;
 
-        &--first{
-            color: $text-color-light;
-            margin: 0;
-        }
-
-        &--second{
-            color: $primary-color;
-            margin: 0;
-            margin-left: 1rem;
-        }
+    &--first {
+      color: $text-color-light;
+      margin: 0;
     }
 
-    &__description{
-        display: flex;
-        color: $text-color-light;
-        font-size: $Fontsize-s; 
-        margin-bottom: 3rem;
+    &--second {
+      color: $primary-color;
+      margin: 0;
+      margin-left: 1rem;
     }
+  }
 
-    &__list{
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
+  &__description {
+    display: flex;
+    color: $text-color-light;
+    font-size: $Fontsize-s;
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 
 @media screen and (max-width: $mediascreen-xl) {
-    .Aboutme{
-        &__title {
-            justify-content: center;
-        }
-
-        &__description{
-            justify-content: center;
-            text-align: center;
-        }
+  .Aboutme {
+    &__title {
+      justify-content: center;
     }
-    
+
+    &__description {
+      justify-content: center;
+      text-align: center;
+    }
+  }
 }
 
 @media screen and (max-width: $mediascreen-m) {
-    .Aboutme{
-        &__title {
-            justify-content: center;
-        }
-
-        &__description{
-            justify-content: center;
-            text-align: center;
-        }
-
-        &__list{
-            flex-direction: column;
-            align-items: center;
-        }
+  .Aboutme {
+    &__title {
+      justify-content: center;
     }
-    
+
+    &__description {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }

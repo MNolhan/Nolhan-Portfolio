@@ -25,9 +25,9 @@ $border-color-light: white;
 $border-color-dark: black;
 
 // -- Font --
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
-$font-family-primary: 'Jersey 25', sans-serif;
-$font-family-secondary: 'Helvetica', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
+$font-family-primary: "Jersey 25", sans-serif;
+$font-family-secondary: "Helvetica", sans-serif;
 
 $Fontsize-xs: 1rem;
 $Fontsize-s: 1.25rem;
@@ -36,7 +36,6 @@ $Fontsize-l: 1.75rem;
 $Fontsize-xl: 2rem;
 $Fontsize-2xl: 3rem;
 $Fontsize-3xl: 4rem;
-
 
 // -- Transition --
 $transition-duration: 0.3s;

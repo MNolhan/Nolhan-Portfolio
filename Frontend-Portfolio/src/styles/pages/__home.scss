@@ -1,97 +1,94 @@
-@use '../abstracts/_variables' as *;
+@use "../abstracts/_variables" as *;
 
 .home {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-primary;
+
+  &__subtitle {
     display: flex;
-    flex-direction: column;
-    font-family: $font-family-primary;
+    font-size: $Fontsize-xl;
+    margin-bottom: 1.5rem;
+  }
 
-    &__subtitle{
-        display: flex;
-        font-size: $Fontsize-xl;
-        margin-bottom: 1.5rem;
+  &__title {
+    display: flex;
+    font-size: $Fontsize-3xl;
+    margin: 0;
+
+    &__typing {
+      position: relative;
+      display: inline-block;
+      height: 1.2em;
+      min-width: 13ch;
+      color: $primary-color;
+      overflow: hidden;
+      z-index: 10;
+
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid $primary-color;
+        width: 0;
+        opacity: 0;
+      }
+
+      span:nth-child(1) {
+        animation: typingDeveloper 6s steps(9) infinite;
+      }
+
+      span:nth-child(2) {
+        animation: typingDesigner 6s steps(8) infinite;
+      }
     }
+  }
 
-    &__title{
-        display: flex;
-        font-size: $Fontsize-3xl;
-        margin: 0;
+  &--first {
+    color: white;
+  }
 
-        &__typing {
-            position: relative;
-            display: inline-block;
-            height: 1.2em;
-            min-width: 13ch; 
-            color: $primary-color;
-            overflow: hidden;
-            z-index: 10;
+  &--second {
+    color: $primary-color;
+    margin-left: 0.5rem;
+  }
 
-            span {
-                position: absolute;
-                left: 0;
-                top: 0;
-                white-space: nowrap;
-                overflow: hidden;
-                border-right: 3px solid $primary-color;
-                width: 0;
-                opacity: 0;
-            }
+  &__description {
+    font-size: $Fontsize-s;
+    max-width: 600px;
+    color: white;
+    margin-bottom: 2rem;
+  }
 
-            span:nth-child(1) {
-                animation: typingDeveloper 6s steps(9) infinite;
-            }
+  &__list {
+    display: flex;
+    gap: 1rem;
+  }
 
-            span:nth-child(2) {
-                animation: typingDesigner 6s steps(8) infinite;
-            }
+  &__image {
+    width: 425px;
+    height: 425px;
+    margin: 1.5rem 0 0 0;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 2rem;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &--right {
+      display: flex;
+      justify-content: flex-end;
     }
-
-
-
-    }
-
-    &--first{
-            color: white;
-        }
-
-    &--second{
-        color: $primary-color;
-        margin-left: 0.5rem;
-    }
-
-    &__description{
-        font-size: $Fontsize-s;
-        max-width: 600px;
-        color: white;
-        margin-bottom: 2rem;
-    }
-
-    &__list{
-        display: flex;
-        gap: 1rem;
-    }
-
-    &__image{
-        width: 425px;
-        height: 425px;
-        margin: 1.5rem 0 0 0;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-left: 2rem;
-        justify-content: flex-end;
-    }
-
-    &__content{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        &--right{
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
+  }
 }
 
 @keyframes typingDeveloper {

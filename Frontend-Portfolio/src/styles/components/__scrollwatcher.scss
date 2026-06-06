@@ -1,18 +1,18 @@
-@use '../abstracts/_variables' as*;
+@use "../abstracts/_variables" as *;
 
 .scroll-watcher {
-    height: 5px;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    background-color: $primary-color;
-    width: 0%;
-    animation: scroll-watcher linear ;
-    animation-timeline: scroll(); 
+  height: 5px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: $primary-color;
+  width: 0%;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
 }
 
 @keyframes scroll-watcher {
-    to {
-        width: 100%;
-    }
+  to {
+    width: 100%;
+  }
 }

@@ -1,53 +1,53 @@
-@use '../abstracts/_variables' as *;
+@use "../abstracts/_variables" as *;
 
-.footer{
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 4rem 0;
+  background-color: $dark-bg;
+  font-family: $font-family-primary;
+  border-top: $border-width-small solid $border-color-light;
+  margin-top: 5rem;
+
+  &__content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 2rem 0 4rem 0;
-    background-color: $dark-bg;
-    font-family: $font-family-primary;
-    border-top: $border-width-small solid $border-color-light;
-    margin-top: 5rem;
 
-    &__content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    &-logo {
+      display: flex;
+      font-size: $Fontsize-xl;
+      font-weight: bold;
+      color: $text-color-light;
+      text-decoration: none;
 
-        &-logo{
-            display: flex;
-            font-size: $Fontsize-xl;
-            font-weight: bold;
-            color: $text-color-light;
-            text-decoration: none;
+      &--first {
+        color: $primary-color;
+      }
 
-            &--first{
-                color: $primary-color;
-            }
-
-            &--second{
-                color: $text-color-light;
-            }
-        }
-
-        &-title{
-            margin: 1.5rem;
-            font-size: $Fontsize-2xl;
-            color: $text-color-light;
-        }
-
-        &-description{
-            font-size: $Fontsize-s;
-            color: $text-color-light;
-            text-align: center;
-        }
+      &--second {
+        color: $text-color-light;
+      }
     }
 
-    &__list{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
+    &-title {
+      margin: 1.5rem;
+      font-size: $Fontsize-2xl;
+      color: $text-color-light;
     }
+
+    &-description {
+      font-size: $Fontsize-s;
+      color: $text-color-light;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
 }
