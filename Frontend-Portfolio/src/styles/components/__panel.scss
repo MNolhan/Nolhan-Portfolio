@@ -29,6 +29,14 @@
         padding-top: 0rem;
     }
 
+    &__message{
+        color: $text-color-light;
+        font-size: $Fontsize-s;
+        font-family: $font-family-primary;
+        text-align: center;
+        margin: 0;
+    }
+
     &__inputs{
         width: 80%;
         display: flex;

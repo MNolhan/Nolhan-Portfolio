@@ -46,7 +46,7 @@ export default function AddProject() {
                 setGithubUrl("");
                 setLiveUrl("");
                 setTechnologies([]);
-                setTimeout(() => { document.getElementById("AddProject").close(); setMessage(""); }, 1000);
+                setTimeout(() => { document.getElementById("AddProject").close(); setMessage(""); window.location.reload();}, 1000);
                 return;
             }
 
@@ -105,6 +105,13 @@ export default function AddProject() {
                     <Bouton variant="primary" type="button" onClick={() => {
                         document.getElementById("AddProject").close();
                         setMessage("");
+                        setName("");
+                        setType("Autres");
+                        setDescription("");
+                        setThumbnail("");
+                        setGithubUrl("");
+                        setLiveUrl("");
+                        setTechnologies([]);
                     }}>
                         Fermer
                     </Bouton>
