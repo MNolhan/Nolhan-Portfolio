@@ -76,6 +76,8 @@ dialog::backdrop {
 
 @media screen and (max-width: $mediascreen-m) {
   .header {
+    position:relative;
+
     &__nav {
       flex-direction: column;
       gap: 1rem;
