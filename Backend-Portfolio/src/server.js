@@ -8,6 +8,7 @@ import UpdateUser from './routes/users/UpdateUser.js';
 import DeleteUser from './routes/users/DeleteUser.js';
 import LoginUser from './routes/users/LoginUser.js';
 import CreateProject from './routes/projects/CreateProject.js';
+import ReadProject from './routes/projects/ReadProject.js';
 
 dotenv.config();
 const app = express();
@@ -33,6 +34,7 @@ app.use('/UpdateUser', UpdateUser);
 app.use('/DeleteUser', DeleteUser);
 app.use('/Login', LoginUser);
 app.use('/CreateProject', CreateProject);
+app.use('/ReadProject', ReadProject)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
