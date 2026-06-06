@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Bouton from "../ui/button";
-import Input from "../ui/input";
 
 export default function Login() {
     const [email, setEmail] = useState("");
