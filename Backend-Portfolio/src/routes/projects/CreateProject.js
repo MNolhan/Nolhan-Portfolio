@@ -20,7 +20,7 @@ const projectSchema = z.object({
     description: z.string().min(1),
     thumbnail: z.string().url().optional(),
     github_url: z.string().url().optional(),
-    live_url: z.string().url().optional(),
+    live_url: z.string().optional(),
     technologies: z.array(z.string()).optional(),
     status: z.enum(["En cours", "Terminé", "Archivé"]).default("Terminé"),
     featured: z.boolean().default(false),
