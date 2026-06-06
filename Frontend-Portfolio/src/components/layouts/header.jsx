@@ -1,6 +1,7 @@
 import Bouton from "../ui/button"
 import Login from "./login"
 import Register from "./register"
+import AdminPanel from "./adminpanel";
 
 export default function Header() {
 
@@ -49,13 +50,16 @@ export default function Header() {
         userbutton = (
             <div className="header__user-button">
                 <li>
-                    <Bouton variant="secondary">
+                    <Bouton variant="secondary"
+                        onClick={() =>
+                            document.getElementById("AdminPanel").showModal()
+                        }
+                    >
                         Admin Panel
                     </Bouton>
                 </li>
                 <li>
                     <Bouton variant="primary"
-
                         onClick={() => {
                             localStorage.removeItem("token");
                             window.location.reload();
@@ -109,6 +113,7 @@ export default function Header() {
             </header>
             <Login />
             <Register />
+            <AdminPanel />
         </>
     );
 }

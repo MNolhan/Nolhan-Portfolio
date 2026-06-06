@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Bouton from "../ui/button";
-import Input from "../ui/input";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -39,12 +38,12 @@ export default function Login() {
 
     return (
         <dialog className="auth-popup auth-popup--login" id="Login">
-            <h2 className="auth-popup__title">Connexion</h2>
+            <h1 className="auth-popup__title">Connexion</h1>
 
             <form className="auth-popup__content" onSubmit={handleSubmit}>
                 <div className="auth-popup__inputs">
-                    <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <Input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="input" type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 {message && <p className="auth-popup__message">{message}</p>}

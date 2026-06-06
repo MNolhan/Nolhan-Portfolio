@@ -35,6 +35,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem; 
     }
+
+    &__message {
+        color : $text-color-light;
+        font-size: $Fontsize-s;
+    }
 }
 
 @media screen and (max-width: $mediascreen-xl) {
