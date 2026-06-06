@@ -37,9 +37,9 @@ router.delete("/",  async (req, res) => {
             `SELECT * FROM projects WHERE name = ?`, name
         );
 
-        if (empty(rows)){
-            res.status(400);
-            res.json("Il n'existe pas de projet comportant ce nom");
+        if (rows.length === 0) {
+            res.status(404)
+            res.json({ message: "Projet '" + name + "' introuvable" });
             return;
         }
 
