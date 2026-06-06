@@ -45,9 +45,9 @@ export default function service() {
             </Card>
             <Card
               Icone={EcommerceIcon}
-              description="Solutions e-commerce complète pour booster vos ventes en ligne."
+              description="Création de scripts pour automatiser vos tâches répétitives et gagner en productivité."
             >
-              E-commerce
+              Automatisation
             </Card>
             <Card
               Icone={OptimizationIcon}
