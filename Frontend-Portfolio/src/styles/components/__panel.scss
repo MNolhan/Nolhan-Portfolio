@@ -20,6 +20,14 @@
     color: $text-color-light;
     font-family: $font-family-primary;
     text-align: center;
+
+    &--validation{
+      font-size: $Fontsize-xl - 0.1;
+      color: $text-color-light;
+      font-family: $font-family-primary;
+      text-align: center;
+    }
+
   }
 
   &__buttons {
@@ -27,6 +35,12 @@
     flex-direction: column;
     gap: 0.5rem;
     padding-top: 0rem;
+
+    &--validation{
+      display: flex;
+      gap : 0.5rem;
+    }
+
   }
 
   &__message {

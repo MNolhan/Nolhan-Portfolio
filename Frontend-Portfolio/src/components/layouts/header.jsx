@@ -1,6 +1,7 @@
 import Bouton from "../ui/button";
 import Login from "./login";
 import Register from "./register";
+import ValidationPanel from "./validationpanel";
 import AdminPanel from "./adminpanel";
 
 export default function Header() {
@@ -53,10 +54,7 @@ export default function Header() {
         <li>
           <Bouton
             variant="primary"
-            onClick={() => {
-              localStorage.removeItem("token");
-              window.location.reload();
-            }}
+            onClick={() => document.getElementById("ValidationPanel").showModal()}
           >
             Logout
           </Bouton>
@@ -69,10 +67,7 @@ export default function Header() {
         <li>
           <Bouton
             variant="primary"
-            onClick={() => {
-              localStorage.removeItem("token");
-              window.location.reload();
-            }}
+            onClick={() => document.getElementById("ValidationPanel").showModal()}
           >
             Logout
           </Bouton>
@@ -126,6 +121,7 @@ export default function Header() {
       <Login />
       <Register />
       <AdminPanel />
+      <ValidationPanel />
     </>
   );
 }
