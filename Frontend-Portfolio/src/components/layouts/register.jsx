@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Bouton from "../ui/button";
+import Login from "./login";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -26,9 +27,6 @@ export default function Register() {
         setFirstname("");
         setEmail("");
         setPassword("");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
         return;
       }
 
@@ -41,63 +39,78 @@ export default function Register() {
   };
 
   return (
-    <dialog className="auth-popup auth-popup--signup" id="Signup">
-      <h1 className="auth-popup__title">Créer un compte</h1>
+    <>
+      <dialog className="auth-popup auth-popup--signup" id="Signup">
+        <h1 className="auth-popup__title">Créer un compte</h1>
 
-      <form className="auth-popup__content" onSubmit={handleSubmit}>
-        <div className="auth-popup__inputs">
-          <input
-            className="input"
-            type="text"
-            placeholder="Nom"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            className="input"
-            type="text"
-            placeholder="Prenom"
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-          />
-          <input
-            className="input"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className="input"
-            type="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+        <form className="auth-popup__content" onSubmit={handleSubmit}>
+          <div className="auth-popup__inputs">
+            <input
+              className="input"
+              type="text"
+              placeholder="Nom"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className="input"
+              type="text"
+              placeholder="Prenom"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
+            <input
+              className="input"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              className="input"
+              type="password"
+              placeholder="Mot de passe"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-        {message && <p className="auth-popup__message">{message}</p>}
+          {message && <p className="auth-popup__message">{message}</p>}
 
-        <div className="auth-popup__buttons">
-          <Bouton variant="secondary" type="submit">
-            S'inscrire
-          </Bouton>
-          <Bouton
-            variant="primary"
-            type="button"
-            onClick={() => {
-              document.getElementById("Signup").close();
-              setMessage("");
-              setName("");
-              setFirstname("");
-              setEmail("");
-              setPassword("");
-            }}
-          >
-            Fermer
-          </Bouton>
-        </div>
-      </form>
-    </dialog>
+          <div className="auth-popup__buttons">
+            <Bouton 
+              variant="secondary" 
+              type="submit" 
+              onClick={() => {
+                  setTimeout(() => {
+                    document.getElementById("Login").showModal();
+                    setMessage("");
+                  }, 1000);
+                  document.getElementById("Signup").close();
+                }
+              }
+            >
+              S'inscrire
+            </Bouton>
+            <Bouton
+              variant="primary"
+              type="button"
+              onClick={() => {
+                document.getElementById("Signup").close();
+                setMessage("");
+                setName("");
+                setFirstname("");
+                setEmail("");
+                setPassword("");
+              }}
+            >
+              Fermer
+            </Bouton>
+          </div>
+        </form>
+      </dialog>
+
+      <Login />
+    </>
   );
 }
