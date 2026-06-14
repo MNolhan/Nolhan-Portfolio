@@ -9,6 +9,7 @@ import DeleteUser from './routes/users/DeleteUser.js';
 import LoginUser from './routes/users/LoginUser.js';
 import CreateProject from './routes/projects/CreateProject.js';
 import ReadProject from './routes/projects/ReadProject.js';
+import UpdateProject from './routes/projects/UpdateProject.js';
 import DeleteProject from './routes/projects/DeleteProject.js';
 import CountProject from './routes/projects/CountProject.js';
 
@@ -37,6 +38,7 @@ app.use('/DeleteUser', DeleteUser);
 app.use('/Login', LoginUser);
 app.use('/CreateProject', CreateProject);
 app.use('/ReadProject', ReadProject);
+app.use('/UpdateProject', UpdateProject);
 app.use('/DeleteProject', DeleteProject);
 app.use('/CountProject', CountProject);
 
