@@ -21,17 +21,15 @@ const projectSchema = z.object({
     description: z.string().min(1).optional(),
     thumbnail: z.string().url().optional(),
     github_url: z.string().url().optional(),
-    live_url: z.string().optional(),
     technologies: z.array(z.string()).optional(),
-    status: z.enum(["En cours", "Terminé", "Archivé"]).optional(),
     featured: z.boolean().optional(),
 });
 
 router.put("/", async (req, res) => {
-    let name, newName, type, description, thumbnail, github_url, live_url, technologies, status, featured;
+    let name, newName, type, description, thumbnail, github_url, technologies, featured;
 
     try {
-        ({ name, newName, type, description, thumbnail, github_url, live_url, technologies, status, featured } = projectSchema.parse(req.body));
+        ({ name, newName, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body));
     } catch (error) {
         return res.status(400).json({
             message: "Données invalides",
@@ -54,9 +52,7 @@ router.put("/", async (req, res) => {
             description,
             thumbnail,
             github_url,
-            live_url,
             technologies,
-            status,
             featured,
         };
 

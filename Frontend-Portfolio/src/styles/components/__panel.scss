@@ -65,7 +65,7 @@
     }
   }
 
-  &__tech {
+  &__1grid {
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@
     }
   }
 
-  &__tech-list {
+  &__1grid-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -91,7 +91,7 @@
     overflow: hidden;
   }
 
-  &__tech-item {
+  &__1grid-item {
     font-family: $font-family-primary;
     display: flex;
     align-items: center;
@@ -123,4 +123,9 @@
     min-width: 25%;
     max-width: 500px;
   }
+}
+
+hr{
+  width: 90%;
+  border-color: rgb(185, 185, 185);;
 }

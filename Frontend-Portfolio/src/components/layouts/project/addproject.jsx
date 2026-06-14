@@ -7,7 +7,6 @@ export default function AddProject() {
   const [description, setDescription] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [githubUrl, setGithubUrl] = useState("");
-  const [liveUrl, setLiveUrl] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [techInput, setTechInput] = useState("");
   const [message, setMessage] = useState("");
@@ -36,7 +35,6 @@ export default function AddProject() {
           description,
           thumbnail: thumbnail,
           github_url: githubUrl,
-          live_url: liveUrl,
           technologies,
         }),
       });
@@ -50,7 +48,6 @@ export default function AddProject() {
         setDescription("");
         setThumbnail("");
         setGithubUrl("");
-        setLiveUrl("");
         setTechnologies([]);
         setTimeout(() => {
           window.location.reload();
@@ -70,6 +67,7 @@ export default function AddProject() {
       <h1 className="panel__title">Ajouter un Projet</h1>
       <div className="panel__content">
         <form className="panel__inputs--project" onSubmit={handleSubmit}>
+
           <input
             className="input"
             type="text"
@@ -78,6 +76,7 @@ export default function AddProject() {
             onChange={(e) => setName(e.target.value)}
             required
           />
+
           <select
             className="input"
             value={type}
@@ -93,6 +92,7 @@ export default function AddProject() {
               Autres
             </option>
           </select>
+
           <textarea
             className="input"
             placeholder="Description"
@@ -101,6 +101,7 @@ export default function AddProject() {
             required
             maxLength={255}
           />
+
           <input
             className="input"
             type="url"
@@ -108,6 +109,7 @@ export default function AddProject() {
             value={thumbnail}
             onChange={(e) => setThumbnail(e.target.value)}
           />
+
           <input
             className="input"
             type="url"
@@ -115,16 +117,9 @@ export default function AddProject() {
             value={githubUrl}
             onChange={(e) => setGithubUrl(e.target.value)}
           />
-          <input
-            className="input"
-            type="url"
-            placeholder="URL du site"
-            value={liveUrl}
-            onChange={(e) => setLiveUrl(e.target.value)}
-          />
 
-          <div className="panel__tech">
-            <div className="panel__tech--input">
+          <div className="panel__1grid">
+            <div className="panel__1grid--input">
               <input
                 className="input"
                 type="text"
@@ -139,9 +134,10 @@ export default function AddProject() {
                 +
               </Bouton>
             </div>
-            <div className="panel__tech-list">
+
+            <div className="panel__1grid-list">
               {technologies.map((tech) => (
-                <span key={tech} className="panel__tech-item">
+                <span key={tech} className="panel__1grid-item">
                   {tech}
                   <button type="button" onClick={() => removeTech(tech)}>
                     x
@@ -176,6 +172,7 @@ export default function AddProject() {
             Fermer
           </Bouton>
         </div>
+
       </div>
     </dialog>
   );

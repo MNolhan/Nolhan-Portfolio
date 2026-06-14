@@ -8,7 +8,6 @@ export default function UpdateProject() {
   const [description, setDescription] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [githubUrl, setGithubUrl] = useState("");
-  const [liveUrl, setLiveUrl] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [techInput, setTechInput] = useState("");
   const [message, setMessage] = useState("");
@@ -22,19 +21,6 @@ export default function UpdateProject() {
 
   const removeTech = (tech) => {
     setTechnologies(technologies.filter((t) => t !== tech));
-  };
-
-  const resetForm = () => {
-    setName("");
-    setNewName("");
-    setType("");
-    setDescription("");
-    setThumbnail("");
-    setGithubUrl("");
-    setLiveUrl("");
-    setTechnologies([]);
-    setTechInput("");
-    setStatus("");
   };
 
   const handleSubmit = async (e) => {
@@ -62,19 +48,15 @@ export default function UpdateProject() {
     if (githubUrl.trim()) 
       payload.github_url = githubUrl.trim();
 
-    if (liveUrl.trim()) 
-      payload.live_url = liveUrl.trim();
-
     if (technologies.length > 0) 
       payload.technologies = technologies;
-
-    if (status) 
-      payload.status = status;
 
     try {
       const response = await fetch("http://localhost:3000/UpdateProject", {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json" 
+        },
         body: JSON.stringify(payload),
       });
 
@@ -82,7 +64,14 @@ export default function UpdateProject() {
 
       if (response.ok) {
         setMessage("Projet mis à jour avec succès !");
-        resetForm();
+        setName("");
+        setNewName("");
+        setType("");
+        setDescription("");
+        setThumbnail("");
+        setGithubUrl("");
+        setTechnologies([]);
+        setTechInput("");
         setTimeout(() => {
           window.location.reload();
         }, 1000);
@@ -102,14 +91,18 @@ export default function UpdateProject() {
       <h1 className="panel__title">Modifier un Projet</h1>
       <div className="panel__content">
         <form className="panel__inputs--project" onSubmit={handleSubmit}>
-          <input
-            className="input"
-            type="text"
-            placeholder="Nom du projet à modifier"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+
+          <div className="panel__1grid">
+            <input
+              className="input"
+              type="text"
+              placeholder="Nom du projet à modifier"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <hr></hr>
+          </div>
           <input
             className="input"
             type="text"
@@ -135,24 +128,7 @@ export default function UpdateProject() {
               Autres
             </option>
           </select>
-          <select
-            className="input"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <option className="input__option" value="">
-              Statut (inchangé)
-            </option>
-            <option className="input__option" value="En cours">
-              En cours
-            </option>
-            <option className="input__option" value="Terminé">
-              Terminé
-            </option>
-            <option className="input__option" value="Archivé">
-              Archivé
-            </option>
-          </select>
+
           <textarea
             className="input"
             placeholder="Description"
@@ -160,6 +136,7 @@ export default function UpdateProject() {
             onChange={(e) => setDescription(e.target.value)}
             maxLength={255}
           />
+
           <input
             className="input"
             type="url"
@@ -174,16 +151,9 @@ export default function UpdateProject() {
             value={githubUrl}
             onChange={(e) => setGithubUrl(e.target.value)}
           />
-          <input
-            className="input"
-            type="url"
-            placeholder="URL du site"
-            value={liveUrl}
-            onChange={(e) => setLiveUrl(e.target.value)}
-          />
 
-          <div className="panel__tech">
-            <div className="panel__tech--input">
+          <div className="panel__1grid">
+            <div className="panel__1grid--input">
               <input
                 className="input"
                 type="text"
@@ -198,9 +168,9 @@ export default function UpdateProject() {
                 +
               </Bouton>
             </div>
-            <div className="panel__tech-list">
+            <div className="panel__1grid-list">
               {technologies.map((tech) => (
-                <span key={tech} className="panel__tech-item">
+                <span key={tech} className="panel__1grid-item">
                   {tech}
                   <button type="button" onClick={() => removeTech(tech)}>
                     x
@@ -222,7 +192,14 @@ export default function UpdateProject() {
             type="button"
             onClick={() => {
               document.getElementById("UpdateProject").close();
-              resetForm();
+              setName("");
+              setNewName("");
+              setType("");
+              setDescription("");
+              setThumbnail("");
+              setGithubUrl("");
+              setTechnologies([]);
+              setTechInput("");
               setMessage("");
             }}
           >

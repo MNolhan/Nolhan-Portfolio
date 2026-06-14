@@ -20,17 +20,15 @@ const projectSchema = z.object({
     description: z.string().min(1),
     thumbnail: z.string().url().optional(),
     github_url: z.string().url().optional(),
-    live_url: z.string().optional(),
     technologies: z.array(z.string()).optional(),
-    status: z.enum(["En cours", "Terminé", "Archivé"]).default("Terminé"),
     featured: z.boolean().default(false),
 });
 
 router.post("/", async (req, res) => {
-    let name, type, description, thumbnail, github_url, live_url, technologies, status, featured;
+    let name, type, description, thumbnail, github_url, technologies, featured;
 
     try {
-        ({ name, type, description, thumbnail, github_url, live_url, technologies, status, featured } = projectSchema.parse(req.body));
+        ({ name, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body));
     } catch (error) {
         return res.status(400).json({ 
             message: "Données invalides", 
@@ -40,17 +38,15 @@ router.post("/", async (req, res) => {
 
     try {
         const [result] = await pool.execute(
-            `INSERT INTO projects (name, type, description, thumbnail, github_url, live_url, technologies, status, featured)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO projects (name, type, description, thumbnail, github_url, technologies, featured)
+             VALUES (?, ?, ?, ?, ?, ?, ?)`,
             [
                 name,
                 type,
                 description,
                 thumbnail,
                 github_url,
-                live_url ?? null,
                 technologies,
-                status,
                 featured,
             ]
         );
