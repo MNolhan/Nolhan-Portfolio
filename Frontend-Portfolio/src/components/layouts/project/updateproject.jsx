@@ -11,7 +11,6 @@ export default function UpdateProject() {
   const [liveUrl, setLiveUrl] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [techInput, setTechInput] = useState("");
-  const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
 
   const addTech = () => {
