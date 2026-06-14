@@ -9,5 +9,5 @@ export default function contactCard({ Icone, titre, info }) {
         <p className="contactCard__description">{info}</p>
       </div>
     </div>
-  );
+  )
 }

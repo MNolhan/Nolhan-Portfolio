@@ -1,36 +1,35 @@
-import { useState, useEffect } from "react";
-import Card from "../components/ui/card";
+import { useState, useEffect } from 'react'
+import Card from '../components/ui/card'
 
 export default function Aboutme() {
-  const [count, setCount] = useState("");
+  const [count, setCount] = useState('')
 
   useEffect(() => {
-    fetch("http://localhost:3000/CountProject")
-      .then(res => res.json())
-      .then(data => setCount(data.count))
-      .catch(() => setCount("ERROR"));
-    }, 
-  []);
+    fetch('http://localhost:3000/CountProject')
+      .then((res) => res.json())
+      .then((data) => setCount(data.count))
+      .catch(() => setCount('ERROR'))
+  }, [])
 
-  const startDate = new Date("2023-10-01");
-  const today = new Date();
+  const startDate = new Date('2023-10-01')
+  const today = new Date()
 
-  let yearsExperience = today.getFullYear() - startDate.getFullYear();
+  let yearsExperience = today.getFullYear() - startDate.getFullYear()
 
   if (
     today.getMonth() < startDate.getMonth() ||
     (today.getMonth() === startDate.getMonth() &&
       today.getDate() < startDate.getDate())
   ) {
-    yearsExperience--;
+    yearsExperience--
   }
 
-  let message;
+  let message
 
   if (yearsExperience > 1) {
-    message = "Années d'expériences";
+    message = "Années d'expériences"
   } else {
-    message = "Année d'expérience";
+    message = "Année d'expérience"
   }
 
   return (
@@ -78,5 +77,5 @@ export default function Aboutme() {
         </div>
       </div>
     </>
-  );
+  )
 }

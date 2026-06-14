@@ -1,7 +1,7 @@
-import Bouton from "../components/ui/button";
-import Card from "../components/ui/contactCard";
-import Email from "../components/Icon/email-icon";
-import Pinmap from "../components/Icon/pinmap-icon";
+import Bouton from '../components/ui/button'
+import Card from '../components/ui/contactCard'
+import Email from '../components/Icon/email-icon'
+import Pinmap from '../components/Icon/pinmap-icon'
 
 export default function contact() {
   return (
@@ -68,5 +68,5 @@ export default function contact() {
         </div>
       </div>
     </>
-  );
+  )
 }

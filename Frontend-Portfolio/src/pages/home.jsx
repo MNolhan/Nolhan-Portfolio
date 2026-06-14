@@ -1,5 +1,5 @@
-import Bouton from "../components/ui/button";
-import Me from "../assets/me.jpg";
+import Bouton from '../components/ui/button'
+import Me from '../assets/me.jpg'
 
 export default function Home() {
   return (
@@ -41,5 +41,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  );
+  )
 }

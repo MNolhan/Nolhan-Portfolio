@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Bouton from "../ui/button";
-import AddProject from "./project/addproject";
-import UpdateProject from "./project/updateproject";
-import DeleteProject from "./project/deleteproject";
+import { useState } from 'react'
+import Bouton from '../ui/button'
+import AddProject from './project/addproject'
+import UpdateProject from './project/updateproject'
+import DeleteProject from './project/deleteproject'
 
 export default function AdminPanel() {
   return (
@@ -14,8 +14,8 @@ export default function AdminPanel() {
             <Bouton
               variant="secondary"
               onClick={() => {
-                document.getElementById("AddProject").showModal();
-                document.getElementById("AdminPanel").close();
+                document.getElementById('AddProject').showModal()
+                document.getElementById('AdminPanel').close()
               }}
             >
               Ajout un Projet
@@ -24,8 +24,8 @@ export default function AdminPanel() {
             <Bouton
               variant="secondary"
               onClick={() => {
-                document.getElementById("UpdateProject").showModal();
-                document.getElementById("AdminPanel").close();
+                document.getElementById('UpdateProject').showModal()
+                document.getElementById('AdminPanel').close()
               }}
             >
               Modifier un Projet
@@ -34,8 +34,8 @@ export default function AdminPanel() {
             <Bouton
               variant="secondary"
               onClick={() => {
-                document.getElementById("DeleteProject").showModal();
-                document.getElementById("AdminPanel").close();
+                document.getElementById('DeleteProject').showModal()
+                document.getElementById('AdminPanel').close()
               }}
             >
               Supprimer un Projet
@@ -44,7 +44,7 @@ export default function AdminPanel() {
           <Bouton
             variant="primary"
             type="button"
-            onClick={() => document.getElementById("AdminPanel").close()}
+            onClick={() => document.getElementById('AdminPanel').close()}
           >
             Fermer
           </Bouton>
@@ -55,5 +55,5 @@ export default function AdminPanel() {
       <UpdateProject />
       <DeleteProject />
     </>
-  );
+  )
 }

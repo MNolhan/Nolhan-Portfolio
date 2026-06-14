@@ -1,31 +1,31 @@
-import Bouton from "../ui/button";
-import Login from "./login";
-import Register from "./register";
-import ValidationPanel from "./validationpanel";
-import AdminPanel from "./adminpanel";
+import Bouton from '../ui/button'
+import Login from './login'
+import Register from './register'
+import ValidationPanel from './validationpanel'
+import AdminPanel from './adminpanel'
 
 export default function Header() {
-  const token = localStorage.getItem("token");
-  let data = null;
+  const token = localStorage.getItem('token')
+  let data = null
 
   if (token) {
     try {
-      data = JSON.parse(atob(token.split(".")[1]));
+      data = JSON.parse(atob(token.split('.')[1]))
     } catch (error) {
-      console.error("Error parsing token:", error);
-      localStorage.removeItem("token");
+      console.error('Error parsing token:', error)
+      localStorage.removeItem('token')
     }
   }
 
-  let userbutton;
+  let userbutton
 
-  if (!localStorage.getItem("token")) {
+  if (!localStorage.getItem('token')) {
     userbutton = (
       <div className="header__user-button">
         <li>
           <Bouton
             variant="secondary"
-            onClick={() => document.getElementById("Login").showModal()}
+            onClick={() => document.getElementById('Login').showModal()}
           >
             Login
           </Bouton>
@@ -33,20 +33,20 @@ export default function Header() {
         <li>
           <Bouton
             variant="primary"
-            onClick={() => document.getElementById("Signup").showModal()}
+            onClick={() => document.getElementById('Signup').showModal()}
           >
             Sign Up
           </Bouton>
         </li>
       </div>
-    );
-  } else if (localStorage.getItem("token") && data.role === "ADMIN") {
+    )
+  } else if (localStorage.getItem('token') && data.role === 'ADMIN') {
     userbutton = (
       <div className="header__user-button">
         <li>
           <Bouton
             variant="secondary"
-            onClick={() => document.getElementById("AdminPanel").showModal()}
+            onClick={() => document.getElementById('AdminPanel').showModal()}
           >
             Admin Panel
           </Bouton>
@@ -54,26 +54,30 @@ export default function Header() {
         <li>
           <Bouton
             variant="primary"
-            onClick={() => document.getElementById("ValidationPanel").showModal()}
+            onClick={() =>
+              document.getElementById('ValidationPanel').showModal()
+            }
           >
             Logout
           </Bouton>
         </li>
       </div>
-    );
+    )
   } else {
     userbutton = (
       <div className="header__user-button">
         <li>
           <Bouton
             variant="primary"
-            onClick={() => document.getElementById("ValidationPanel").showModal()}
+            onClick={() =>
+              document.getElementById('ValidationPanel').showModal()
+            }
           >
             Logout
           </Bouton>
         </li>
       </div>
-    );
+    )
   }
 
   return (
@@ -123,5 +127,5 @@ export default function Header() {
       <AdminPanel />
       <ValidationPanel />
     </>
-  );
+  )
 }

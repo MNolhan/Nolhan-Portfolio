@@ -1,97 +1,84 @@
-import { useState } from "react";
-import Bouton from "../../ui/button";
+import { useState } from 'react'
+import Bouton from '../../ui/button'
 
 export default function UpdateProject() {
-  const [name, setName] = useState("");
-  const [newName, setNewName] = useState("");
-  const [type, setType] = useState("");
-  const [description, setDescription] = useState("");
-  const [thumbnail, setThumbnail] = useState("");
-  const [githubUrl, setGithubUrl] = useState("");
-  const [technologies, setTechnologies] = useState([]);
-  const [techInput, setTechInput] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('')
+  const [newName, setNewName] = useState('')
+  const [type, setType] = useState('')
+  const [description, setDescription] = useState('')
+  const [thumbnail, setThumbnail] = useState('')
+  const [githubUrl, setGithubUrl] = useState('')
+  const [technologies, setTechnologies] = useState([])
+  const [techInput, setTechInput] = useState('')
+  const [message, setMessage] = useState('')
 
   const addTech = () => {
     if (techInput.trim() && !technologies.includes(techInput.trim())) {
-      setTechnologies([...technologies, techInput.trim()]);
-      setTechInput("");
+      setTechnologies([...technologies, techInput.trim()])
+      setTechInput('')
     }
-  };
+  }
 
   const removeTech = (tech) => {
-    setTechnologies(technologies.filter((t) => t !== tech));
-  };
+    setTechnologies(technologies.filter((t) => t !== tech))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!name.trim()) {
-      setMessage("Indiquez le nom du projet à modifier.");
-      return;
+      setMessage('Indiquez le nom du projet à modifier.')
+      return
     }
 
-    const payload = { name };
+    const payload = { name }
 
-    if (newName.trim()) 
-      payload.newName = newName.trim();
-
-    if (type) 
-      payload.type = type;
-
-    if (description.trim()) 
-      payload.description = description.trim();
-
-    if (thumbnail.trim()) 
-      payload.thumbnail = thumbnail.trim();
-
-    if (githubUrl.trim()) 
-      payload.github_url = githubUrl.trim();
-
-    if (technologies.length > 0) 
-      payload.technologies = technologies;
+    if (newName.trim()) payload.newName = newName.trim()
+    if (type) payload.type = type
+    if (description.trim()) payload.description = description.trim()
+    if (thumbnail.trim()) payload.thumbnail = thumbnail.trim()
+    if (githubUrl.trim()) payload.github_url = githubUrl.trim()
+    if (technologies.length > 0) payload.technologies = technologies
 
     try {
-      const response = await fetch("http://localhost:3000/UpdateProject", {
-        method: "PUT",
-        headers: { 
-          "Content-Type": "application/json" 
+      const response = await fetch('http://localhost:3000/UpdateProject', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok) {
-        setMessage("Projet mis à jour avec succès !");
-        setName("");
-        setNewName("");
-        setType("");
-        setDescription("");
-        setThumbnail("");
-        setGithubUrl("");
-        setTechnologies([]);
-        setTechInput("");
+        setMessage('Projet mis à jour avec succès !')
+        setName('')
+        setNewName('')
+        setType('')
+        setDescription('')
+        setThumbnail('')
+        setGithubUrl('')
+        setTechnologies([])
+        setTechInput('')
         setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-        return;
+          window.location.reload()
+        }, 1000)
+        return
       }
 
-      setMessage(data.message);
-      
+      setMessage(data.message)
     } catch (error) {
-      console.error("Erreur:", error);
-      setMessage("Impossible de contacter le serveur.");
+      console.error('Erreur:', error)
+      setMessage('Impossible de contacter le serveur.')
     }
-  };
+  }
 
   return (
     <dialog className="panel panel--popup" id="UpdateProject">
       <h1 className="panel__title">Modifier un Projet</h1>
       <div className="panel__content">
         <form className="panel__inputs--project" onSubmit={handleSubmit}>
-
           <div className="panel__1grid">
             <input
               className="input"
@@ -161,7 +148,7 @@ export default function UpdateProject() {
                 value={techInput}
                 onChange={(e) => setTechInput(e.target.value)}
                 onKeyDown={(e) =>
-                  e.key === "Enter" && (e.preventDefault(), addTech())
+                  e.key === 'Enter' && (e.preventDefault(), addTech())
                 }
               />
               <Bouton variant="secondary" type="button" onClick={addTech}>
@@ -191,16 +178,16 @@ export default function UpdateProject() {
             variant="primary"
             type="button"
             onClick={() => {
-              document.getElementById("UpdateProject").close();
-              setName("");
-              setNewName("");
-              setType("");
-              setDescription("");
-              setThumbnail("");
-              setGithubUrl("");
-              setTechnologies([]);
-              setTechInput("");
-              setMessage("");
+              document.getElementById('UpdateProject').close()
+              setName('')
+              setNewName('')
+              setType('')
+              setDescription('')
+              setThumbnail('')
+              setGithubUrl('')
+              setTechnologies([])
+              setTechInput('')
+              setMessage('')
             }}
           >
             Fermer
@@ -208,5 +195,5 @@ export default function UpdateProject() {
         </div>
       </div>
     </dialog>
-  );
+  )
 }

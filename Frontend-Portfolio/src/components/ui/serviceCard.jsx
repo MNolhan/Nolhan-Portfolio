@@ -7,5 +7,5 @@ export default function serviceCard({ Icone, children, description }) {
       <h3 className="serviceCard__title">{children}</h3>
       <p className="serviceCard__description">{description}</p>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-@use "../abstracts/_variables" as *;
+@use '../abstracts/_variables' as *;
 
 .header {
   position: sticky;
@@ -76,7 +76,7 @@ dialog::backdrop {
 
 @media screen and (max-width: $mediascreen-m) {
   .header {
-    position:relative;
+    position: relative;
 
     &__nav {
       flex-direction: column;

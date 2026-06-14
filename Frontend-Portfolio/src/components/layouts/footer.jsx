@@ -1,4 +1,4 @@
-import Bouton from "../ui/button";
+import Bouton from '../ui/button'
 
 export default function Footer() {
   return (
@@ -25,5 +25,5 @@ export default function Footer() {
         </nav>
       </div>
     </footer>
-  );
+  )
 }

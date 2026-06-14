@@ -1,10 +1,10 @@
-import Card from "../components/ui/serviceCard";
-import DevWebIcon from "../components/Icon/devweb-icon";
-import BackendApiIcon from "../components/Icon/backendapi-icon";
-import EcommerceIcon from "../components/Icon/ecommerce-icon";
-import MobileAppIcon from "../components/Icon/mobiledev-icon";
-import OptimizationIcon from "../components/Icon/optimisation-icon";
-import WebDesignIcon from "../components/Icon/webdesign-icon";
+import Card from '../components/ui/serviceCard'
+import DevWebIcon from '../components/Icon/devweb-icon'
+import BackendApiIcon from '../components/Icon/backendapi-icon'
+import EcommerceIcon from '../components/Icon/ecommerce-icon'
+import MobileAppIcon from '../components/Icon/mobiledev-icon'
+import OptimizationIcon from '../components/Icon/optimisation-icon'
+import WebDesignIcon from '../components/Icon/webdesign-icon'
 
 export default function service() {
   return (
@@ -59,5 +59,5 @@ export default function service() {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -1,41 +1,41 @@
-import { useState } from "react";
-import Bouton from "../ui/button";
+import { useState } from 'react'
+import Bouton from '../ui/button'
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:3000/Login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('http://localhost:3000/Login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok) {
-        localStorage.setItem("token", data.token);
-        setMessage("Connexion réussie !");
-        setEmail("");
-        setPassword("");
+        localStorage.setItem('token', data.token)
+        setMessage('Connexion réussie !')
+        setEmail('')
+        setPassword('')
         setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-        return;
+          window.location.reload()
+        }, 1000)
+        return
       }
 
-      setPassword("");
-      setMessage(data.message);
+      setPassword('')
+      setMessage(data.message)
     } catch (error) {
-      console.error("Error during login:", error);
-      setMessage("Impossible de contacter le serveur.");
+      console.error('Error during login:', error)
+      setMessage('Impossible de contacter le serveur.')
     }
-  };
+  }
 
   return (
     <dialog className="auth-popup auth-popup--login" id="Login">
@@ -69,10 +69,10 @@ export default function Login() {
             variant="primary"
             type="button"
             onClick={() => {
-              document.getElementById("Login").close();
-              setMessage("");
-              setEmail("");
-              setPassword("");
+              document.getElementById('Login').close()
+              setMessage('')
+              setEmail('')
+              setPassword('')
             }}
           >
             Fermer
@@ -80,5 +80,5 @@ export default function Login() {
         </div>
       </form>
     </dialog>
-  );
+  )
 }

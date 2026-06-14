@@ -1,5 +1,5 @@
 export default function Btn({
-  as: Component = "button",
+  as: Component = 'button',
   children,
   variant,
   ...props
@@ -8,5 +8,5 @@ export default function Btn({
     <Component className={`btn btn-${variant}`} {...props}>
       {children}
     </Component>
-  );
+  )
 }

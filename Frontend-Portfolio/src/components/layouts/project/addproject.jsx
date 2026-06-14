@@ -1,34 +1,34 @@
-import { useState } from "react";
-import Bouton from "../../ui/button";
+import { useState } from 'react'
+import Bouton from '../../ui/button'
 
 export default function AddProject() {
-  const [name, setName] = useState("");
-  const [type, setType] = useState("Autres");
-  const [description, setDescription] = useState("");
-  const [thumbnail, setThumbnail] = useState("");
-  const [githubUrl, setGithubUrl] = useState("");
-  const [technologies, setTechnologies] = useState([]);
-  const [techInput, setTechInput] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('')
+  const [type, setType] = useState('Autres')
+  const [description, setDescription] = useState('')
+  const [thumbnail, setThumbnail] = useState('')
+  const [githubUrl, setGithubUrl] = useState('')
+  const [technologies, setTechnologies] = useState([])
+  const [techInput, setTechInput] = useState('')
+  const [message, setMessage] = useState('')
 
   const addTech = () => {
     if (techInput.trim() && !technologies.includes(techInput.trim())) {
-      setTechnologies([...technologies, techInput.trim()]);
-      setTechInput("");
+      setTechnologies([...technologies, techInput.trim()])
+      setTechInput('')
     }
-  };
+  }
 
   const removeTech = (tech) => {
-    setTechnologies(technologies.filter((t) => t !== tech));
-  };
+    setTechnologies(technologies.filter((t) => t !== tech))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:3000/CreateProject", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('http://localhost:3000/CreateProject', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name,
           type,
@@ -37,37 +37,36 @@ export default function AddProject() {
           github_url: githubUrl,
           technologies,
         }),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok) {
-        setMessage("Projet créé avec succès !");
-        setName("");
-        setType("Autres");
-        setDescription("");
-        setThumbnail("");
-        setGithubUrl("");
-        setTechnologies([]);
+        setMessage('Projet créé avec succès !')
+        setName('')
+        setType('Autres')
+        setDescription('')
+        setThumbnail('')
+        setGithubUrl('')
+        setTechnologies([])
         setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-        return;
+          window.location.reload()
+        }, 1000)
+        return
       }
 
-      setMessage(data.message);
+      setMessage(data.message)
     } catch (error) {
-      console.error("Erreur:", error);
-      setMessage("Impossible de contacter le serveur.");
+      console.error('Erreur:', error)
+      setMessage('Impossible de contacter le serveur.')
     }
-  };
+  }
 
   return (
     <dialog className="panel panel--popup" id="AddProject">
       <h1 className="panel__title">Ajouter un Projet</h1>
       <div className="panel__content">
         <form className="panel__inputs--project" onSubmit={handleSubmit}>
-
           <input
             className="input"
             type="text"
@@ -127,7 +126,7 @@ export default function AddProject() {
                 value={techInput}
                 onChange={(e) => setTechInput(e.target.value)}
                 onKeyDown={(e) =>
-                  e.key === "Enter" && (e.preventDefault(), addTech())
+                  e.key === 'Enter' && (e.preventDefault(), addTech())
                 }
               />
               <Bouton variant="secondary" type="button" onClick={addTech}>
@@ -158,22 +157,21 @@ export default function AddProject() {
             variant="primary"
             type="button"
             onClick={() => {
-              document.getElementById("AddProject").close();
-              setMessage("");
-              setName("");
-              setType("Autres");
-              setDescription("");
-              setThumbnail("");
-              setGithubUrl("");
-              setLiveUrl("");
-              setTechnologies([]);
+              document.getElementById('AddProject').close()
+              setMessage('')
+              setName('')
+              setType('Autres')
+              setDescription('')
+              setThumbnail('')
+              setGithubUrl('')
+              setLiveUrl('')
+              setTechnologies([])
             }}
           >
             Fermer
           </Bouton>
         </div>
-
       </div>
     </dialog>
-  );
+  )
 }

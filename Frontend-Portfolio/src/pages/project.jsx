@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
-import Card from "../components/ui/projectCard";
+import { useState, useEffect } from 'react'
+import Card from '../components/ui/projectCard'
 
 export default function Project() {
-  const [projects, setProjects] = useState([]);
-  const [message, setMessage] = useState("");
+  const [projects, setProjects] = useState([])
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:3000/ReadProject");
-        const data = await response.json();
+        const response = await fetch('http://localhost:3000/ReadProject')
+        const data = await response.json()
 
         if (response.ok) {
-          setProjects(data);
+          setProjects(data)
         } else {
-          setMessage("Erreur lors du chargement des projets");
+          setMessage('Erreur lors du chargement des projets')
         }
       } catch (error) {
-        console.error(error);
-        setMessage("Impossible de contacter le serveur.");
+        console.error(error)
+        setMessage('Impossible de contacter le serveur.')
       }
-    };
+    }
 
-    fetchProjects();
-  }, []);
+    fetchProjects()
+  }, [])
 
   return (
     <div className="project" id="project">
@@ -53,5 +53,5 @@ export default function Project() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,42 +1,42 @@
-import { useState } from "react";
-import Bouton from "../ui/button";
-import Login from "./login";
+import { useState } from 'react'
+import Bouton from '../ui/button'
+import Login from './login'
 
 export default function Register() {
-  const [name, setName] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('')
+  const [firstname, setFirstname] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:3000/CreateUser", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('http://localhost:3000/CreateUser', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, firstname, email, password }),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok) {
-        setMessage("Inscription réussie !");
-        setName("");
-        setFirstname("");
-        setEmail("");
-        setPassword("");
-        return;
+        setMessage('Inscription réussie !')
+        setName('')
+        setFirstname('')
+        setEmail('')
+        setPassword('')
+        return
       }
 
-      setPassword("");
-      setMessage(data.message);
+      setPassword('')
+      setMessage(data.message)
     } catch (error) {
-      console.error("Error during registration:", error);
-      setMessage("Impossible de contacter le serveur.");
+      console.error('Error during registration:', error)
+      setMessage('Impossible de contacter le serveur.')
     }
-  };
+  }
 
   return (
     <>
@@ -78,17 +78,16 @@ export default function Register() {
           {message && <p className="auth-popup__message">{message}</p>}
 
           <div className="auth-popup__buttons">
-            <Bouton 
-              variant="secondary" 
-              type="submit" 
+            <Bouton
+              variant="secondary"
+              type="submit"
               onClick={() => {
-                  setTimeout(() => {
-                    document.getElementById("Login").showModal();
-                    setMessage("");
-                  }, 1000);
-                  document.getElementById("Signup").close();
-                }
-              }
+                setTimeout(() => {
+                  document.getElementById('Login').showModal()
+                  setMessage('')
+                }, 1000)
+                document.getElementById('Signup').close()
+              }}
             >
               S'inscrire
             </Bouton>
@@ -96,12 +95,12 @@ export default function Register() {
               variant="primary"
               type="button"
               onClick={() => {
-                document.getElementById("Signup").close();
-                setMessage("");
-                setName("");
-                setFirstname("");
-                setEmail("");
-                setPassword("");
+                document.getElementById('Signup').close()
+                setMessage('')
+                setName('')
+                setFirstname('')
+                setEmail('')
+                setPassword('')
               }}
             >
               Fermer
@@ -112,5 +111,5 @@ export default function Register() {
 
       <Login />
     </>
-  );
+  )
 }

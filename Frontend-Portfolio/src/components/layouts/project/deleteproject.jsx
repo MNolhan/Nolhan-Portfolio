@@ -1,37 +1,37 @@
-import { useState } from "react";
-import Bouton from "../../ui/button";
+import { useState } from 'react'
+import Bouton from '../../ui/button'
 
 export default function DeleteProject() {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:3000/DeleteProject", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('http://localhost:3000/DeleteProject', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name }),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok) {
-        setMessage("Suppression du Projet Réussi");
-        setName("");
+        setMessage('Suppression du Projet Réussi')
+        setName('')
         setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-        return;
+          window.location.reload()
+        }, 1000)
+        return
       }
 
-      setMessage(data.message);
+      setMessage(data.message)
     } catch (error) {
-      console.error(error);
-      setMessage("Impossible de contacter le serveur.");
+      console.error(error)
+      setMessage('Impossible de contacter le serveur.')
     }
-  };
+  }
 
   return (
     <dialog className="panel panel--popup" id="DeleteProject">
@@ -54,9 +54,9 @@ export default function DeleteProject() {
             variant="primary"
             type="button"
             onClick={() => {
-              document.getElementById("DeleteProject").close();
-              setName("");
-              setMessage("");
+              document.getElementById('DeleteProject').close()
+              setName('')
+              setMessage('')
             }}
           >
             Fermer
@@ -64,5 +64,5 @@ export default function DeleteProject() {
         </div>
       </form>
     </dialog>
-  );
+  )
 }
