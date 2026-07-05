@@ -11,14 +11,6 @@ services:
     volumes:
       - mysql_portfolio:/var/lib/mysql
 
-  mongo:
-    image: mongo:7
-    container_name: portfolio-mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_portfolio:/data/db
-
   redis:
     image: redis:7
     container_name: portfolio-redis
@@ -29,5 +21,4 @@ services:
 
 volumes:
   mysql_portfolio:
-  mongo_portfolio:
   redis_portfolio:
