@@ -44,7 +44,7 @@
 
     &__description {
       justify-content: center;
-      text-align: center;
+      text-align: justify;
     }
   }
 }
@@ -52,10 +52,25 @@
 @media screen and (max-width: $mediascreen-m) {
   .Aboutme {
     &__title {
+      font-size: $Fontsize-2xl;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+
+      &--first {
+        display: flex;
+        justify-content: center;
+      }
+
+      &--second {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
     }
 
     &__description {
+      font-size: $Fontsize-s;
       justify-content: center;
       text-align: center;
     }
@@ -66,3 +81,4 @@
     }
   }
 }
+
