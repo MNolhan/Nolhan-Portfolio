@@ -1,0 +1,41 @@
+@use '../abstracts/_variables' as *;
+
+.contactCard {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+  border: $border-width-small solid $primary-color;
+  border-radius: $border-radius-small;
+  background-color: $primary-background-color;
+  padding: 1rem;
+
+  &__icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: $text-color-light;
+    background-color: $primary-color;
+    padding: 0.25rem;
+    min-width: 3rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    border-radius: $border-radius-medium;
+
+    &:hover {
+      animation: spin 1.75s ease-in-out 1;
+    }
+  }
+
+  &__title {
+    font-size: $Fontsize-xs;
+    color: $text-color-grey;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__description {
+    font-size: $Fontsize-s;
+    color: $text-color-light;
+    margin: 0;
+  }
+}

@@ -1,0 +1,49 @@
+// -- Color variables --
+$primary-color: rgb(255, 68, 56);
+$primary-background-color: rgba($primary-color, 0.075);
+
+$secondary-color: rgb(107, 107, 107);
+$secondary-background-color: rgba($secondary-color, 0.075);
+
+$dark-bg: #151515;
+$light-bg: #f5f5f5;
+
+$text-color-light: white;
+$text-color-grey: rgb(185, 185, 185);
+$text-color-dark: black;
+
+// -- Border --
+$border-radius-small: 5px;
+$border-radius-medium: 10px;
+$border-radius-large: 20px;
+
+$border-width-small: 1px;
+$border-width-medium: 2px;
+$border-width-large: 3px;
+
+$border-color-light: white;
+$border-color-dark: black;
+
+// -- Font --
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+$font-family-primary: 'Jersey 25', sans-serif;
+$font-family-secondary: 'Helvetica', sans-serif;
+
+$Fontsize-xs: 1rem;
+$Fontsize-s: 1.25rem;
+$Fontsize-m: 1.5rem;
+$Fontsize-l: 1.75rem;
+$Fontsize-xl: 2rem;
+$Fontsize-2xl: 3rem;
+$Fontsize-3xl: 4rem;
+
+// -- Transition --
+$transition-duration: 0.3s;
+$transition-timing-function: ease-in-out;
+
+// -- Media Queries --
+$mediascreen-s: 480px;
+$mediascreen-m: 768px;
+$mediascreen-l: 992px;
+$mediascreen-xl: 1200px;
+$mediascreen-xxl: 1600px;

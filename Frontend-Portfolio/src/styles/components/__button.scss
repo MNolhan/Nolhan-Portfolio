@@ -1,0 +1,45 @@
+@use '../abstracts/_variables' as *;
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius-small;
+  border-width: $border-width-small;
+  border-style: solid;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all $transition-duration $transition-timing-function;
+  font-size: $Fontsize-s;
+  font-family: $font-family-primary;
+  text-align: center;
+
+  &-primary {
+    background-color: $primary-background-color;
+    border-color: $primary-color;
+    color: $text-color-light;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-secondary {
+    background-color: $secondary-background-color;
+    border-color: $secondary-color;
+    color: $text-color-light;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-validation {
+    background-color: $primary-color;
+    color: $text-color-light;
+    padding: 0.75rem;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+}
