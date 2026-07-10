@@ -78,3 +78,69 @@ label {
   color: $text-color-light;
   font-size: $Fontsize-s;
 }
+
+@media screen and (max-width: $mediascreen-xl) {
+  .contact {
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    &__content--left {
+      text-align: center;
+    }
+
+    &__content--list {
+      align-items: center;
+    }
+
+    &__content--title,
+    &__content--description {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+  .contact {
+    scroll-margin-top: 6rem;
+
+    &__title {
+      font-size: $Fontsize-2xl;
+      flex-wrap: wrap;
+      text-align: center;
+
+      &--second {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &__subtitle {
+      font-size: $Fontsize-s;
+      text-align: center;
+    }
+
+    &__content {
+      margin-top: 2.5rem;
+      gap: 2rem;
+    }
+
+    &__content--title {
+      font-size: $Fontsize-l;
+      margin-bottom: 1rem;
+    }
+
+    &__content--description {
+      font-size: $Fontsize-xs;
+      margin-bottom: 1.5rem;
+    }
+
+    &__content--right {
+      gap: 1.5rem;
+
+      textarea {
+        min-height: 120px;
+      }
+    }
+  }
+}
