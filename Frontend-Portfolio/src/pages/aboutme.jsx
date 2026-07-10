@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import Card from '../components/ui/card'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Aboutme() {
   const [count, setCount] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/CountProject')
+    fetch(`${API_URL}/CountProject`)
       .then((res) => res.json())
       .then((data) => setCount(data.count))
       .catch(() => setCount('ERROR'))

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Bouton from '../../ui/button'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function UpdateProject() {
   const [name, setName] = useState('')
   const [newName, setNewName] = useState('')
@@ -41,7 +43,7 @@ export default function UpdateProject() {
     if (technologies.length > 0) payload.technologies = technologies
 
     try {
-      const response = await fetch('http://localhost:3000/UpdateProject', {
+      const response = await fetch(`${API_URL}/UpdateProject`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

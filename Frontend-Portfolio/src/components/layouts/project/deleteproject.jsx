@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Bouton from '../../ui/button'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function DeleteProject() {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
@@ -9,7 +11,7 @@ export default function DeleteProject() {
     e.preventDefault()
 
     try {
-      const response = await fetch('http://localhost:3000/DeleteProject', {
+      const response = await fetch(`${API_URL}/DeleteProject`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name }),

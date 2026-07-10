@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Bouton from '../ui/button'
 import Login from './login'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Register() {
   const [name, setName] = useState('')
   const [firstname, setFirstname] = useState('')
@@ -13,7 +15,7 @@ export default function Register() {
     e.preventDefault()
 
     try {
-      const response = await fetch('http://localhost:3000/CreateUser', {
+      const response = await fetch(`${API_URL}/CreateUser`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, firstname, email, password }),

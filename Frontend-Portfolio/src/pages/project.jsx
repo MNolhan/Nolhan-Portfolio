@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import Card from '../components/ui/projectCard'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Project() {
   const [projects, setProjects] = useState([])
   const [message, setMessage] = useState('')
@@ -8,7 +10,7 @@ export default function Project() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:3000/ReadProject')
+        const response = await fetch(`${API_URL}/ReadProject`)
         const data = await response.json()
 
         if (response.ok) {
