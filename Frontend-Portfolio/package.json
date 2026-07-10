@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "preview": "vite preview --port $PORT --host 0.0.0.0"
   },
   "dependencies": {
     "react": "^19.2.0",
