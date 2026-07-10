@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 
     } catch (error) {
 
-        res.json(500);
+        res.status(500);
         res.json({ message : "ERROR" });
 
     }
