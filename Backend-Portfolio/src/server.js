@@ -16,8 +16,13 @@ import CountProject from './routes/projects/CountProject.js';
 dotenv.config();
 const app = express();
 
+const allowedOrigins = ['http://localhost:5173', 'https://www.nolhandev.fr', 'https://nolhandev.fr'];
+
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
