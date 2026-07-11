@@ -39,3 +39,24 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: $mediascreen-m) {
+  .contactCard {
+    grid-template-columns: 1fr 5fr;
+    padding: 0.5rem;
+
+    &__icone {
+      min-width: 2.5rem;
+      max-width: 2.5rem;
+      min-height: 2.5rem;
+    }
+
+    &__title {
+      font-size: $Fontsize-xs;
+    }
+
+    &__description {
+      font-size: $Fontsize-xs;
+    }
+  }
+}
