@@ -163,6 +163,7 @@
     &__image {
       width: 400px;
       height: 400px;
+      margin: 1.5rem 0 0 0;
     }
 
     &__list {
@@ -197,7 +198,7 @@
     }
 
     &__description {
-      font-size: $Fontsize-xs;
+      font-size: $Fontsize-s;
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -205,6 +206,7 @@
     &__image {
       width: 300px;
       height: 300px;
+      margin: 1.5rem 0 0 0;
     }
 
     &__list {

@@ -52,6 +52,14 @@
   .service {
     text-align: center;
 
+    &__title {
+      font-size: $Fontsize-2xl;
+    }
+
+    &__subtitle {
+      font-size: $Fontsize-s;
+    }
+
     &__card-list {
       display: grid;
       grid-template-columns: 1fr;

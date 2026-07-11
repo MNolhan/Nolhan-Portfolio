@@ -53,10 +53,21 @@
 
 @media screen and (max-width: $mediascreen-m) {
   .project {
+
+    &__title{
+      font-size: $Fontsize-2xl;
+    }
+
     &__card-list {
       display: grid;
       grid-template-columns: 1fr;
       justify-items: center;
+    }
+
+    &__subtitle {
+      font-size: $Fontsize-s;
+      margin-bottom: 1rem;
+      text-align: center;
     }
   }
 }
