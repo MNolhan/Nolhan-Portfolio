@@ -1,5 +1,5 @@
 import Bouton from '../components/ui/button'
-import Me from '../assets/me.jpg'
+import Me from '../assets/NolhanPortfolioPDP.png'
 
 export default function Home() {
   return (
