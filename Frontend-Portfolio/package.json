@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "preview": "vite preview --port $PORT --host 0.0.0.0"
