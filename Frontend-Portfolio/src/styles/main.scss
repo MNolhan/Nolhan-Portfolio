@@ -32,6 +32,19 @@ html {
   gap: 10rem;
 }
 
+@media screen and (max-width: $mediascreen-xl) {
+  .page {
+    gap: 7.5rem;
+  }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+  .page {
+    gap: 5rem;
+  }
+}
+
+// -- Scrollbar --
 ::-webkit-scrollbar {
   width: 10px;
 }
