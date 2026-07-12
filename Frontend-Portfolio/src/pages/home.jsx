@@ -1,5 +1,6 @@
 import Bouton from '../components/ui/button'
 import Me from '../assets/NolhanPortfolioPDP.png'
+import CV from '../assets/CV.pdf'
 
 export default function Home() {
   return (
@@ -31,7 +32,9 @@ export default function Home() {
                 <a href="#project">
                   <Bouton variant="primary">Projects</Bouton>
                 </a>
-                <Bouton variant="secondary">Télécharger Mon CV</Bouton>
+                <Bouton as="a" href={CV} download variant="secondary">
+                  Télécharger Mon CV
+                </Bouton>
               </div>
             </div>
             <div className="home__content--right">
