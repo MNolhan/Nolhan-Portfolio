@@ -32,9 +32,9 @@ export default function Home() {
                 <a href="#project">
                   <Bouton variant="primary">Projects</Bouton>
                 </a>
-                <Bouton as="a" href={CV} download variant="secondary">
-                  Télécharger Mon CV
-                </Bouton>
+                <a href={CV} download>
+                  <Bouton variant="secondary">Télécharger Mon CV</Bouton>
+                </a>
               </div>
             </div>
             <div className="home__content--right">
