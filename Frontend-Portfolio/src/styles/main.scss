@@ -31,3 +31,20 @@ html {
   flex-direction: column;
   gap: 10rem;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary-background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-background-color;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($primary-color, 0.25);
+}
