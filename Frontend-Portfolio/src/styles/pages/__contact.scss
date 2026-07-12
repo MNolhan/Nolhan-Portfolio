@@ -1,6 +1,9 @@
 @use '../abstracts/_variables' as *;
 
 .contact {
+  animation: reveal-blur-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
   scroll-margin-top: 9.5rem;
   font-family: $font-family-primary;
 

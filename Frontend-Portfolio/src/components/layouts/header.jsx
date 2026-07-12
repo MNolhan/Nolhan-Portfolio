@@ -27,12 +27,18 @@ export default function Header() {
     userbutton = (
       <div className="header__user-button">
         <li>
-          <Bouton variant="secondary" onClick={() => document.getElementById('Login').showModal()}>
+          <Bouton
+            variant="secondary"
+            onClick={() => document.getElementById('Login').showModal()}
+          >
             Login
           </Bouton>
         </li>
         <li>
-          <Bouton variant="primary" onClick={() => document.getElementById('Signup').showModal()}>
+          <Bouton
+            variant="primary"
+            onClick={() => document.getElementById('Signup').showModal()}
+          >
             Sign Up
           </Bouton>
         </li>
@@ -42,12 +48,20 @@ export default function Header() {
     userbutton = (
       <div className="header__user-button">
         <li>
-          <Bouton variant="secondary" onClick={() => document.getElementById('AdminPanel').showModal()}>
+          <Bouton
+            variant="secondary"
+            onClick={() => document.getElementById('AdminPanel').showModal()}
+          >
             Admin Panel
           </Bouton>
         </li>
         <li>
-          <Bouton variant="primary" onClick={() => document.getElementById('ValidationPanel').showModal()}>
+          <Bouton
+            variant="primary"
+            onClick={() =>
+              document.getElementById('ValidationPanel').showModal()
+            }
+          >
             Logout
           </Bouton>
         </li>
@@ -57,7 +71,12 @@ export default function Header() {
     userbutton = (
       <div className="header__user-button">
         <li>
-          <Bouton variant="primary" onClick={() => document.getElementById('ValidationPanel').showModal()}>
+          <Bouton
+            variant="primary"
+            onClick={() =>
+              document.getElementById('ValidationPanel').showModal()
+            }
+          >
             Logout
           </Bouton>
         </li>
@@ -86,21 +105,33 @@ export default function Header() {
             </button>
 
             <div className="header__nav-links">
-              <ul className={`header__nav-links menubase ${isMenuOpen ? 'header__nav-links--active' : ''}`}>
+              <ul
+                className={`header__nav-links menubase ${isMenuOpen ? 'header__nav-links--active' : ''}`}
+              >
                 <li>
-                  <a href="#" className="header__nav-link">Accueil</a>
+                  <a href="#" className="header__nav-link">
+                    Accueil
+                  </a>
                 </li>
                 <li>
-                  <a href="#Aboutme" className="header__nav-link">À propos</a>
+                  <a href="#Aboutme" className="header__nav-link">
+                    À propos
+                  </a>
                 </li>
                 <li>
-                  <a href="#service" className="header__nav-link">Services</a>
+                  <a href="#service" className="header__nav-link">
+                    Services
+                  </a>
                 </li>
                 <li>
-                  <a href="#project" className="header__nav-link">Projets</a>
+                  <a href="#project" className="header__nav-link">
+                    Projets
+                  </a>
                 </li>
                 <li>
-                  <a href="#contact" className="header__nav-link">Contact</a>
+                  <a href="#contact" className="header__nav-link">
+                    Contact
+                  </a>
                 </li>
                 {userbutton}
               </ul>

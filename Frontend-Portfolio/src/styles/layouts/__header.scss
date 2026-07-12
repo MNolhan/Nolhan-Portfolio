@@ -5,7 +5,7 @@
   top: 0;
   margin-bottom: 5rem;
   background-color: $dark-bg;
-  border-bottom: $border-width-small solid $border-color-light;
+  border-bottom: $border-width-small solid $secondary-background-color;
   z-index: 100;
 
   &__nav {
@@ -121,6 +121,8 @@ dialog::backdrop {
 
 @media screen and (max-width: $mediascreen-xl) {
   .header {
+    margin-bottom: 3rem;
+
     &__nav {
       flex-direction: row;
       justify-content: space-between;
@@ -158,5 +160,11 @@ dialog::backdrop {
       align-items: center;
       margin-top: 2rem;
     }
+  }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+  .header {
+    margin-bottom: 2rem;
   }
 }

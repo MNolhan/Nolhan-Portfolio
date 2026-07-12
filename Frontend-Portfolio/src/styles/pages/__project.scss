@@ -1,6 +1,9 @@
 @use '../abstracts/_variables' as *;
 
 .project {
+  animation: reveal-blur-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
   scroll-margin-top: 9.5rem;
   font-family: $font-family-primary;
 
@@ -53,8 +56,7 @@
 
 @media screen and (max-width: $mediascreen-m) {
   .project {
-
-    &__title{
+    &__title {
       font-size: $Fontsize-2xl;
     }
 

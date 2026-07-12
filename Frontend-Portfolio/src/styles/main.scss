@@ -31,3 +31,47 @@ html {
   flex-direction: column;
   gap: 10rem;
 }
+
+@media screen and (max-width: $mediascreen-xl) {
+  .page {
+    gap: 7.5rem;
+  }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+  .page {
+    gap: 5rem;
+  }
+}
+
+// -- Scrollbar --
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary-background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-background-color;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($primary-color, 0.25);
+}
+
+// -- Animation Scroll --
+@keyframes reveal-blur-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
