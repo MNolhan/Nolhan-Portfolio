@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Bouton from '../../ui/button'
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL
 
 export default function AddProject() {
   const [name, setName] = useState('')
