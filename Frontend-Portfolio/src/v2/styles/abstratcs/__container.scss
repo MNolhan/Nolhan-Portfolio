@@ -1,0 +1,10 @@
+@use '_variables' as *;
+
+.containerv2 {
+  width: 90%;
+  max-width: $DesktopScreen;
+  margin: 0 auto;
+
+  @media (max-width: $LaptopScreen)  { max-width: $tabletScreen; }
+  @media (max-width: $tabletScreen)  { max-width: $mobileScreen; }
+}
