@@ -1,6 +1,6 @@
 import Bouton from '../components/ui/button'
-import Me from '../assets/NolhanPortfolioPDP.png'
-import CV from '../assets/CV.pdf'
+import Me from '../../assets/NolhanPortfolioPDP.png'
+import CV from '../../assets/CV.pdf'
 
 export default function Home() {
   return (

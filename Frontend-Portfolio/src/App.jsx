@@ -1,7 +1,8 @@
-import AppRouter from './router/AppRouter'
+import AppRouterV1 from './v1/router/AppRouter'
+import AppRouterV2 from './v2/router/AppRouter'
 
 function App() {
-  return <AppRouter />
+  return <AppRouterV1 />
 }
 
 export default App
