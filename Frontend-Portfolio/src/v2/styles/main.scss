@@ -5,9 +5,11 @@
 @use './pages/__home' as *;
 @use './components/__bouton' as *;
 @use './pages/__apropos' as *;
-@use './components/_card_apropos' as *;
-@use './pages/_services' as *;
-@use './components/_card_services' as *;
+@use './components/__card_apropos' as *;
+@use './pages/__services' as *;
+@use './components/__card_services' as *;
+@use './pages/__stack' as *;
+@use './components/__card_stack' as *;
 
 body {
   margin: 0;

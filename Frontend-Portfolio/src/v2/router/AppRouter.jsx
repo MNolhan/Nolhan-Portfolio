@@ -4,6 +4,7 @@ import Header from '../components/layouts/header'
 import Home from '../pages/home'
 import Apropos from '../pages/apropos'
 import Services from '../pages/services'
+import Stack from '../pages/stack'
 
 export default function AppRouter() {
   return (
@@ -13,6 +14,7 @@ export default function AppRouter() {
       <Home />
       <Apropos />
       <Services />
+      <Stack />
     </BrowserRouter>
   )
 }
