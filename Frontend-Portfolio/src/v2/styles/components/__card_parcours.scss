@@ -1,0 +1,52 @@
+@use '../abstratcs/_variables' as *;
+
+.CardParcours {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: $bg-soft;
+    padding: 2.5rem 3.5rem;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    border: 1px solid $surface-2;
+
+    &__date{
+        color: $textred-soft;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__title{
+        font-size: 2rem;
+        color: $textColor;
+        font-family: $font-family;
+        font-weight: 700;
+        margin: 0.5rem 0 0 0;
+    }
+
+    &__sub{
+        font-size: 1.10rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    &__description{
+        font-size: 1.10rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    &:hover{
+        transform: scale(1.05);
+        border: 1px solid $textred-soft;
+    }
+}

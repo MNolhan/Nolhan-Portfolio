@@ -5,6 +5,7 @@ import Home from '../pages/home'
 import Apropos from '../pages/apropos'
 import Services from '../pages/services'
 import Stack from '../pages/stack'
+import Parcours from '../pages/parcours'
 
 export default function AppRouter() {
   return (
@@ -15,6 +16,7 @@ export default function AppRouter() {
       <Apropos />
       <Services />
       <Stack />
+      <Parcours />
     </BrowserRouter>
   )
 }

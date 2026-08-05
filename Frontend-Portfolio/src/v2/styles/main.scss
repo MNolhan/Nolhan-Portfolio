@@ -10,6 +10,8 @@
 @use './components/__card_services' as *;
 @use './pages/__stack' as *;
 @use './components/__card_stack' as *;
+@use './pages/__parcours' as *;
+@use './components/__card_parcours' as *;
 
 body {
   margin: 0;
