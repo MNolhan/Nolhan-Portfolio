@@ -1,0 +1,55 @@
+@use '../abstratcs/_variables' as *;
+
+.card {
+    width: 80%;
+    height: 175px;
+    background-color: $bg-soft;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border : 1px solid $surface-2;
+    transition: all 0.5s ease-in-out;
+
+    &-title{
+        font-size: 2rem;
+        color: $textColor;
+        font-family: $font-family;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &-description{
+        font-size: 0.875rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        line-height: 1.5rem;
+    }
+
+    &:hover{
+        border : 1px solid $textred-soft;
+        transform : scale(1.01);
+    }
+
+    &-red{
+        background-color: $textred;
+        border : 1px solid $textred;
+
+        &-title{
+            font-size: 0.875rem;
+        }
+
+        &-description{
+            font-size: 2rem;
+            font-family: $font-family-secondary;
+            font-style: italic;
+            color : $textColor;
+        }
+
+        &:hover{
+            border : 1px solid $textred;
+            cursor: pointer;
+        }
+    }
+}

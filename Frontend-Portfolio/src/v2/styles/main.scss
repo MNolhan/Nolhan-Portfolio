@@ -4,6 +4,8 @@
 @use './components/__scrollwatcher' as *;
 @use './pages/__home' as *;
 @use './components/__bouton' as *;
+@use './pages/__apropos' as *;
+@use './components/_card_apropos' as *;
 
 body {
   margin: 0;

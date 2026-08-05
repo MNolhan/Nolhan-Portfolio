@@ -1,32 +1,48 @@
 @use '_variables' as *;
 
 .container {
-  width: 100%;
-  max-width: $DesktopScreen;
-  margin: 0 auto;
-  padding: 0 50px;
-  padding: 8.75rem 0;
+    width: 100%;
+    max-width: $DesktopScreen;
+    margin: 0 auto;
+    padding: 0 50px;
+    padding: 8.75rem 0;
 
-  @media (max-width: $LaptopScreen)  { 
-      max-width: $tabletScreen; 
-  }
+    @media (max-width: $LaptopScreen)  { 
+        max-width: $tabletScreen; 
+    }
 
-  @media (max-width: $tabletScreen)  { 
-      max-width: $mobileScreen; 
-  }
+    @media (max-width: $tabletScreen)  { 
+        max-width: $mobileScreen; 
+    }
+}
+
+.container--small {
+    width: 100%;
+    max-width: $DesktopScreen - 100px;
+    margin: 0 auto;
+    padding: 0 50px;
+    padding: 5rem 0;
+
+    @media (max-width: $LaptopScreen)  { 
+        max-width: $tabletScreen; 
+    }
+
+    @media (max-width: $tabletScreen)  { 
+        max-width: $mobileScreen; 
+    }
 }
 
 .navcontainer {
-  width: 100%;
-  max-width: $DesktopScreen + 400px;
-  margin: 0 auto;
-  padding: 0 50px;
+    width: 100%;
+    max-width: $DesktopScreen + 400px;
+    margin: 0 auto;
+    padding: 0 50px;
 
-  @media (max-width: $LaptopScreen)  { 
-      max-width: $tabletScreen; 
-  }
+    @media (max-width: $LaptopScreen)  { 
+        max-width: $tabletScreen; 
+    }
 
-  @media (max-width: $tabletScreen)  { 
-      max-width: $mobileScreen; 
-  }
+    @media (max-width: $tabletScreen)  { 
+        max-width: $mobileScreen; 
+    }
 }
