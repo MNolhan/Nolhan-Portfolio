@@ -5,7 +5,7 @@
     max-width: $DesktopScreen;
     margin: 0 auto;
     padding: 0 50px;
-    padding: 8.75rem 0;
+    padding: 8.75rem 0 5.5rem 0;
 
     @media (max-width: $LaptopScreen)  { 
         max-width: $tabletScreen; 

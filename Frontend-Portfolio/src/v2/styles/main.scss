@@ -6,8 +6,14 @@
 @use './components/__bouton' as *;
 @use './pages/__apropos' as *;
 @use './components/_card_apropos' as *;
+@use './pages/_services' as *;
+@use './components/_card_services' as *;
 
 body {
   margin: 0;
   background-color: $bg;
+}
+
+html {
+  scroll-behavior: smooth;
 }
