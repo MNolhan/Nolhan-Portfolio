@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollWatcher from '../components/ui/scrollwatcher'
+import Header from '../components/layouts/header'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
-    <div className="containerv2">
-      <h1>test</h1>
-    </div>
+      <ScrollWatcher />
+      <Header />
     </BrowserRouter>
   )
 }

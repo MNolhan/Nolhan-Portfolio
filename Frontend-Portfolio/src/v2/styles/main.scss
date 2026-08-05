@@ -1,2 +1,9 @@
 @use './abstratcs/_variables' as *;
 @use './abstratcs/_container' as *;
+@use './layouts/__header' as *;
+@use './components/__scrollwatcher' as *;
+
+body {
+  margin: 0;
+  background-color: $bg;
+}

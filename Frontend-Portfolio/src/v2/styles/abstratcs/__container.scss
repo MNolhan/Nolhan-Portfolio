@@ -1,10 +1,31 @@
 @use '_variables' as *;
 
-.containerv2 {
-  width: 90%;
+.container {
+  width: 100%;
   max-width: $DesktopScreen;
   margin: 0 auto;
+  padding: 0 50px;
 
-  @media (max-width: $LaptopScreen)  { max-width: $tabletScreen; }
-  @media (max-width: $tabletScreen)  { max-width: $mobileScreen; }
+  @media (max-width: $LaptopScreen)  { 
+      max-width: $tabletScreen; 
+  }
+
+  @media (max-width: $tabletScreen)  { 
+      max-width: $mobileScreen; 
+  }
+}
+
+.navcontainer {
+  width: 100%;
+  max-width: $DesktopScreen + 400px;
+  margin: 0 auto;
+  padding: 0 50px;
+
+  @media (max-width: $LaptopScreen)  { 
+      max-width: $tabletScreen; 
+  }
+
+  @media (max-width: $tabletScreen)  { 
+      max-width: $mobileScreen; 
+  }
 }
