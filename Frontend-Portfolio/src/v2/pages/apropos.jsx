@@ -2,7 +2,7 @@ import CardApropos from "../components/ui/card_apropos";
 
 export default function apropos() {
     return (
-        <div className="container--small">
+        <div className="container--small" id="apropos">
 
             <div className="apropos__header">
                 <h1 className="apropos__header-title">- À Propos</h1>
