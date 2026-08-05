@@ -17,3 +17,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+// -- Scrollbar --
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, $textred, $textred-soft);
+  border-radius: 8px;
+}
