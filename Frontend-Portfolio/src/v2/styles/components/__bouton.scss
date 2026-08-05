@@ -1,0 +1,27 @@
+@use '../abstratcs/_variables' as *;
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: $font-family;
+    transition: all 0.3s ease;
+
+    &-primary {
+        background-color: $textred;
+        color: $textColor;
+        border: 1px solid $textred;
+    }
+
+    &-secondary {
+        background-color: transparent;
+        border: 1px solid $surface-2;
+        color: $textColor;
+    }
+
+    &:hover {
+        background-color: transparent;
+        color: $textred;
+        border: 1px solid $textred;
+    }
+}

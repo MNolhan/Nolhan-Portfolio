@@ -2,6 +2,8 @@
 @use './abstratcs/_container' as *;
 @use './layouts/__header' as *;
 @use './components/__scrollwatcher' as *;
+@use './pages/__home' as *;
+@use './components/__bouton' as *;
 
 body {
   margin: 0;

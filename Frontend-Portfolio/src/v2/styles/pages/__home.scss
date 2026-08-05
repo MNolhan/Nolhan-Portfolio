@@ -1,0 +1,218 @@
+@use '../abstratcs/_variables' as *;
+
+.home{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+
+    &__left{
+
+        &-pub{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            border: 1px solid $surface-2;
+            border-radius: 25px;
+            padding: 0.65rem 1rem 0.65rem 1rem;
+            font-size: 0.875rem;
+            font-family: $font-family;
+            color: $textColor-dim;
+            margin: 0 0 2rem 0;
+
+            &--dot{
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #3ddc84;
+                animation: pulse 2s infinite;
+                flex-shrink: 0;
+            }
+        }
+
+        &-title{
+            margin: 0;
+            font-size: 5rem;
+            font-family: $font-family;
+            color: $textColor;
+            line-height: 1;
+            font-weight: 1000;
+
+            &--red{
+                color: $textred;
+            }
+        }
+        
+        &-subtitle{
+            margin: 2rem 0 0 0;
+            font-size: 1.75rem;
+            font-family: $font-family;
+            color: $textColor-dim;
+            line-height: 1.5;
+
+            &--red{
+                color: $textred-soft;
+                font-family: $font-family-secondary;
+                font-style: italic;
+                font-weight: 400;
+                margin: 0 0 0 0.1rem;
+            }
+        }
+
+        &-description{
+            max-width: 550px;
+            font-size: 1.125rem;
+            font-family: $font-family;
+            line-height: 1.75;
+            color: $textColor-dim;
+        }
+
+        &-bouton{
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        &-contact{
+            color : $textColor-dim;
+            font-family: $font-family;
+            font-size : 0.9rem;
+        }
+    }
+
+    &__right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: min(340px, 80%);
+        aspect-ratio: 1 / 1.12;
+        margin: 0 auto;
+
+        &--ring{
+            position: absolute;
+            inset: -16px;
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            background: conic-gradient(from 180deg, $textred, #6b3fb8, $textred);
+            opacity: 0.5;
+            filter: blur(2px);
+            animation: morph 10s ease-in-out infinite;
+        }
+
+        &--img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 34% 66% 67% 33% / 45% 40% 60% 55%;
+            border: 2px solid rgba(255,255,255,.08);
+        }
+
+        &--chip{
+            position: absolute;
+            padding: 9px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            background: rgba(20,20,24,.85);
+            border: 1px solid $surface-2;
+            backdrop-filter: blur(8px);
+            color: $textColor;
+            font-family: $font-family;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+            animation: chipFloat 5s ease-in-out infinite;
+        }
+
+        .chip-1{ 
+            top: 8%; 
+            left: -14%; 
+            animation-delay: 0s; 
+        }
+
+        .chip-2{ 
+            top: 48%; 
+            right: -16%; 
+            animation-delay: 1.2s; 
+        }
+
+        .chip-3{ 
+            bottom: 6%; 
+            left: -8%; 
+            animation-delay: 2.4s; 
+        }
+    }
+
+    &__scroll{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        margin: 2.5rem 0 0 0;
+        text-decoration: none;
+        font-family: $font-family;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        color: $textColor-dim;
+
+        &--line{
+            width: 1px;
+            height: 44px;
+            background: $surface-2;
+            overflow: hidden;
+
+            i{
+                display: block;
+                width: 100%;
+                height: 19px;
+                background: $textred;
+                animation: scrollDown 3s ease-in-out infinite;
+            }
+        }
+    }
+
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.5);
+    }
+    70%{
+        box-shadow: 0 0 0 8px rgba(61, 220, 132, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(61, 220, 132, 0);
+    }
+}
+
+@keyframes morph{
+    0%, 100%{ 
+        border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; 
+        transform: rotate(0deg); 
+    }
+
+    50%{ 
+        border-radius: 58% 42% 40% 60% / 55% 40% 60% 45%; 
+        transform: rotate(8deg); 
+    }
+}
+
+@keyframes chipFloat{
+    0%, 100%{ 
+        transform: translateY(0); 
+    }
+    50%{ 
+        transform: translateY(-10px); 
+    }
+}
+
+@keyframes scrollDown{
+    0%{ 
+        transform: translateY(-100%); 
+    }
+    100%{ 
+        transform: translateY(140%); 
+    }
+}
