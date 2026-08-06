@@ -8,6 +8,7 @@ import Stack from '../pages/stack'
 import Parcours from '../pages/parcours'
 import Projects from '../pages/projects'
 import Loader from '../components/ui/loader'
+import Contact from '../pages/contact'
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
       <Stack />
       <Parcours />
       <Projects />
+      <Contact />
     </BrowserRouter>
   )
 }
