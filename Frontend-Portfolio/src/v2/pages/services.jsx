@@ -9,8 +9,8 @@ import Mobile from '../components/Icon/mobiledev-icon'
 
 export default function services(){
     return(
-        <div className="container--small">
-            <div className="services" id="services">
+        <div className="container--small" id="services">
+            <div className="services">
 
                 <div className="services__header">
                     <h1 className="services__header-title">- Mes Services</h1>

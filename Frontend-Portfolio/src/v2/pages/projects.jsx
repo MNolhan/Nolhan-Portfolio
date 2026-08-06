@@ -28,8 +28,8 @@ export default function Projects(){
     }, [])
     
     return(
-        <div className="container--small">
-            <div className="projects" id="projects">
+        <div className="container--small" id="projets">
+            <div className="projects">
 
                 <div className="projects__header">
                     <span className="projects__header-title">- Projets</span>

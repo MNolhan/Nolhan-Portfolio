@@ -2,8 +2,8 @@ import CardParcours from "../components/ui/card_parcours";
 
 export default function Parcours(){
     return(
-        <div className="container--small">
-            <div className="parcours" id="parcours">
+        <div className="container--small" id="parcours">
+            <div className="parcours">
 
                 <div className="parcours__header">
                     <span className="parcours__header-title">- Parcours</span>

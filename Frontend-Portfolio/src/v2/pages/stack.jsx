@@ -2,8 +2,8 @@ import CardStack from "../components/ui/card_stack";
 
 export default function Stack(){
     return(
-        <div className="container--small">
-            <div className="stack" id="stack">
+        <div className="container--small" id="stack">
+            <div className="stack">
 
                 <div className="stack__header">
                     <h1 className="stack__header-title">- Stack</h1>

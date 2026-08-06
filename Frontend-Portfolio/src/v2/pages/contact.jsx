@@ -1,7 +1,7 @@
 export default function Contact(){
     return(
-        <div className="container--small">
-            <div className="contact" id="contact">
+        <div className="container--small" id="contact">
+            <div className="contact">
 
                 <div className="contact__header">
                     <span className="contact__header-title">- Contact</span>
