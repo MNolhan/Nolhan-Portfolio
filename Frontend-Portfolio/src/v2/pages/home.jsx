@@ -2,6 +2,7 @@ import Bouton from "../components/ui/bouton";
 import DownloadIcon from "../components/Icon/download-icon";
 import ArrowRightIcon from "../components/Icon/arrowright-icon";
 import Me from '../../assets/NolhanPortfolioPDP.png'
+import CV from '../../assets/CV.pdf'
 
 export default function Home() {
     return (
@@ -24,10 +25,10 @@ export default function Home() {
                     </p>
 
                     <div className="home__left-bouton">
-                        <Bouton variant="primary" as="a" href="#contact">
+                        <Bouton variant="primary" as="a" href="#projets">
                             <span>Voir mes projets</span><ArrowRightIcon />
                         </Bouton>
-                        <Bouton variant="secondary" as="a" href="#contact">
+                        <Bouton variant="secondary" as="a" href={CV} download>
                             <span>Télécharger mon CV</span><DownloadIcon />
                         </Bouton>
                     </div>
