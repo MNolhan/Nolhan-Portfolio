@@ -19,6 +19,7 @@
 @use './pages/__contact' as *;
 @use './layouts/_footer' as *;
 @use './pages/__login' as *;
+@use './pages/__signup' as *;
 
 body {
   margin: 0;

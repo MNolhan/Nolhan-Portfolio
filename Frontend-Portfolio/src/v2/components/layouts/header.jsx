@@ -24,7 +24,7 @@ export default function Header() {
                     <Bouton variant="secondary" as="a" href="/login">
                         <span>Login</span>
                     </Bouton>
-                    <Bouton variant="primary" as="a" href="#contact">
+                    <Bouton variant="primary" as="a" href="/signup">
                         <span>Sign Up</span>
                     </Bouton>
                 </div>

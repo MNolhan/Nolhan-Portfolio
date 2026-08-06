@@ -11,6 +11,7 @@ import Loader from '../components/ui/loader'
 import Contact from '../pages/contact'
 import Footer from '../components/layouts/footer'
 import Login from '../pages/login'
+import Signup from '../pages/signup'
 
 export default function AppRouter() {
   return (
@@ -36,6 +37,7 @@ export default function AppRouter() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   )
