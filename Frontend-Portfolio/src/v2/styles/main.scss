@@ -12,6 +12,8 @@
 @use './components/__card_stack' as *;
 @use './pages/__parcours' as *;
 @use './components/__card_parcours' as *;
+@use './pages/__projects' as *;
+@use './components/__loader' as *;
 
 body {
   margin: 0;
