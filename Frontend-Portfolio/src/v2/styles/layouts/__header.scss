@@ -39,29 +39,8 @@
         }
     }
 
-    &__contact{
-    border: 1px solid $surface-2;
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    transition: border-color 0.3s ease;
-    
-
-        &:hover{
-            border-color: $textred-soft;
-            cursor: pointer;
-
-            .nav__contact--links{
-                color: $textred-soft;
-            }
-        }
-
-        &--links{
-            text-decoration: none;
-            color: $textColor;
-            font-family: $font-family;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    &__auth{
+        display: flex;
+        gap: 20px;
     }
 }

@@ -1,3 +1,5 @@
+import Bouton from "../ui/bouton";
+
 export default function Header() {
     return (
         <div className="navcontainer">
@@ -15,10 +17,16 @@ export default function Header() {
                     <a href="#stack" className="nav__menu--links">Stack</a>
                     <a href="#parcours" className="nav__menu--links">Parcours</a>
                     <a href="#projets" className="nav__menu--links">Projets</a>
+                    <a href="#contact" className="nav__menu--links">Contact</a>
                 </nav>
 
-                <div className="nav__contact">
-                    <a href="#contact" className="nav__contact--links">Contact</a>
+                <div className="nav__auth">
+                    <Bouton variant="secondary" as="a" href="#contact">
+                        <span>Login</span>
+                    </Bouton>
+                    <Bouton variant="primary" as="a" href="#contact">
+                        <span>Sign Up</span>
+                    </Bouton>
                 </div>
 
             </header>
