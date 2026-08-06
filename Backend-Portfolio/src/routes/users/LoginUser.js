@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { configDotenv } from 'dotenv';
 import rateLimiter from "../../middlewares/RateLimiting.js";
+import guest from "../../middlewares/guest.js";
 
 configDotenv();
 
@@ -23,7 +24,7 @@ const PostSchema = z.object({
     password: z.string().min(6),
 });
 
-router.post("/", rateLimiter,async (req, res) => {
+router.post("/", rateLimiter, guest, async (req, res) => {
 
     let email, password;
 
