@@ -1,0 +1,97 @@
+@use '../abstratcs/_variables' as *;
+
+.stack {
+    
+    &__header{
+        &-title{
+            font-size: 0.75rem;
+            color: $textColor-dim;
+            font-family: $font-family;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        &-subtitle{
+            font-size: 3.25rem;
+            color: $textColor;
+            font-family: $font-family;
+            font-weight: 1000;
+            margin: 0.5rem 0 4rem 0;
+
+            &--red{
+                color: $textred-soft;
+                font-family: $font-family-secondary;
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+
+        &-title{
+            font-size: 1.25rem;
+            color: $textColor;
+            font-family: $font-family;
+            font-weight: 700;
+            margin-bottom: 1rem;
+
+            &--red{
+                color: $textred-soft;
+                font-family: $font-family;
+                font-weight: 400;
+                font-size: 0.875rem;
+                margin: 0 0.75rem 0 0;
+            }
+        }
+
+        &--list{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    @media (max-width: $LaptopScreen) {
+        &__content{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: $tabletScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 2.25rem;
+                margin: 0.5rem 0 2.5rem 0;
+            }
+        }
+
+        &__content{
+            gap: 2.5rem;
+        }
+    }
+
+    @media (max-width: $mobileScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 1.85rem;
+            }
+        }
+
+        &__content{
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+}
+
+hr{
+    border: 0;
+    height: 3px;
+    background-color: $surface-2;
+    margin: 0 0 1rem 0;
+}

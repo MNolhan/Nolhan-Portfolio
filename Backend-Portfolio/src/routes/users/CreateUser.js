@@ -3,6 +3,7 @@ import mysql from "mysql2/promise";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import { configDotenv } from 'dotenv';
+import guest from "../../middlewares/guest.js";
 
 configDotenv();
 
@@ -22,7 +23,7 @@ const userSchema = z.object({
     password : z.string().min(6),
 });
 
-router.post("/", async (req, res) => {
+router.post("/", guest, async (req, res) => {
 
     const data = req.body;
     let name, firstname, email, password;

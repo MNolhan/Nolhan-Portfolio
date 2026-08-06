@@ -1,0 +1,63 @@
+@use '../abstratcs/_variables' as *;
+
+.CardProjectComponent{
+    background: $bg-soft;
+    border: 1px solid $surface-2;
+    border-radius: 16px;
+    overflow: hidden;
+
+    &__header{
+        display: flex;
+        gap: 6px;
+        padding: 12px 16px;
+        background: $surface-2;
+        border-bottom: 1px solid $surface-2;
+
+        &--dot{
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: $textColor-faint;
+        }
+    }
+
+    &__content{
+        position: relative;
+        padding: 24px;
+    }
+
+    &__type{
+        position: absolute;
+        top: -30px;
+        right: 20px;
+        background: $bg;
+        border: 1px solid $surface-2;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-size: 13px;
+        font-weight: 400;
+        padding: 8px 16px;
+        border-radius: 100px;
+        backdrop-filter: blur(6px);
+        z-index: 2;
+    }
+
+    &__main-card{
+        height: 60px;
+        border-radius: 10px;
+        background: linear-gradient(120deg, rgba($textred, 0.2), rgba($textred-soft, 0.2));
+    }
+
+    &__card{
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+
+        &-sub{
+            flex: 1;
+            height: 48px;
+            border-radius: 10px;
+            background: $surface-2;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// -- Screen Sizes --
+
+$mobileScreen: 480px;
+$tabletScreen: 768px;
+$LaptopScreen: 1024px;
+$DesktopScreen: 1280px;
+
+// -- Colors --
+
+$bg: #0a0a0c;
+$bg-soft: #101013;
+$surface: #141417;
+$surface-2: #1a1a1f;
+
+$textColor: #f2f1ee;
+$textColor-dim: #a6a5a1;
+$textColor-faint: #6e6d6a;
+
+$textred: #ef3b3b;
+$textred-soft: #ff6b5b;
+
+// -- Fonts --
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap'); 
+$font-family: "Bricolage Grotesque", sans-serif;
+$font-family-secondary: "Instrument Serif", serif;

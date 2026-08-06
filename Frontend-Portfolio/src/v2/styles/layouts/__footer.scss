@@ -1,0 +1,79 @@
+@use '../abstratcs/_variables' as *;
+
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 2rem;
+    padding: 1.5rem 0;
+    background-color: rgba($bg, 0.5);
+
+    @media (max-width: $tabletScreen) {
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 0;
+
+        &__nav {
+            order: 3;
+            flex-basis: 100%;
+            justify-content: center;
+        }
+
+        &__nav--link {
+            justify-content: center;
+        }
+    }
+
+    &__credit {
+        display: flex;
+        align-items: center;
+        font-family: $font-family;
+
+        &--white{
+            color : $textColor-dim;
+        }
+
+        &--red{
+            color : $textred;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--link{
+            text-decoration: none;
+            font-family: $font-family;
+            color: $textColor-dim;
+            border: 1px solid $surface-2;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                transform: translateY(-0.1rem);
+                color: $textred;
+                border-color: $textred;
+            }
+        }
+    }
+
+    &__nav{
+        font-family: $font-family;
+
+        &--link{
+            display: flex;
+            text-decoration: none;
+            color: $textColor-dim;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                color: $textred-soft;
+                cursor: pointer;
+            }
+        }
+    }
+}

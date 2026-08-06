@@ -1,0 +1,28 @@
+@use '../abstratcs/_variables' as *;
+
+.cardstack {
+    display: flex;
+    background-color: $bg-soft;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid $surface-2;
+
+    &-title{
+        margin: 0;
+        font-size: 1.1rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover{
+        transform: translateX(5px);
+        border : 1px solid $textred-soft;
+
+        .cardstack-title{
+            color : $textColor;
+        }
+    }
+}

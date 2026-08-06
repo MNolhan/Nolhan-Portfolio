@@ -1,0 +1,62 @@
+@use '../abstratcs/_variables' as *;
+
+.cardapropos {
+    width: 80%;
+    height: 200px;
+    background-color: $bg-soft;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border : 1px solid $surface-2;
+    transition: all 0.5s ease-in-out;
+
+    @media (max-width: $tabletScreen) {
+        width: 100%;
+        height: auto;
+        min-height: 140px;
+        padding: 1.25rem 1.5rem;
+    }
+
+    &-title{
+        font-size: 2rem;
+        color: $textColor;
+        font-family: $font-family;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &-description{
+        font-size: 0.875rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        line-height: 1.5rem;
+    }
+
+    &:hover{
+        border : 1px solid $textred-soft;
+        transform : scale(1.01);
+    }
+
+    &-red{
+        background: linear-gradient(0.9turn, $textred, $textred-soft);
+        border : 1px solid transparent;
+
+        &-title{
+            font-size: 0.875rem;
+        }
+
+        &-description{
+            font-size: 2rem;
+            font-family: $font-family-secondary;
+            font-style: italic;
+            color : $textColor;
+        }
+
+        &:hover{
+            border : 1px solid transparent;
+            cursor: pointer;
+        }
+    }
+}

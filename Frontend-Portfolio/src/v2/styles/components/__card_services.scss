@@ -1,0 +1,98 @@
+@use '../abstratcs/_variables' as *;
+
+.cardservices {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: $bg-soft;
+    padding: 2.5rem 3.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (max-width: $LaptopScreen) {
+        width: 90%;
+        padding: 2rem 2.5rem;
+    }
+
+    @media (max-width: $tabletScreen) {
+        width: 100%;
+    }
+
+    @media (max-width: $mobileScreen) {
+        padding: 1.75rem 1.5rem;
+
+        &-title{
+            font-size: 1.5rem;
+        }
+
+        &-description{
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
+    &-type{
+        color: $textred-soft;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &-title{
+        font-size: 2rem;
+        color: $textColor;
+        font-family: $font-family;
+        font-weight: 700;
+        margin: 0.5rem 0 0 0;
+    }
+
+    &-description{
+        font-size: 1.10rem;
+        color: $textColor-dim;
+        font-family: $font-family;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    &-icon{
+        font-size: 2.5rem;
+        color: $textColor;
+    }
+
+    &-red{
+    background: radial-gradient(circle at 85% 15%, rgba(239, 59, 59, 0.22), transparent 60%), #141417;
+    }
+
+    &-purple{
+        background: radial-gradient(circle at 85% 15%, rgba(107, 63, 184, 0.22), transparent 60%), #141417;
+    }
+
+    &-blue{
+        background: radial-gradient(circle at 85% 15%, rgba(61, 150, 220, 0.20), transparent 60%), #141417;
+    }
+
+    &-green{
+        background: radial-gradient(circle at 85% 15%, rgba(61, 220, 132, 0.18), transparent 60%), #141417;
+    }
+
+    &-amber{
+        background: radial-gradient(circle at 85% 15%, rgba(240, 180, 60, 0.18), transparent 60%), #141417;
+    }
+
+    &-red-strong{
+        background: radial-gradient(circle at 85% 15%, rgba(239, 59, 59, 0.25), transparent 60%), #141417;
+    }
+
+    &:hover{
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}

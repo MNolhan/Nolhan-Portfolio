@@ -1,0 +1,129 @@
+@use '../abstratcs/_variables' as *;
+
+.contact{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, $surface 0%, $surface-2 100%);
+    border-radius: 30px;
+    border: 1px solid $surface-2;
+    padding: 5rem 0;
+    margin: 0 auto;
+    width: 80%;
+    transition: all 0.3s ease-in-out;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title{
+            font-size: 0.75rem;
+            color: $textColor-dim;
+            font-family: $font-family;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        &-subtitle{
+            font-size: 3.25rem;
+            color: $textColor;
+            font-family: $font-family;
+            font-weight: 1000;
+            margin: 0.5rem 0 0 0;
+            margin-bottom: 2rem;
+
+            &--red{
+                color: $textred-soft;
+                font-family: $font-family-secondary;
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: $font-family;
+
+        &-text{
+            font-size: 1.10rem;
+            color: $textColor-dim;
+            font-family: $font-family;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: center;
+
+            &--small{
+                font-size: 0.75rem;
+                color: $textColor-dim;
+                font-family: $font-family;
+                font-weight: 400;
+                line-height: 30px;
+            }
+        }
+
+        &-email{
+            font-size: 3rem;
+            color: $textColor;
+            font-family: $font-family;
+            font-weight: 600;
+            line-height: 30px;
+        }
+    }
+
+    &:hover{
+        box-shadow: 0px 0px 10px 0px $textred-soft;
+    }
+
+    @media (max-width: $tabletScreen) {
+        width: 100%;
+        padding: 3.5rem 1.5rem;
+        border-radius: 20px;
+
+        &__header{
+            &-subtitle{
+                font-size: 2.25rem;
+            }
+        }
+
+        &__content{
+            &-email{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    @media (max-width: $mobileScreen) {
+        padding: 3rem 1.25rem;
+
+        &__header{
+            &-subtitle{
+                font-size: 1.85rem;
+            }
+        }
+
+        &__content{
+            &-text{
+                font-size: 1rem;
+            }
+
+            &-email{
+                font-size: 1.5rem;
+                word-break: break-all;
+            }
+        }
+    }
+}
+
+hr{
+    width: 100%;
+    height: 0;
+    border: 1px solid $textColor-faint;
+    margin: 0.5rem 0 1rem 0;
+}

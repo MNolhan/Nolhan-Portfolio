@@ -1,0 +1,83 @@
+@use '_variables' as *;
+
+.container {
+    width: 100%;
+    max-width: $DesktopScreen;
+    margin: 0 auto;
+    padding: 0 50px;
+    padding: 8.75rem 0 5.5rem 0;
+
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
+    }
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 6.5rem 24px 4rem 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 6rem 20px 3rem 20px;
+    }
+}
+
+.container--small {
+    width: 100%;
+    max-width: $DesktopScreen - 100px;
+    margin: 0 auto;
+    padding: 0 50px;
+    padding: 5rem 0;
+
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
+    }
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 3.5rem 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 3rem 20px;
+    }
+}
+
+.navcontainer {
+    width: 100%;
+    max-width: $DesktopScreen + 400px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
+    }
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
+    }
+}
+
+.authcontainer {
+    width: 100%;
+    max-width: $DesktopScreen + 575px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
+    }
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
+    }
+}

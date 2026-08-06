@@ -1,0 +1,52 @@
+@use './abstratcs/_variables' as *;
+@use './abstratcs/_container' as *;
+@use './layouts/__header' as *;
+@use './components/__scrollwatcher' as *;
+@use './pages/__home' as *;
+@use './components/__bouton' as *;
+@use './pages/__apropos' as *;
+@use './components/__card_apropos' as *;
+@use './pages/__services' as *;
+@use './components/__card_services' as *;
+@use './pages/__stack' as *;
+@use './components/__card_stack' as *;
+@use './pages/__parcours' as *;
+@use './components/__card_parcours' as *;
+@use './pages/__projects' as *;
+@use './components/__loader' as *;
+@use './components/__card_project' as *;
+@use './components/__card_project_component' as *;
+@use './pages/__contact' as *;
+@use './layouts/__footer' as *;
+@use './pages/__login' as *;
+@use './pages/__signup' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $bg;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// -- Scrollbar --
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, $textred, $textred-soft);
+  border-radius: 8px;
+}
