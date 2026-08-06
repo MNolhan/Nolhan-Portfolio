@@ -1,6 +1,35 @@
 import Bouton from "../ui/bouton";
 
 export default function Header() {
+
+    let userbutton;
+    
+    if(!localStorage.getItem('token')) {
+        userbutton = (
+            <div className="nav__auth">
+                <Bouton variant="secondary" as="a" href="/login">
+                        Login
+                    </Bouton>
+                    <Bouton variant="primary" as="a" href="/signup">
+                        Sign Up
+                    </Bouton>
+                </div>
+            )
+    } else {
+        userbutton = (
+            <div className="nav__auth">
+                <Bouton 
+                    variant="primary" as="a"
+                    onClick={() => {localStorage.removeItem('token')
+                    window.location.reload()
+                }}>
+                    Logout
+                </Bouton>
+            </div>
+        )
+    }
+
+
     return (
         <div className="navcontainer">
             <header className="nav" id="nav">
@@ -20,14 +49,7 @@ export default function Header() {
                     <a href="#contact" className="nav__menu--links">Contact</a>
                 </nav>
 
-                <div className="nav__auth">
-                    <Bouton variant="secondary" as="a" href="/login">
-                        <span>Login</span>
-                    </Bouton>
-                    <Bouton variant="primary" as="a" href="/signup">
-                        <span>Sign Up</span>
-                    </Bouton>
-                </div>
+                {userbutton}
 
             </header>
         </div>

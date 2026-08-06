@@ -27,9 +27,6 @@ export default function Login() {
             setMessage('Connexion réussie !')
             setEmail('')
             setPassword('')
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000)
             navigate('/')
             return
         }
