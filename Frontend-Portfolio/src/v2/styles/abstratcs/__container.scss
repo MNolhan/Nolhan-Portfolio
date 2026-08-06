@@ -46,3 +46,18 @@
         max-width: $mobileScreen; 
     }
 }
+
+.authcontainer {
+    width: 100%;
+    max-width: $DesktopScreen + 575px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: $LaptopScreen)  { 
+        max-width: $tabletScreen; 
+    }
+
+    @media (max-width: $tabletScreen)  { 
+        max-width: $mobileScreen; 
+    }
+}

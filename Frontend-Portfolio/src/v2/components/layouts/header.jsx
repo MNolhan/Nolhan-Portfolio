@@ -21,7 +21,7 @@ export default function Header() {
                 </nav>
 
                 <div className="nav__auth">
-                    <Bouton variant="secondary" as="a" href="#contact">
+                    <Bouton variant="secondary" as="a" href="/login">
                         <span>Login</span>
                     </Bouton>
                     <Bouton variant="primary" as="a" href="#contact">

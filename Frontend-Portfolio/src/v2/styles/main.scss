@@ -18,6 +18,7 @@
 @use './components/__card_project_component' as *;
 @use './pages/__contact' as *;
 @use './layouts/_footer' as *;
+@use './pages/__login' as *;
 
 body {
   margin: 0;

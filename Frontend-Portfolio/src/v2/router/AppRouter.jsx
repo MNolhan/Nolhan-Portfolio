@@ -10,21 +10,33 @@ import Projects from '../pages/projects'
 import Loader from '../components/ui/loader'
 import Contact from '../pages/contact'
 import Footer from '../components/layouts/footer'
+import Login from '../pages/login'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <ScrollWatcher />
       <Loader />
-      <Header />
-      <Home />
-      <Apropos />
-      <Services />
-      <Stack />
-      <Parcours />
-      <Projects />
-      <Contact />
-      <Footer />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Home />
+              <Apropos />
+              <Services />
+              <Stack />
+              <Parcours />
+              <Projects />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </BrowserRouter>
   )
 }
