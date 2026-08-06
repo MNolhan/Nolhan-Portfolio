@@ -1,6 +1,40 @@
 import CardApropos from "../components/ui/card_apropos";
+import { useState, useEffect } from "react";
+
+const API_URL = import.meta.env.VITE_API_URL
 
 export default function apropos() {
+    const [count, setCount] = useState('')
+
+    useEffect(() => {
+        fetch(`${API_URL}/CountProject`)
+        .then((res) => res.json())
+        .then((data) => setCount(data.count))
+        .catch(() => setCount('ERROR'))
+    }, [])
+
+    const startDate = new Date('2023-10-01')
+    const today = new Date()
+
+    let yearsExperience = today.getFullYear() - startDate.getFullYear()
+
+    if (
+        today.getMonth() < startDate.getMonth() ||
+        (today.getMonth() === startDate.getMonth() &&
+        today.getDate() < startDate.getDate())
+    ) {
+        yearsExperience--
+    }
+
+    let message
+
+    if (yearsExperience > 1) {
+        message = "Années d'expériences"
+    } else {
+        message = "Année d'expérience"
+    }
+
+
     return (
         <div className="container--small" id="apropos">
 
@@ -27,9 +61,9 @@ export default function apropos() {
                     </p>
                 </div>
                 <div className="apropos__content--right">
-                    <CardApropos Description="Projet(s) réalisé(s) ">10</CardApropos>
-                    <CardApropos Description="Année(s) d'expérience">2</CardApropos>
-                    <CardApropos Description="Client(s)">0</CardApropos>
+                    <CardApropos Description="Projet(s) réalisé(s) ">{count}</CardApropos>
+                    <CardApropos Description="Année(s) d'expérience">{yearsExperience}</CardApropos>
+                    <CardApropos Description="Technologies Maîtrisées">15+</CardApropos>
                     <CardApropos variant="red" Description="Full-Stack">Focus</CardApropos>
                 </div>
             </div>
