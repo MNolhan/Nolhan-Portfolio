@@ -2,7 +2,7 @@
 
 .signup{
     font-family: $font-family;
-    min-height: 90vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +34,7 @@
         background-color: $bg-soft;
         border: 1px solid $surface-2;
         border-radius: 20px;
-        width: 22.5%;
+        width: 30%;
         margin: auto;
         padding: 2rem;
         color: $textColor;
