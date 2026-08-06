@@ -9,6 +9,7 @@ import Parcours from '../pages/parcours'
 import Projects from '../pages/projects'
 import Loader from '../components/ui/loader'
 import Contact from '../pages/contact'
+import Footer from '../components/layouts/footer'
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,7 @@ export default function AppRouter() {
       <Parcours />
       <Projects />
       <Contact />
+      <Footer />
     </BrowserRouter>
   )
 }

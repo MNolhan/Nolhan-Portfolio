@@ -1,0 +1,62 @@
+@use '../abstratcs/_variables' as *;
+
+.footer{
+    display : flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background-color: rgba($bg, 0.5);
+
+    &__credit {
+        display: flex;
+        align-items: center;
+        font-family: $font-family;
+
+        &--white{
+            color : $textColor-dim;
+        }
+
+        &--red{
+            color : $textred;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--link{
+            text-decoration: none;
+            font-family: $font-family;
+            color: $textColor-dim;
+            border: 1px solid $surface-2;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                transform: translateY(-0.1rem);
+                color: $textred;
+                border-color: $textred;
+            }
+        }
+    }
+
+    &__nav{
+        font-family: $font-family;
+
+        &--link{
+            display: flex;
+            text-decoration: none;
+            color: $textColor-dim;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                color: $textred-soft;
+                cursor: pointer;
+            }
+        }
+    }
+}
