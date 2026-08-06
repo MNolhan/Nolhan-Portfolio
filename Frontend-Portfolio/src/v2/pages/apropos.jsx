@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 const API_URL = import.meta.env.VITE_API_URL
 
 export default function apropos() {
+
+    // -- Count Project
+
     const [count, setCount] = useState('')
+    let projets
 
     useEffect(() => {
         fetch(`${API_URL}/CountProject`)
@@ -12,6 +16,14 @@ export default function apropos() {
         .then((data) => setCount(data.count))
         .catch(() => setCount('ERROR'))
     }, [])
+
+    if (count > 1) {
+        projets = "Projets réalisés"
+    } else {
+        projets = "Projet réalisé"
+    }
+
+    // -- Years of Experience
 
     const startDate = new Date('2023-10-01')
     const today = new Date()
@@ -61,8 +73,8 @@ export default function apropos() {
                     </p>
                 </div>
                 <div className="apropos__content--right">
-                    <CardApropos Description="Projet(s) réalisé(s) ">{count}</CardApropos>
-                    <CardApropos Description="Année(s) d'expérience">{yearsExperience}</CardApropos>
+                    <CardApropos Description={projets}>{count}</CardApropos>
+                    <CardApropos Description={message}>{yearsExperience}</CardApropos>
                     <CardApropos Description="Technologies Maîtrisées">15+</CardApropos>
                     <CardApropos variant="red" Description="Full-Stack">Focus</CardApropos>
                 </div>
