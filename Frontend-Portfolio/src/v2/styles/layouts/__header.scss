@@ -1,15 +1,20 @@
 @use '../abstratcs/_variables' as *;
 
 .nav{
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem 2rem;
     padding: 1.5rem 0;
-    background-color: blur($bg, 0.5);
+    background-color: rgba($bg, 0.5);
 
     &__menu{
         display: flex;
-        gap: 50px;
+        flex-wrap: wrap;
+        gap: 0.75rem 50px;
+        justify-content: center;
 
         &--links{
             text-decoration: underline;
@@ -25,6 +30,10 @@
                 text-decoration-color: $textred;
             }
         }
+
+        &--auth{
+            display: none;
+        }
     }
 
     &__logo{
@@ -33,6 +42,7 @@
         font-family: $font-family;
         font-size: 1.3rem;
         font-weight: 700;
+        z-index: 2;
 
         &--red{
             color: $textred;
@@ -41,6 +51,89 @@
 
     &__auth{
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        flex-shrink: 0;
+    }
+
+    &__burger{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        z-index: 2;
+        flex-shrink: 0;
+
+        span{
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: $textColor;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &--open{
+            span:nth-child(1){
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            span:nth-child(2){
+                opacity: 0;
+            }
+
+            span:nth-child(3){
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
+    }
+
+    @media (max-width: $tabletScreen) {
+        padding: 1.25rem 0;
+
+        &__burger{
+            display: flex;
+        }
+
+        &__auth{
+            display: none;
+        }
+
+        &__menu{
+            position: fixed;
+            inset: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            background-color: $bg;
+            transform: translateX(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1;
+
+            &--open{
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &--links{
+                font-size: 1.25rem;
+            }
+
+            &--auth{
+                display: flex;
+                margin-top: 1rem;
+            }
+        }
     }
 }

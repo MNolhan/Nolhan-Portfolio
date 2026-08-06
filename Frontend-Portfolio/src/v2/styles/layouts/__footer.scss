@@ -1,12 +1,29 @@
 @use '../abstratcs/_variables' as *;
 
 .footer{
-    display : flex;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem 2rem;
     padding: 1.5rem 0;
     background-color: rgba($bg, 0.5);
+
+    @media (max-width: $tabletScreen) {
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 0;
+
+        &__nav {
+            order: 3;
+            flex-basis: 100%;
+            justify-content: center;
+        }
+
+        &__nav--link {
+            justify-content: center;
+        }
+    }
 
     &__credit {
         display: flex;

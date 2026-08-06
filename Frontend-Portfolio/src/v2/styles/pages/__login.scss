@@ -39,6 +39,23 @@
         padding: 2rem;
         color: $textColor;
 
+        @media (max-width: $DesktopScreen) {
+            width: 40%;
+        }
+
+        @media (max-width: $LaptopScreen) {
+            width: 55%;
+        }
+
+        @media (max-width: $tabletScreen) {
+            width: 80%;
+        }
+
+        @media (max-width: $mobileScreen) {
+            width: 100%;
+            padding: 1.5rem;
+        }
+
         &-logo{
             font-size: 1.25rem;
 

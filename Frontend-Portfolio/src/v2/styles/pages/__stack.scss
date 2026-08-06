@@ -55,6 +55,38 @@
             gap: 0.5rem;
         }
     }
+
+    @media (max-width: $LaptopScreen) {
+        &__content{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: $tabletScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 2.25rem;
+                margin: 0.5rem 0 2.5rem 0;
+            }
+        }
+
+        &__content{
+            gap: 2.5rem;
+        }
+    }
+
+    @media (max-width: $mobileScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 1.85rem;
+            }
+        }
+
+        &__content{
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
 }
 
 hr{

@@ -17,9 +17,15 @@
 @use './components/__card_project' as *;
 @use './components/__card_project_component' as *;
 @use './pages/__contact' as *;
-@use './layouts/_footer' as *;
+@use './layouts/__footer' as *;
 @use './pages/__login' as *;
 @use './pages/__signup' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

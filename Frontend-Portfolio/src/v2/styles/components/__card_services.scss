@@ -15,6 +15,28 @@
         align-items: center;
     }
 
+    @media (max-width: $LaptopScreen) {
+        width: 90%;
+        padding: 2rem 2.5rem;
+    }
+
+    @media (max-width: $tabletScreen) {
+        width: 100%;
+    }
+
+    @media (max-width: $mobileScreen) {
+        padding: 1.75rem 1.5rem;
+
+        &-title{
+            font-size: 1.5rem;
+        }
+
+        &-description{
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
     &-type{
         color: $textred-soft;
         font-family: $font-family;

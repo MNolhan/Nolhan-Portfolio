@@ -52,6 +52,43 @@
             justify-items: center;
         }
     }
+
+    @media (max-width: $LaptopScreen) {
+        &__content{
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+
+    @media (max-width: $tabletScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 2.25rem;
+            }
+        }
+
+        &__content{
+            gap: 2.5rem;
+
+            &--right{
+                gap: 1.25rem;
+            }
+        }
+    }
+
+    @media (max-width: $mobileScreen) {
+        &__header{
+            &-subtitle{
+                font-size: 1.85rem;
+            }
+        }
+
+        &__content{
+            &--right{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
 }
 
 .Strong{

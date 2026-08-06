@@ -7,12 +7,17 @@
     padding: 0 50px;
     padding: 8.75rem 0 5.5rem 0;
 
-    @media (max-width: $LaptopScreen)  { 
-        max-width: $tabletScreen; 
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
     }
 
-    @media (max-width: $tabletScreen)  { 
-        max-width: $mobileScreen; 
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 6.5rem 24px 4rem 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 6rem 20px 3rem 20px;
     }
 }
 
@@ -23,12 +28,17 @@
     padding: 0 50px;
     padding: 5rem 0;
 
-    @media (max-width: $LaptopScreen)  { 
-        max-width: $tabletScreen; 
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
     }
 
-    @media (max-width: $tabletScreen)  { 
-        max-width: $mobileScreen; 
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 3.5rem 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 3rem 20px;
     }
 }
 
@@ -38,12 +48,17 @@
     margin: 0 auto;
     padding: 0 50px;
 
-    @media (max-width: $LaptopScreen)  { 
-        max-width: $tabletScreen; 
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
     }
 
-    @media (max-width: $tabletScreen)  { 
-        max-width: $mobileScreen; 
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
     }
 }
 
@@ -53,11 +68,16 @@
     margin: 0 auto;
     padding: 0;
 
-    @media (max-width: $LaptopScreen)  { 
-        max-width: $tabletScreen; 
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
     }
 
-    @media (max-width: $tabletScreen)  { 
-        max-width: $mobileScreen; 
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
     }
 }
