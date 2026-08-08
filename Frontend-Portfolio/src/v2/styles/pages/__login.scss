@@ -136,3 +136,44 @@
         }
     }
 }
+
+@media (max-width: $tabletScreen){
+    .login{
+        &__content{
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: $mobileScreen){
+    .login{
+        &__content{
+            width: 100%;
+
+            &-title{
+            font-size: 1.5rem;
+            margin: 0.5rem 0 0 0;
+            }
+
+            &-subtitle{
+                font-size: 0.875rem;
+                margin: 0.5rem 0 1rem 0;
+            }
+
+            &-form{
+                &--button{
+                    padding: 0.75rem;
+                    font-size: 0.875rem;
+                }
+
+                &--label{
+                    font-size: 0.75rem;
+                }
+
+                &--input{
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}
