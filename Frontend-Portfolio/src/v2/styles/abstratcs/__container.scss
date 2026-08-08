@@ -75,6 +75,10 @@
     margin: 0 auto;
     padding: 0;
 
+    @media (max-width: $wideScreen)  {
+        padding: 0 50px;
+    }
+
     @media (max-width: $LaptopScreen)  {
         max-width: $tabletScreen;
     }
