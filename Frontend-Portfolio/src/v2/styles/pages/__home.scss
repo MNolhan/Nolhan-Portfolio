@@ -174,50 +174,7 @@
             }
         }
     }
-  
-    @media (max-width: $WideScreen) {
-        gap: 2.5rem;
-
-        &__left{
-            &-pub{
-                margin: 0 0 1.25rem 0;
-            }
-
-            &-title{
-                font-size: 3.75rem;
-            }
-
-            &-subtitle{
-                margin: 1.25rem 0 0 0;
-                font-size: 1.5rem;
-            }
-
-            &-description{
-                max-width: 480px;
-            }
-
-            &-bouton{
-                margin: 1.5rem 0;
-            }
-        }
-
-        &__right{
-            width: min(280px, 78%);
-        }
-
-        &__scroll{
-            margin-top: 1.5rem;
-
-            &--line{
-                height: 30px;
-            }
-        }
-    }
-
-    @media (max-width: $LaptopScreen) {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2.5rem;
+}
 
 @keyframes pulse{
     0%{
