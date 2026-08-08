@@ -36,3 +36,23 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .cardstack{
+        padding: 1rem 1rem;
+
+        &-title{
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .cardstack{
+        padding: 0.75rem 1rem;
+
+        &-title{
+            font-size: 0.875rem;
+        }
+    }
+}

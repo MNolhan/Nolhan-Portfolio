@@ -51,3 +51,33 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .parcours{
+        &__header{
+            &-subtitle{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__timeline{
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .parcours{
+        &__header{
+            &-subtitle{
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__timeline{
+            gap: 0.75rem;
+        }
+    }
+}

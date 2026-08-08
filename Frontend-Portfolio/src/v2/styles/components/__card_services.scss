@@ -88,3 +88,33 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .cardservices{
+        width: 75%;
+        padding: 1.5rem 2rem;
+
+        &-title{
+            font-size: 1.5rem;
+        }
+
+        &-description{
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .cardservices{
+        width: 100%;
+        padding: 1.5rem 2rem;
+
+        &-title{
+            font-size: 1.25rem;
+        }
+
+        &-description{
+            font-size: 0.75rem;
+        }
+    }
+}

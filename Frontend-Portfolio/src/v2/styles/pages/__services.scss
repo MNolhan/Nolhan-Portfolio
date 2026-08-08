@@ -52,3 +52,37 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .services{
+
+        &__header{
+
+            &-subtitle{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__content{
+            gap: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .services{
+
+        &__header{
+
+            &-subtitle{
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__content{
+            gap: 1rem;
+        }
+    }
+}

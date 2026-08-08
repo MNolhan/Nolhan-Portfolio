@@ -112,3 +112,51 @@ hr{
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .contact{
+        width: 90%;
+        padding: 2rem 0;
+
+        &__header{
+            &-subtitle{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__content{
+            &-text{
+                font-size: 0.875rem;
+            }
+
+            &-email{
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .contact{
+        width: 100%;
+        padding: 1.5rem 0;
+
+        &__header{
+            &-subtitle{
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__content{
+            &-text{
+                font-size: 0.75rem;
+            }
+
+            &-email{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

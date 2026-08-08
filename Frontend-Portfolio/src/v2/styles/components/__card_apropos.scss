@@ -78,3 +78,53 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .cardapropos{
+        height: 150px;
+        padding: 1rem 1.5rem;
+
+        &-title{
+            font-size: 1.5rem;
+        }
+
+        &-description{
+            font-size: 0.75rem;
+        }
+
+        &-red{
+            &-title{
+                font-size: 0.75rem;
+            }
+
+            &-description{
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .cardapropos{
+        height: 130px;
+        padding: 1rem 1.5rem;
+
+        &-title{
+            font-size: 1.25rem;
+        }
+
+        &-description{
+            font-size: 0.875rem;
+        }
+
+        &-red{
+            &-title{
+                font-size: 0.75rem;
+            }
+
+            &-description{
+                font-size: 1rem;
+            }
+        }
+    }
+}

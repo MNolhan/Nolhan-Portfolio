@@ -2,22 +2,27 @@
 
 .container {
     width: 100%;
-    max-width: $DesktopScreen;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px;
-    padding: 8.75rem 0 5.5rem 0;
+    padding: 8rem 50px 5rem 50px;
 
     @media (max-width: $wideScreen)  {
         padding: 5rem 0px;
     }
 
+    @media (max-width: $DesktopScreen)  {
+        max-width: $LaptopScreen;
+        padding: 4rem 50px;
+    }
+
     @media (max-width: $LaptopScreen)  {
         max-width: $tabletScreen;
+        padding: 3.5rem 50px;
     }
 
     @media (max-width: $tabletScreen)  {
         max-width: $mobileScreen;
-        padding: 6.5rem 24px 4rem 24px;
+        padding: 3rem 24px;
     }
 
     @media (max-width: $mobileScreen)  {
@@ -33,6 +38,11 @@
 
     @media (max-width: $wideScreen)  {
         padding: 5rem 0px;
+    }
+
+    @media (max-width: $DesktopScreen)  {
+        max-width: $LaptopScreen;
+        padding: 4rem 50px;
     }
 
     @media (max-width: $LaptopScreen)  {
@@ -56,7 +66,6 @@
     padding: 0 50px;
 
     @media (max-width: $LaptopScreen)  {
-        max-width: $tabletScreen;
     }
 
     @media (max-width: $tabletScreen)  {

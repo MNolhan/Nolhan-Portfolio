@@ -84,3 +84,61 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .apropos{
+
+        &__header{
+
+            &-subtitle{
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__content{
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+            &--right{
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .apropos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__header{
+
+            &-subtitle{
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__content{
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            &--left{
+                display: flex;
+                text-align: justify;
+
+                &-description{
+                    font-size: 0.875rem;
+                }
+            }
+
+            &--right{
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    }
+}

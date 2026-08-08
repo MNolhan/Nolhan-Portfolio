@@ -68,3 +68,41 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .CardParcours{
+        width: 75%;
+        padding: 1rem 1rem;
+
+        &__title{
+            font-size: 1.25rem;
+        }
+
+        &__sub{
+            font-size: 0.875rem;
+        }
+
+        &__description{
+            font-size: 0.75rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .CardParcours{
+        width: 100%;
+        padding: 0.75rem 1rem;
+
+        &__title{
+            font-size: 1.125rem;
+        }
+
+        &__sub{
+            font-size: 0.75rem;
+        }
+
+        &__description{
+            font-size: 0.75rem;
+        }
+    }
+}

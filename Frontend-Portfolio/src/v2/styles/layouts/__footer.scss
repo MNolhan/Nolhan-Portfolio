@@ -61,3 +61,24 @@
         }
     }
 }
+
+@media (max-width: $tabletScreen){
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        &__credit{
+            text-align: center;
+        }
+
+        &__social{
+            justify-content: center;
+        }
+
+        &__nav{
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+}

@@ -50,3 +50,37 @@
         }
     }
 }
+
+@media (max-width: $LaptopScreen){
+    .projects{
+        &__header{
+            &-subtitle{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__cards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .projects{
+        &__header{
+            &-subtitle{
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__cards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
