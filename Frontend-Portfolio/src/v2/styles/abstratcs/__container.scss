@@ -26,7 +26,7 @@
     }
 
     @media (max-width: $mobileScreen)  {
-        padding: 6rem 20px 3rem 20px;
+        padding: 2rem 20px;
     }
 }
 
@@ -47,6 +47,7 @@
 
     @media (max-width: $LaptopScreen)  {
         max-width: $tabletScreen;
+        padding: 3.5rem 50px;
     }
 
     @media (max-width: $tabletScreen)  {
@@ -64,9 +65,6 @@
     max-width: $DesktopScreen + 400px;
     margin: 0 auto;
     padding: 0 50px;
-
-    @media (max-width: $LaptopScreen)  {
-    }
 
     @media (max-width: $tabletScreen)  {
         max-width: $mobileScreen;
@@ -90,6 +88,7 @@
 
     @media (max-width: $LaptopScreen)  {
         max-width: $tabletScreen;
+        padding: 0 50px;
     }
 
     @media (max-width: $tabletScreen)  {

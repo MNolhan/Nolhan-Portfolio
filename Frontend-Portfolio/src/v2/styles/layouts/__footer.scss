@@ -19,6 +19,7 @@
         }
 
         &--red{
+            font-weight: 700;
             color : $textred;
         }
     }
@@ -39,8 +40,8 @@
 
             &:hover{
                 transform: translateY(-0.1rem);
-                color: $textred;
-                border-color: $textred;
+                color: $textred-soft;
+                border-color: $textred-soft;
             }
         }
     }
