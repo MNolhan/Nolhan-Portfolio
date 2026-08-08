@@ -27,6 +27,11 @@
   box-sizing: border-box;
 }
 
+::selection{
+    background-color: $textred-soft;
+    color: #fff;
+}
+
 body {
   margin: 0;
   background-color: $bg;

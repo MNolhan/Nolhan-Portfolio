@@ -49,27 +49,60 @@
         transform: scale(1.05);
         border: 1px solid $textred-soft;
     }
+}
 
-    @media (max-width: $LaptopScreen) {
-        width: 90%;
-        padding: 2rem 2.5rem;
-    }
-
-    @media (max-width: $tabletScreen) {
-        width: 100%;
-    }
-
-    @media (max-width: $mobileScreen) {
-        padding: 1.75rem 1.5rem;
+@media (max-width: $wideScreen){
+    .CardParcours{
+        padding: 1rem 1.5rem;
 
         &__title{
             font-size: 1.5rem;
         }
 
-        &__sub,
-        &__description{
+        &__sub{
             font-size: 1rem;
-            line-height: 1.6;
+        }
+
+        &__description{
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@media (max-width: $LaptopScreen){
+    .CardParcours{
+        width: 75%;
+        padding: 1rem 1rem;
+
+        &__title{
+            font-size: 1.25rem;
+        }
+
+        &__sub{
+            font-size: 0.875rem;
+        }
+
+        &__description{
+            font-size: 0.75rem;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .CardParcours{
+        width: 100%;
+        padding: 0.75rem 1rem;
+
+        &__title{
+            font-size: 1.125rem;
+        }
+
+        &__sub{
+            font-size: 0.75rem;
+        }
+
+        &__description{
+            font-size: 0.75rem;
         }
     }
 }

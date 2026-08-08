@@ -174,7 +174,7 @@
             }
         }
     }
-
+  
     @media (max-width: $WideScreen) {
         gap: 2.5rem;
 
@@ -219,84 +219,6 @@
         text-align: center;
         gap: 2.5rem;
 
-        &__left{
-            order: 2;
-
-            &-pub{
-                margin: 0 auto 2rem auto;
-            }
-
-            &-bouton{
-                justify-content: center;
-            }
-
-            &-description{
-                max-width: 100%;
-                margin: 0 auto;
-            }
-        }
-
-        &__right{
-            order: 1;
-        }
-    }
-
-    @media (max-width: $tabletScreen) {
-        &__left{
-            &-title{
-                font-size: 3rem;
-            }
-
-            &-subtitle{
-                font-size: 1.35rem;
-            }
-
-            &-description{
-                font-size: 1rem;
-            }
-        }
-
-        &__right{
-            width: min(280px, 70%);
-
-            &--chip{
-                font-size: 12px;
-                padding: 7px 12px;
-            }
-        }
-    }
-
-    @media (max-width: $mobileScreen) {
-        &__left{
-            &-title{
-                font-size: 2.25rem;
-            }
-
-            &-subtitle{
-                font-size: 1.1rem;
-            }
-
-            &-bouton{
-                flex-direction: column;
-                width: 100%;
-
-                .btn{
-                    justify-content: center;
-                }
-            }
-        }
-
-        &__right{
-            width: min(220px, 65%);
-
-            &--chip{
-                display: none;
-            }
-        }
-    }
-
-}
-
 @keyframes pulse{
     0%{
         box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.5);
@@ -336,5 +258,121 @@
     }
     100%{ 
         transform: translateY(140%); 
+    }
+}
+
+@media (max-width: $wideScreen){
+    .home{
+        gap: 2rem;
+
+        &__left{
+
+            &-pub{
+                font-size: 0.75rem;
+            }
+
+            &-title{
+                font-size: 3rem;
+            }
+
+            &-subtitle{
+                font-size: 1.5rem;
+            }
+
+            &-description{
+                font-size: 1rem;
+            }
+
+            &-bouton{
+                gap: 0.75rem;
+            }
+
+            &-contact{
+                font-size: 0.8rem;
+            }
+        }
+
+        &__right{
+            width: min(300px, 80%);
+            aspect-ratio: 1 / 1.12;
+        }
+    }
+}
+
+@media (max-width: $LaptopScreen){
+    .home{
+
+        &__left{
+
+            &-pub{
+                font-size: 0.75rem;
+            }
+
+            &-title{
+                font-size: 2.5rem;
+            }
+
+            &-subtitle{
+                font-size: 1.25rem;
+            }
+
+            &-description{
+                font-size: 0.875rem;
+            }
+
+            &-bouton{
+                gap: 0.5rem;
+            }
+
+            &-contact{
+                font-size: 0.75rem;
+            }
+        }
+
+        &__right{
+            width: min(300px, 80%);
+            aspect-ratio: 1 / 1.12;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .home{
+        grid-template-columns: 1fr;
+        gap: 4rem;
+
+        &__left{
+            text-align: center;
+
+            &-pub{
+                margin: 0 auto 1.5rem auto;
+            }
+
+            &-title{
+                font-size: 2rem;
+            }
+
+            &-subtitle{
+                font-size: 1.25rem;
+            }
+
+            &-description{
+                font-size: 0.875rem;
+            }
+
+            &-bouton{
+                justify-content: center;
+                gap: 0.5rem;
+            }
+        }
+
+        &__right{
+            width: min(300px, 80%);
+            aspect-ratio: 1 / 1.12;
+        }
+
+        &__scroll{
+            margin: 5rem 0 0 0;
+        }
     }
 }

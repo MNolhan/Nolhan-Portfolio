@@ -7,7 +7,7 @@ export default function Parcours(){
 
                 <div className="parcours__header">
                     <span className="parcours__header-title">- Parcours</span>
-                    <p className="parcours__header-subtitle"> Parcours<span className="parcours__header-subtitle--red">.</span></p>
+                    <p className="parcours__header-subtitle"> Mon parcours dans <span className="parcours__header-subtitle--red">l'informatique</span>.</p>
                 </div>
 
                 <div className="parcours__timeline">

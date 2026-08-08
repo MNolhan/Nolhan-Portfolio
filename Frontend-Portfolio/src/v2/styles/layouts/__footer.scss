@@ -9,22 +9,6 @@
     padding: 1.5rem 0;
     background-color: rgba($bg, 0.5);
 
-    @media (max-width: $tabletScreen) {
-        justify-content: center;
-        text-align: center;
-        padding: 1.5rem 0;
-
-        &__nav {
-            order: 3;
-            flex-basis: 100%;
-            justify-content: center;
-        }
-
-        &__nav--link {
-            justify-content: center;
-        }
-    }
-
     &__credit {
         display: flex;
         align-items: center;
@@ -35,6 +19,7 @@
         }
 
         &--red{
+            font-weight: 700;
             color : $textred;
         }
     }
@@ -55,8 +40,8 @@
 
             &:hover{
                 transform: translateY(-0.1rem);
-                color: $textred;
-                border-color: $textred;
+                color: $textred-soft;
+                border-color: $textred-soft;
             }
         }
     }
@@ -74,6 +59,27 @@
                 color: $textred-soft;
                 cursor: pointer;
             }
+        }
+    }
+}
+
+@media (max-width: $tabletScreen){
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        &__credit{
+            text-align: center;
+        }
+
+        &__social{
+            justify-content: center;
+        }
+
+        &__nav{
+            justify-content: center;
+            gap: 1rem;
         }
     }
 }
