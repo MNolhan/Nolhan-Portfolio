@@ -33,3 +33,16 @@
         box-shadow: 0 4px 20px rgba($textred-soft, 0.5);
     }
 }
+
+@media (max-width: $wideScreen) {
+    .CardProject {
+        
+        &__title {
+            font-size: 1.25rem;
+        }
+
+        &__description {
+            font-size: 0.875rem;
+        }
+    }
+}

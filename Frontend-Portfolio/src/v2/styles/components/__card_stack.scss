@@ -26,3 +26,13 @@
         }
     }
 }
+
+@media (max-width: $wideScreen){
+    .cardstack{
+        padding: 1rem 1.5rem;
+
+        &-title{
+            font-size: 1rem;
+        }
+    }
+}

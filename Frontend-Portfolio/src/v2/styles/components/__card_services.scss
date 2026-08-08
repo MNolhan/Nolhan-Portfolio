@@ -15,28 +15,6 @@
         align-items: center;
     }
 
-    @media (max-width: $LaptopScreen) {
-        width: 90%;
-        padding: 2rem 2.5rem;
-    }
-
-    @media (max-width: $tabletScreen) {
-        width: 100%;
-    }
-
-    @media (max-width: $mobileScreen) {
-        padding: 1.75rem 1.5rem;
-
-        &-title{
-            font-size: 1.5rem;
-        }
-
-        &-description{
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-    }
-
     &-type{
         color: $textred-soft;
         font-family: $font-family;
@@ -94,5 +72,19 @@
     &:hover{
         transform: translateY(-5px);
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (max-width: $wideScreen){
+    .cardservices{
+        padding: 1.5rem 2rem;
+
+        &-title{
+            font-size: 1.75rem;
+        }
+
+        &-description{
+            font-size: 0.875rem;
+        }
     }
 }

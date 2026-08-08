@@ -34,25 +34,21 @@
         gap: 3rem;
         align-items: center;
     }
+}
 
-    @media (max-width: $tabletScreen) {
+@media (max-width: $wideScreen){
+    .services{
+
         &__header{
+
             &-subtitle{
-                font-size: 2.25rem;
-                margin: 0.5rem 0 2.5rem 0;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
         }
 
         &__content{
             gap: 2rem;
-        }
-    }
-
-    @media (max-width: $mobileScreen) {
-        &__header{
-            &-subtitle{
-                font-size: 1.85rem;
-            }
         }
     }
 }

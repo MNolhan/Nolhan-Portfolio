@@ -35,20 +35,14 @@
         gap: 2rem;
         align-items: center;
     }
+}
 
-    @media (max-width: $tabletScreen) {
+@media (max-width: $wideScreen){
+    .parcours{
         &__header{
             &-subtitle{
-                font-size: 2.25rem;
-                margin: 0.5rem 0 2.5rem 0;
-            }
-        }
-    }
-
-    @media (max-width: $mobileScreen) {
-        &__header{
-            &-subtitle{
-                font-size: 1.85rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
         }
 

@@ -61,3 +61,30 @@
         }
     }
 }
+
+@media (max-width: $wideScreen){
+    .CardProjectComponent{
+        &__content{
+            padding: 16px;
+        }
+
+        &__type{
+            top: -30px;
+            right: 12px;
+            font-size: 11px;
+            padding: 6px 12px;
+        }
+
+        &__main-card{
+            height: 40px;
+        }
+
+        &__card{
+            margin-top: 8px;
+
+            &-sub{
+                height: 32px;
+            }
+        }
+    }
+}

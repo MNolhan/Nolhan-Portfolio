@@ -49,27 +49,22 @@
         transform: scale(1.05);
         border: 1px solid $textred-soft;
     }
+}
 
-    @media (max-width: $LaptopScreen) {
-        width: 90%;
-        padding: 2rem 2.5rem;
-    }
-
-    @media (max-width: $tabletScreen) {
-        width: 100%;
-    }
-
-    @media (max-width: $mobileScreen) {
-        padding: 1.75rem 1.5rem;
+@media (max-width: $wideScreen){
+    .CardParcours{
+        padding: 1rem 1.5rem;
 
         &__title{
             font-size: 1.5rem;
         }
 
-        &__sub,
-        &__description{
+        &__sub{
             font-size: 1rem;
-            line-height: 1.6;
+        }
+
+        &__description{
+            font-size: 0.875rem;
         }
     }
 }

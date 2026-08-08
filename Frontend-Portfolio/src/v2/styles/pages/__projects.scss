@@ -34,25 +34,19 @@
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
+}
 
-    @media (max-width: $tabletScreen) {
+@media (max-width: $wideScreen){
+    .projects{
         &__header{
             &-subtitle{
-                font-size: 2.25rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
         }
 
         &__cards{
-            grid-template-columns: 1fr;
             gap: 1.5rem;
-        }
-    }
-
-    @media (max-width: $mobileScreen) {
-        &__header{
-            &-subtitle{
-                font-size: 1.85rem;
-            }
         }
     }
 }

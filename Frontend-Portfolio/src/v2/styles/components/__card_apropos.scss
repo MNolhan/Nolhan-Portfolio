@@ -11,13 +11,6 @@
     border : 1px solid $surface-2;
     transition: all 0.5s ease-in-out;
 
-    @media (max-width: $tabletScreen) {
-        width: 100%;
-        height: auto;
-        min-height: 140px;
-        padding: 1.25rem 1.5rem;
-    }
-
     &-title{
         font-size: 2rem;
         color: $textColor;
@@ -57,6 +50,31 @@
         &:hover{
             border : 1px solid transparent;
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: $wideScreen){
+    .cardapropos{
+        height: 200px;
+        padding: 1rem 1.5rem;
+
+        &-title{
+            font-size: 1.75rem;
+        }
+
+        &-description{
+            font-size: 0.75rem;
+        }
+
+        &-red{
+            &-title{
+                font-size: 0.75rem;
+            }
+
+            &-description{
+                font-size: 1.5rem;
+            }
         }
     }
 }

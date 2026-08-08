@@ -55,38 +55,6 @@
             gap: 0.5rem;
         }
     }
-
-    @media (max-width: $LaptopScreen) {
-        &__content{
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: $tabletScreen) {
-        &__header{
-            &-subtitle{
-                font-size: 2.25rem;
-                margin: 0.5rem 0 2.5rem 0;
-            }
-        }
-
-        &__content{
-            gap: 2.5rem;
-        }
-    }
-
-    @media (max-width: $mobileScreen) {
-        &__header{
-            &-subtitle{
-                font-size: 1.85rem;
-            }
-        }
-
-        &__content{
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-    }
 }
 
 hr{
@@ -94,4 +62,21 @@ hr{
     height: 3px;
     background-color: $surface-2;
     margin: 0 0 1rem 0;
+}
+
+@media (max-width: $wideScreen){
+    .stack{
+
+        &__header{
+
+            &-subtitle{
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &__content{
+            gap: 1.5rem;
+        }
+    }
 }
