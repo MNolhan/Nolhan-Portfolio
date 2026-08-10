@@ -31,14 +31,11 @@ export default function Stack(){
                         </h2>
                         <hr></hr>
                         <div className="stack__content--list">
-                            {Stack.filter(stack => stack.categorie === "Front-End").map((stack) => (
-                                <CardStack key={stack.id}>{stack.name}</CardStack>
-                            ))}
-                                
-                            <CardStack>HTML5</CardStack>
-                            <CardStack>CSS3 / SCSS</CardStack>
-                            <CardStack>JavaScript</CardStack>
-                            <CardStack>React.JS</CardStack>
+                            {Stack
+                                .filter((s) => s.categorie === "Front-end")
+                                .map((s) => (
+                                    <CardStack key={s.id}>{s.name}</CardStack>
+                                ))}
                         </div>
                     </div>
                     <div className="stack__content--Back">
@@ -48,12 +45,11 @@ export default function Stack(){
                         </h2>
                         <hr></hr>
                         <div className="stack__content--list">
-                            <CardStack>Node.js</CardStack>
-                            <CardStack>Express.js</CardStack>
-                            <CardStack>Laravel</CardStack>
-                            <CardStack>PHP</CardStack>
-                            <CardStack>MySQL</CardStack>
-                            <CardStack>Redis</CardStack>
+                            {Stack
+                                .filter((s) => s.categorie === "Back-end")
+                                .map((s) => (
+                                    <CardStack key={s.id}>{s.name}</CardStack>
+                                ))}
                         </div>
                     </div>
                     <div className="stack__content--Other">
@@ -63,12 +59,11 @@ export default function Stack(){
                         </h2>
                         <hr></hr>
                         <div className="stack__content--list">
-                            <CardStack>Git / Github</CardStack>
-                            <CardStack>Figma</CardStack>
-                            <CardStack>Railway</CardStack>
-                            <CardStack>Stripe</CardStack>
-                            <CardStack>Docker</CardStack>
-                            <CardStack>PostMan</CardStack>
+                            {Stack
+                                .filter((s) => s.categorie === "Outils & Design")
+                                .map((s) => (
+                                    <CardStack key={s.id}>{s.name}</CardStack>
+                                ))}
                         </div>
                     </div>
                 </div>
