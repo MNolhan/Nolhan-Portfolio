@@ -23,6 +23,24 @@ export default function apropos() {
         projets = "Projet réalisé"
     }
 
+    // -- Count Stack
+
+    const [countStack, setCountStack] = useState('')
+    let stacks
+
+    useEffect(() => {
+        fetch(`${API_URL}/CountStack`)
+        .then((res) => res.json())
+        .then((data) => setCountStack(data.count))
+        .catch(() => setCountStack('ERROR'))
+    }, [])
+
+    if (countStack > 1) {
+        stacks = "Technologies maîtrisées"
+    } else {
+        stacks = "Technologie maîtrisée"
+    }
+
     // -- Years of Experience
 
     const startDate = new Date('2023-10-01')
@@ -75,7 +93,7 @@ export default function apropos() {
                 <div className="apropos__content--right">
                     <CardApropos Description={projets}>{count}</CardApropos>
                     <CardApropos Description={message}>{yearsExperience}</CardApropos>
-                    <CardApropos Description="Technologies Maîtrisées">15+</CardApropos>
+                    <CardApropos Description={stacks}>{countStack}</CardApropos>
                     <CardApropos variant="red" Description="Full-Stack">Focus</CardApropos>
                 </div>
             </div>

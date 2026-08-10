@@ -1,6 +1,19 @@
 import CardStack from "../components/ui/card_stack";
+import { useState, useEffect } from "react";
+
+const API_URL = import.meta.env.VITE_API_URL
 
 export default function Stack(){
+
+    const [Stack, setStack] = useState([])
+
+    useEffect(() => {
+        fetch(`${API_URL}/ReadStack`)
+        .then((res) => res.json())
+        .then((data) => setStack(data))
+        .catch(() => setStack([]))
+    }, [])
+
     return(
         <div className="container--small" id="stack">
             <div className="stack">
@@ -18,6 +31,10 @@ export default function Stack(){
                         </h2>
                         <hr></hr>
                         <div className="stack__content--list">
+                            {Stack.filter(stack => stack.categorie === "Front-End").map((stack) => (
+                                <CardStack key={stack.id}>{stack.name}</CardStack>
+                            ))}
+                                
                             <CardStack>HTML5</CardStack>
                             <CardStack>CSS3 / SCSS</CardStack>
                             <CardStack>JavaScript</CardStack>
