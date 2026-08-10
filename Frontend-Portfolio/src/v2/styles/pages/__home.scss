@@ -95,7 +95,7 @@
             position: absolute;
             inset: -16px;
             border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-            background: conic-gradient(from 180deg, $textred, #6b3fb8, $textred);
+            background: linear-gradient(120deg, rgba($textred, 0.5), rgba($textred-soft, 0.5));
             opacity: 0.5;
             filter: blur(2px);
             animation: morph 10s ease-in-out infinite;
