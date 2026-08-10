@@ -76,6 +76,22 @@
     }
 }
 
+.footercontainer {
+    width: 100%;
+    max-width: 1400px;
+    margin: 5rem auto 0 auto;
+    padding: 0 50px;
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
+    }
+}
+
 .authcontainer {
     width: 100%;
     max-width: $DesktopScreen + 575px;
