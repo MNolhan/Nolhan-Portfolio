@@ -12,6 +12,7 @@ import Contact from '../pages/contact'
 import Footer from '../components/layouts/footer'
 import Login from '../pages/login'
 import Signup from '../pages/signup'
+import Carroursel from '../components/layouts/carroursel'
 
 export default function AppRouter() {
   return (
@@ -26,6 +27,7 @@ export default function AppRouter() {
             <>
               <Header />
               <Home />
+              <Carroursel />
               <Apropos />
               <Services />
               <Stack />
