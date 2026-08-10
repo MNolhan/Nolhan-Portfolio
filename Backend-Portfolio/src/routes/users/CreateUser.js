@@ -4,17 +4,11 @@ import { z } from "zod";
 import bcrypt from "bcrypt";
 import { configDotenv } from 'dotenv';
 import guest from "../../middlewares/guest.js";
+import pool from '../../infra/db.js';
 
 configDotenv();
 
 const router = express.Router();
-
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
 
 const userSchema = z.object({
     name : z.string().min(1),

@@ -2,17 +2,11 @@ import express from "express";
 import mysql from "mysql2/promise";
 import { z } from "zod";
 import { configDotenv } from 'dotenv';
+import pool from '../../infra/db.js';
 
 configDotenv();
 
 const router = express.Router();
-
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
 
 const projectSchema = z.object({
     name: z.string().min(1),

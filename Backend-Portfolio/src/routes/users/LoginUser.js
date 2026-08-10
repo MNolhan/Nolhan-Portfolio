@@ -6,18 +6,12 @@ import jwt from "jsonwebtoken";
 import { configDotenv } from 'dotenv';
 import rateLimiter from "../../middlewares/RateLimiting.js";
 import guest from "../../middlewares/guest.js";
+import pool from '../../infra/db.js';
 
 configDotenv();
 
 const SecretKey = process.env.jwtKey;
 const router = express.Router();
-
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
 
 const PostSchema = z.object({
     email: z.string().email(),

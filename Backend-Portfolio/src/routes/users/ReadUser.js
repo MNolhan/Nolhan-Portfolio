@@ -3,17 +3,11 @@ import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
 import { configDotenv } from 'dotenv';
 import auth from "../../middlewares/auth.js";
+import pool from '../../infra/db.js';
 
 configDotenv();
 
 const router = express.Router();
-
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
 
 router.get("/:id", auth, async (req, res) => {
 
