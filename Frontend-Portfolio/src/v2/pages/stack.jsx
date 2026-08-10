@@ -32,7 +32,7 @@ export default function Stack(){
                         <hr></hr>
                         <div className="stack__content--list">
                             {Stack
-                                .filter((s) => s.categorie === "Front-end")
+                                .filter((s) => s.category.toLowerCase() === "front-end")
                                 .map((s) => (
                                     <CardStack key={s.id}>{s.name}</CardStack>
                                 ))}
@@ -46,7 +46,7 @@ export default function Stack(){
                         <hr></hr>
                         <div className="stack__content--list">
                             {Stack
-                                .filter((s) => s.categorie === "Back-end")
+                                .filter((s) => s.category.toLowerCase() === "back-end")
                                 .map((s) => (
                                     <CardStack key={s.id}>{s.name}</CardStack>
                                 ))}
@@ -60,7 +60,7 @@ export default function Stack(){
                         <hr></hr>
                         <div className="stack__content--list">
                             {Stack
-                                .filter((s) => s.categorie === "Outils & Design")
+                                .filter((s) => s.category.toLowerCase() === "outils & design")
                                 .map((s) => (
                                     <CardStack key={s.id}>{s.name}</CardStack>
                                 ))}
