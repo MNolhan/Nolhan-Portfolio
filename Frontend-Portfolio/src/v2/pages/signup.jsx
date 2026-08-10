@@ -1,8 +1,10 @@
 import ArrowLeftIcon from "../components/Icon/arrowleft-icon";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const API_URL = import.meta.env.VITE_API_URL
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_CAPTCHA_PUBLIC_KEY
 
 export default function Signup() {
     const navigate = useNavigate()
@@ -11,15 +13,21 @@ export default function Signup() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
+    const [captchaValue, setCaptchaValue] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        if (!captchaValue) {
+            setMessage('Veuillez compléter le reCAPTCHA.')
+            return
+        }
 
         try {
         const response = await fetch(`${API_URL}/CreateUser`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, firstname, email, password }),
+            body: JSON.stringify({ name, firstname, email, password, captchaValue }),
         })
 
         const data = await response.json()
@@ -72,6 +80,11 @@ export default function Signup() {
                             <label htmlFor="password" className="signup__content-form--label">Mot de passe</label>
                             <input type="password" id="password" name="password" className="signup__content-form--input" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
                         </div>
+                        <ReCAPTCHA
+                            className="signup__content-form--captcha"
+                            sitekey={RECAPTCHA_SITE_KEY}
+                            onChange={(value) => setCaptchaValue(value)}
+                        />
                         <button type="submit" className="signup__content-form--button">S'inscrire</button>
                     </form>
                     {message && <p className="signup__content-message">{message}</p>}

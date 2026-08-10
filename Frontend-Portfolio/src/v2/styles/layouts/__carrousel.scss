@@ -1,0 +1,67 @@
+@use '../abstratcs/_variables' as *;
+
+.carrousel {
+    background-color: $bg-soft;
+    border: 1px solid $surface-2;
+    margin: 5rem 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    > * {
+        flex: 0 0 100%;
+    }
+
+    &__group {
+        display: flex;
+        padding: 10px;
+        will-change: transform;
+        animation: scrolling 50s linear infinite;
+    }
+
+    &__card {
+        font-family: $font-family-secondary;
+        font-weight: 400;
+        font-style: italic;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: $textColor-dim;
+        padding: 10px;
+        font-size: xx-large;
+        font-size: 1.25rem;
+        min-height: 25px;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            cursor: pointer;
+            color : $textColor;
+        }
+    } 
+
+    &__separator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1px;
+        color : $textred;
+        margin: 0;
+    }
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: $LaptopScreen) {
+    .carrousel {
+        display: none;
+    }
+}

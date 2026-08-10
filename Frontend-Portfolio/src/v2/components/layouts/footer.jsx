@@ -5,7 +5,7 @@ import ArrowUpIcon from '../Icon/arrowup-icon';
 
 export default function Footer() {
     return (
-        <div className="navcontainer">
+        <div className="footercontainer">
             <footer className="footer" id="footer">
 
                 <div className="footer__credit">
