@@ -18,7 +18,9 @@ export default function Contact(){
         <div className="container--small" id="contact">
 
             <Notification
-                title="Adresse Email Copiée !"
+                titlep1="Adresse Email "
+                titlep2="Copiée"
+                titlep3=" !"
                 message="Vous pouvez maintenant coller l'adresse email dans votre client de messagerie."
                 show={showNotification}
             />

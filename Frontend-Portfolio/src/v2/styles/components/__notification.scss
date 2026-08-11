@@ -15,10 +15,33 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
     font-family: $font-family;
 
-    &__title{
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &-title{
         font-size: 1.25rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
+
+            &--red{
+                color: $textred-soft;
+                font-family: $font-family-secondary;
+                font-style: italic;
+                font-weight: 500;
+            }
+        }
+
+        &-close{
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: $textColor-dim;
+        }
+
     }
 
     &__message{
