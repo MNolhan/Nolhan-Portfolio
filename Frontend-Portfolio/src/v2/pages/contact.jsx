@@ -1,4 +1,3 @@
-import CopyIcon from "../components/Icon/copy-icon";
 import Notification from "../components/ui/notification";
 import { useState } from "react";
 
