@@ -13,13 +13,17 @@ import Footer from '../components/layouts/footer'
 import Login from '../pages/login'
 import Signup from '../pages/signup'
 import Carroursel from '../components/layouts/carroursel'
+import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <ScrollWatcher />
       <Loader />
-
+      <PublicOnlyRoute>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </PublicOnlyRoute>
       <Routes>
         <Route
           path="/"
