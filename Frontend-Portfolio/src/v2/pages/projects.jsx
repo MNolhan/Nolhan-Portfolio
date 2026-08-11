@@ -66,6 +66,9 @@ export default function Projects(){
                             description={project.description}
                         />
                     ))}
+                    {projects.filter((project) => filter === 'all' || project.type === filter).length === 0 && (
+                        <p className="projects__cards-message">Aucun projet disponible...</p>
+                    )}
                 </div>
                 
             </div>

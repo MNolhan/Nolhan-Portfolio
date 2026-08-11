@@ -13,13 +13,13 @@ router.post("/", async (req , res) => {
         );
 
         res.status(200);
-        res.json({ message: "Le nombre de visites a été incrémenté avec succès" });
+        res.json({ message: "Le nombre de reloads a été incrémenté avec succès" });
 
     } catch (error) {
 
         res.status(500);
-        console.error('Erreur lors de l\'incrémentation du nombre de visites :', error);
-        res.json({ message: "Erreur Serveur" });
+        console.error('Erreur lors de l\'incrémentation du nombre de reloads :', error);
+        res.json({ message: "Erreur Serveur lors de l'incrémentation du nombre de reloads" });
 
     }
 

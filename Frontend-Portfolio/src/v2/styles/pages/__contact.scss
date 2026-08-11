@@ -173,3 +173,40 @@ hr{
         }
     }
 }
+
+@media (max-width: $mobileScreen){
+    .contact{
+        width: 100%;
+        padding: 1rem 0;
+
+        &__header{
+            &-subtitle{
+                font-size: 1.5rem;
+            }
+        }
+
+        &__content{
+            &-text{
+                font-size: 0.75rem;
+                line-height: 20px;
+
+                &--small{
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 0.7rem;
+                }
+            }
+
+            &-email-title{
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    hr{
+        width: 75%;
+        height: 0;
+        border: 1px solid $textColor-faint;
+        margin: 0.5rem 0 1rem 0;
+    }
+}

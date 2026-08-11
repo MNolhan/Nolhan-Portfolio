@@ -16,6 +16,7 @@ import Carroursel from '../components/layouts/carroursel'
 import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
 import PagenotFound from '../components/layouts/pagenotfound'
 import ReloadTracker from '../components/analytics/ReloadTracker'
+import Banniere from '../components/layouts/banniere'
 
 export default function AppRouter() {
   return (
@@ -29,6 +30,7 @@ export default function AppRouter() {
           element={
             <>
               <Header />
+              <Banniere />
               <Home />
               <Carroursel />
               <Apropos />
