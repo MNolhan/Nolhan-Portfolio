@@ -57,6 +57,16 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+
+        &-message{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: $textColor-dim;
+            font-family: $font-family;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
     }
 }
 
