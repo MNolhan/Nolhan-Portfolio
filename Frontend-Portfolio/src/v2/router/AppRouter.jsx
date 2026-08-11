@@ -20,10 +20,6 @@ export default function AppRouter() {
     <BrowserRouter>
       <ScrollWatcher />
       <Loader />
-      <PublicOnlyRoute>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </PublicOnlyRoute>
       <Routes>
         <Route
           path="/"
@@ -42,8 +38,20 @@ export default function AppRouter() {
             </>
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login"
+          element={
+            <PublicOnlyRoute>
+              <Login />
+            </PublicOnlyRoute>
+          }
+        />
+        <Route path="/signup"
+          element={
+            <PublicOnlyRoute>
+              <Signup />
+            </PublicOnlyRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )
