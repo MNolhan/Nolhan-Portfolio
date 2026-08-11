@@ -54,7 +54,7 @@ export default function Carroursel() {
 
     // -- Stat Troll
 
-    const troll = reload / 5
+    const troll = Math.round(reload / 5);
 
     return (
         <div className="carrousel">
