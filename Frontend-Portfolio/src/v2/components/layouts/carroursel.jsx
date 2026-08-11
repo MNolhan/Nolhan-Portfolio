@@ -1,8 +1,22 @@
+import React from "react";
+import { useEffect, useState } from "react";
+
+const API_URL = import.meta.env.VITE_API_URL
+
 export default function Carroursel() {
+    const [visit, setVisit] = useState(null);
+
+    useEffect(() => {
+        fetch(`${API_URL}/ReadReload`)
+        .then((res) => res.json())
+        .then((data) => setVisit(data[0].nombre))
+        .catch(() => setVisit('ERROR'))
+    }, [])
+
     return (
         <div className="carrousel">
             <div className="carrousel__group">
-                <div className="carrousel__card image">Performance</div>
+                <div className="carrousel__card image">{visit}</div>
                 <p className="carrousel__separator">•</p>
                 <div className="carrousel__card">Responsive</div>
                 <p className="carrousel__separator">•</p>
@@ -14,7 +28,7 @@ export default function Carroursel() {
                 <p className="carrousel__separator">•</p>
             </div>
             <div aria-hidden className="carrousel__group">
-                <div className="carrousel__card image">Performance</div>
+                <div className="carrousel__card image">{visit}</div>
                 <p className="carrousel__separator">•</p>
                 <div className="carrousel__card">Responsive</div>
                 <p className="carrousel__separator">•</p>

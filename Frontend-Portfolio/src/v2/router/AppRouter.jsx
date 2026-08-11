@@ -15,12 +15,14 @@ import Signup from '../pages/signup'
 import Carroursel from '../components/layouts/carroursel'
 import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
 import PagenotFound from '../components/layouts/pagenotfound'
+import ReloadTracker from '../components/analytics/ReloadTracker'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <ScrollWatcher />
       <Loader />
+      <ReloadTracker />
       <Routes>
         <Route
           path="/"
