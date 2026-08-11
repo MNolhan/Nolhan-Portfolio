@@ -3,8 +3,8 @@ import mysql from "mysql2/promise";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import { configDotenv } from 'dotenv';
-import guest from "../../middlewares/guest.js";
 import pool from '../../infra/db.js';
+import blockIfAuthenticated from "../../middlewares/blockIfAuthenticated.js";
 
 configDotenv();
 
@@ -17,9 +17,8 @@ const userSchema = z.object({
     password : z.string().min(6),
 });
 
-router.post("/", guest, async (req, res) => {
+router.post("/", blockIfAuthenticated, async (req, res) => {
 
-    const data = req.body;
     let name, firstname, email, password;
 
     try {
@@ -36,7 +35,7 @@ router.post("/", guest, async (req, res) => {
 
         const [result] = await pool.query(
             "INSERT INTO users (name, firstname, email, password) VALUES (?, ?, ?, ?)",
-            [data.name, data.firstname, data.email, hashpassword]
+            [name, firstname, email, hashpassword]
         );
 
         res.status(201);

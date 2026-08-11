@@ -13,13 +13,16 @@ import Footer from '../components/layouts/footer'
 import Login from '../pages/login'
 import Signup from '../pages/signup'
 import Carroursel from '../components/layouts/carroursel'
+import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
+import PagenotFound from '../components/layouts/pagenotfound'
+import ReloadTracker from '../components/analytics/ReloadTracker'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <ScrollWatcher />
       <Loader />
-
+      <ReloadTracker />
       <Routes>
         <Route
           path="/"
@@ -38,8 +41,21 @@ export default function AppRouter() {
             </>
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login"
+          element={
+            <PublicOnlyRoute>
+              <Login />
+            </PublicOnlyRoute>
+          }
+        />
+        <Route path="/signup"
+          element={
+            <PublicOnlyRoute>
+              <Signup />
+            </PublicOnlyRoute>
+          }
+        />
+        <Route path="/*" element={<PagenotFound />} />
       </Routes>
     </BrowserRouter>
   )

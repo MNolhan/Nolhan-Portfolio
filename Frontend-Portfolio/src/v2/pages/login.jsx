@@ -13,10 +13,15 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        const token = localStorage.getItem('token');
+
         try {
         const response = await fetch(`${API_URL}/Login`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                ...(token && { Authorization: `Bearer ${token}` })
+             },
             body: JSON.stringify({ email, password }),
         })
 

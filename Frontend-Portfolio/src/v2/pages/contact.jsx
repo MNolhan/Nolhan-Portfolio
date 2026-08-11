@@ -1,6 +1,30 @@
+import Notification from "../components/ui/notification";
+import { useState } from "react";
+
 export default function Contact(){
+    const [showNotification, setShowNotification] = useState(false);
+
+    const copyToClipboard = async (text) => {
+        await navigator.clipboard.writeText(text);
+
+        setShowNotification(true);
+
+        setTimeout(() => {
+            setShowNotification(false);
+        }, 5000);
+    };
+
     return(
         <div className="container--small" id="contact">
+
+            <Notification
+                titlep1="Adresse Email "
+                titlep2="Copiée"
+                titlep3=" !"
+                message="Vous pouvez maintenant coller l'adresse email dans votre client de messagerie."
+                show={showNotification}
+            />
+
             <div className="contact">
 
                 <div className="contact__header">
@@ -10,7 +34,9 @@ export default function Contact(){
 
                 <div className="contact__content">
                     <p className="contact__content-text">Je suis toujours ouvert à discuter de nouveaux projets, <br></br> d'idées créatives ou d'opportunités de collaboration.</p>
-                    <h2 className="contact__content-email">mrt.nolhan@gmail.com</h2>
+                    <button id="showNotification" className="contact__content-email" onClick={() => copyToClipboard("mrt.nolhan@gmail.com")}>
+                        <h2 className="contact__content-email-title">mrt.nolhan@gmail.com</h2>
+                    </button>
                     <hr></hr>
                     <p className="contact__content-text--small">Tours, France · Disponible pour missions freelance</p>
                 </div>

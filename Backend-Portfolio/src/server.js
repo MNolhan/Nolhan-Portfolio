@@ -14,6 +14,8 @@ import DeleteProject from './routes/projects/DeleteProject.js';
 import CountProject from './routes/projects/CountProject.js';
 import CountStack from './routes/stacks/CountStack.js';
 import ReadStack from './routes/stacks/ReadStack.js';
+import IncrementReload from './routes/analytics/IncrementReload.js';
+import ReadReload from './routes/analytics/ReadReload.js';
 
 dotenv.config();
 const app = express();
@@ -50,6 +52,8 @@ app.use('/DeleteProject', DeleteProject);
 app.use('/CountProject', CountProject);
 app.use('/CountStack', CountStack);
 app.use('/ReadStack', ReadStack);
+app.use('/IncrementReload', IncrementReload);
+app.use('/ReadReload', ReadReload);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);

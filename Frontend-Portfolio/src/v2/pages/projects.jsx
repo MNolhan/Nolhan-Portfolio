@@ -4,6 +4,9 @@ import CardProject from "../components/ui/card_project";
 const API_URL = import.meta.env.VITE_API_URL
 
 export default function Projects(){
+
+    // Lire les Projets
+
     const [projects, setProjects] = useState([])
     const [message, setMessage] = useState('')
 
@@ -26,6 +29,14 @@ export default function Projects(){
 
         fetchProjects()
     }, [])
+
+    // Filtrer les Projets
+
+    const [filter, setFilter] = useState('all')
+
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter)
+    }
     
     return(
         <div className="container--small" id="projets">
@@ -36,8 +47,16 @@ export default function Projects(){
                     <p className="projects__header-subtitle">Une sélection de mes <span className="projects__header-subtitle--red">réalisations</span></p>
                 </div>
 
+                <div className="projects__filter">
+                    <button className={filter === 'all' ? 'active' : ''} onClick={() => handleFilterChange('all')}>Tous</button>
+                    <button className={filter === 'Développement Web' ? 'active' : ''} onClick={() => handleFilterChange('Développement Web')}>Web</button>
+                    <button className={filter === 'Développement Application' ? 'active' : ''} onClick={() => handleFilterChange('Développement Application')}>Mobile</button>
+                </div>
+
                 <div className="projects__cards">
-                    {projects.map((project) => (
+                    {projects
+                    .filter((project) => filter === 'all' || project.type === filter)
+                    .map((project) => (
                         <CardProject
                             key={project.id}
                             github_url={project.github_url}

@@ -21,6 +21,8 @@
 @use './pages/__login' as *;
 @use './pages/__signup' as *;
 @use './layouts/__carrousel' as *;
+@use './layouts/__pagenotfound' as *;
+@use './components/__notification' as *;
 
 *,
 *::before,
