@@ -24,10 +24,10 @@ export default function Home() {
                 <div className="home__left">
                     <p className="home__left-pub">
                         <span className="home__left-pub--dot"></span>
-                        Disponible pour de nouvelles missions {date}
+                        Disponible - Fuseau Horaires : UTC+2 (France)
                     </p>
                     <h1 className="home__left-title">{message}, je suis <br></br> Nolhan<span className="home__left-title--red">.</span></h1>
-                    <h2 className="home__left-subtitle">Développeur <span className="home__left-subtitle--red">Full-Stack</span></h2>
+                    <h2 className="home__left-subtitle">Développeur Junior <span className="home__left-subtitle--red">Full-Stack</span></h2>
                     <p className="home__left-description">
                         Je conçois des applications web modernes, performantes et bien 
                         architecturées - du premier trait d'interface jusqu'à la mise en 
