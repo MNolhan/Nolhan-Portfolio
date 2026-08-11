@@ -14,6 +14,7 @@ import Login from '../pages/login'
 import Signup from '../pages/signup'
 import Carroursel from '../components/layouts/carroursel'
 import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
+import PagenotFound from '../components/layouts/pagenotfound'
 
 export default function AppRouter() {
   return (
@@ -52,6 +53,7 @@ export default function AppRouter() {
             </PublicOnlyRoute>
           }
         />
+        <Route path="/*" element={<PagenotFound />} />
       </Routes>
     </BrowserRouter>
   )
