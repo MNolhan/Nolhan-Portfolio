@@ -58,7 +58,7 @@ export default function AppRouter() {
             </PublicOnlyRoute>
           }
         />
-        <Route path="/projects/:projectId" element={<ProjectDetails />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/*" element={<PagenotFound />} />
       </Routes>
     </BrowserRouter>

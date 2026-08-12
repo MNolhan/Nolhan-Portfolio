@@ -33,7 +33,6 @@ const idSchema = z.object({
 });
 
 router.get("/:id", async (req , res) => {
-
     try {
 
         const parsedId = idSchema.parse({ id: Number(req.params.id) });
