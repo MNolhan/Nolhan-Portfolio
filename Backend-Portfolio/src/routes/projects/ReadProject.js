@@ -35,10 +35,11 @@ const idSchema = z.object({
 router.get("/:id", async (req , res) => {
 
     const { id } = req.params;
+    
 
     try {
 
-        const parsedId = idSchema.parse({ id });
+        const parsedId = idSchema.parse({ id: Number(id) });
 
         const [rows] = await pool.execute(
             `Select * from projects where id = ?`, [parsedId.id]
