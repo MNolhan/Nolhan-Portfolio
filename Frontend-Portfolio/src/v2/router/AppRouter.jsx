@@ -17,6 +17,7 @@ import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
 import PagenotFound from '../components/layouts/pagenotfound'
 import ReloadTracker from '../components/analytics/ReloadTracker'
 import Banniere from '../components/layouts/banniere'
+import ProjectDetails from '../pages/projects_details'
 
 export default function AppRouter() {
   return (
@@ -57,6 +58,7 @@ export default function AppRouter() {
             </PublicOnlyRoute>
           }
         />
+        <Route path="/projects/:projectId" element={<ProjectDetails />} />
         <Route path="/*" element={<PagenotFound />} />
       </Routes>
     </BrowserRouter>
