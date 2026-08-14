@@ -58,6 +58,36 @@
     @media (max-width: $mobileScreen)  {
         padding: 3rem 20px;
     }
+
+    &-2{
+        width: 100%;
+        max-width: $DesktopScreen - 100px;
+        margin: 0 auto;
+        padding: 1rem 50px;
+
+        @media (max-width: $wideScreen)  {
+            padding: 2rem 0px;
+        }
+
+        @media (max-width: $DesktopScreen)  {
+            max-width: $LaptopScreen;
+            padding: 2rem 50px;
+        }
+
+        @media (max-width: $LaptopScreen)  {
+            max-width: $tabletScreen;
+            padding: 2rem 50px;
+        }
+
+        @media (max-width: $tabletScreen)  {
+            max-width: $mobileScreen;
+            padding: 1.5rem 24px;
+        }
+
+        @media (max-width: $mobileScreen)  {
+            padding: 1rem 20px;
+        }
+    }
 }
 
 .navcontainer {
@@ -93,6 +123,31 @@
 }
 
 .authcontainer {
+    width: 100%;
+    max-width: $DesktopScreen + 575px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: $wideScreen)  {
+        padding: 0 50px;
+    }
+
+    @media (max-width: $LaptopScreen)  {
+        max-width: $tabletScreen;
+        padding: 0 50px;
+    }
+
+    @media (max-width: $tabletScreen)  {
+        max-width: $mobileScreen;
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobileScreen)  {
+        padding: 0 20px;
+    }
+}
+
+.detailsprojectcontainer {
     width: 100%;
     max-width: $DesktopScreen + 575px;
     margin: 0 auto;
