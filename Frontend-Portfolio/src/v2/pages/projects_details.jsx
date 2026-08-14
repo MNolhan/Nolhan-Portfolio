@@ -81,7 +81,7 @@ export default function ProjectDetails() {
 
                         <p className="project-details__pub">
                             <span className="project-details__pub--dot"></span>
-                            Disponible - Fuseau Horaires : UTC+2 (France)
+                            Disponible
                         </p>
 
                         <h1 className="project-details__content-title">{project.name} <span className="project-details__content-title--red">- {project.type}</span></h1>

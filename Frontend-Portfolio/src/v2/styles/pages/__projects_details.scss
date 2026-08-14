@@ -1,19 +1,19 @@
 @use '../abstratcs/_variables' as *;
 
-hr{
+hr {
     border: none;
     height: 1px;
     background-color: $surface-2;
     margin: 2rem 0;
 }
 
-.project-details{
+.project-details {
 
-    &__header{ 
+    &__header {
         display: flex;
         font-family: $font-family;
 
-        &-nav{
+        &-nav {
             display: flex;
             gap: 0.5rem;
             align-items: center;
@@ -23,27 +23,27 @@ hr{
             padding: 1.5rem 0;
             transition: all 0.3s ease-in-out;
 
-            &:hover{
+            &:hover {
                 color: $textred-soft;
                 cursor: pointer;
             }
         }
     }
 
-    &__pub{
+    &__pub {
         width: fit-content;
         display: flex;
         align-items: center;
         gap: 9px;
         border: 1px solid $surface-2;
         border-radius: 25px;
-        padding: 0.65rem 1rem 0.65rem 1rem;
+        padding: 0.65rem 1rem;
         font-size: 0.875rem;
         font-family: $font-family;
         color: $textColor-dim;
-        margin: 1rem 0 0 0;
+        margin: 1rem 0 0;
 
-        &--dot{
+        &--dot {
             width: 7px;
             height: 7px;
             border-radius: 50%;
@@ -53,30 +53,32 @@ hr{
         }
     }
 
-    &__content{
+    &__content {
         font-family: $font-family;
-        color : $textColor-dim;
+        color: $textColor-dim;
         display: flex;
         flex-direction: column;
         gap: 1rem;
         padding: 1rem 0;
 
-        &-bouton{
+        &-bouton {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             gap: 1rem;
             padding: 1rem 0;
+            flex-wrap: wrap;
         }
 
-        &-title{
+        &-title {
             margin: 0;
             padding: 0;
             font-size: 3.5rem;
             font-weight: 800;
             color: $textColor;
+            line-height: 1.1;
 
-            &--red{
+            &--red {
                 font-family: $font-family-secondary;
                 font-style: italic;
                 color: $textred-soft;
@@ -84,7 +86,7 @@ hr{
             }
         }
 
-        &-description{
+        &-description {
             font-size: 1.05rem;
             max-width: 600px;
             line-height: 1.5;
@@ -92,20 +94,21 @@ hr{
             margin: 0;
         }
 
-        &-technologies{
+        &-technologies {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
 
-            &--item{
+            &--item {
                 background-color: $bg-soft;
                 color: $textColor-dim;
                 padding: 0.5rem 1rem;
                 border-radius: 20px;
                 font-size: 0.9rem;
                 border: 1px solid $surface-2;
+                transition: all 0.3s ease-in-out;
 
-                &:hover{
+                &:hover {
                     background-color: $surface-2;
                     color: $textColor;
                     cursor: pointer;
@@ -113,7 +116,7 @@ hr{
             }
         }
 
-        &-details{
+        &-details {
             display: flex;
             justify-content: space-between;
             text-align: center;
@@ -121,40 +124,44 @@ hr{
             border: 1px solid $surface-2;
             border-radius: 16px;
             margin: 2rem 0;
+            overflow: hidden;
 
-            &--item{
+            &--item {
                 padding: 1rem;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 border-right: 1px solid $surface-2;
 
-                &--last{
+                &--last {
                     border-right: none;
                 }
 
-                &-title{
+                &-title {
                     font-size: 0.875rem;
                     color: $textColor-dim;
-                    margin: 0 0 0.5rem 0;
+                    margin: 0 0 0.5rem;
                 }
 
-                &-text{
+                &-text {
                     font-size: 1.125rem;
                     color: $textColor;
                     margin: 0;
+                    word-break: break-word;
                 }
             }
         }
 
-        &-readme{
+        &-readme {
             font-family: $font-family;
             color: $textColor-dim;
             line-height: 1.5;
             margin: 2rem 0;
 
-            h1, h2, h3{
-                color : $textColor;
+            h1,
+            h2,
+            h3 {
+                color: $textColor;
             }
 
             pre {
@@ -162,20 +169,23 @@ hr{
                 padding: 1rem;
                 border-radius: 8px;
                 border: 1px solid rgba($textColor-faint, 0.2);
+                overflow-x: auto;
+                max-width: 100%;
             }
 
-            &-header{
+            &-header {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
 
-                &--title{
+                &--title {
                     text-transform: uppercase;
                     font-size: 1.5rem;
                     margin: 0 1rem 0 0;
+                    white-space: nowrap;
                 }
 
-                &--hr{
+                &--hr {
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -183,36 +193,41 @@ hr{
                 }
             }
 
-            &-content{
+            &-content {
                 background-color: $bg-soft;
                 border: 1px solid $surface-2;
                 border-radius: 16px;
                 padding: 2rem 3rem;
+                overflow: hidden;
             }
         }
     }
 
-    &-image{
+    &-image {
         border: 1px solid $surface-2;
         border-radius: 16px;
         overflow: hidden;
         height: 600px;
-        background: linear-gradient(120deg, rgba($textred, 0.2), rgba($bg-soft, 0.2));
+        background: linear-gradient(
+            120deg,
+            rgba($textred, 0.2),
+            rgba($bg-soft, 0.2)
+        );
 
-        &__image{
+        &__image {
             width: 100%;
             height: 95%;
             object-fit: cover;
         }
 
-        &__headercard{
+        &__headercard {
             display: flex;
             gap: 6px;
             padding: 12px 16px;
             background: $surface-2;
             border-bottom: 1px solid $surface-2;
 
-            &--dot{
+            &--dot {
                 width: 9px;
                 height: 9px;
                 border-radius: 50%;
@@ -221,13 +236,244 @@ hr{
         }
     }
 
-    &-readme--header{
+    &-readme--header {
         display: flex;
         align-items: center;
         gap: 0.5rem;
 
-        &-hr{
+        &-hr {
             width: 10%;
+        }
+    }
+}
+
+@media (max-width: $LaptopScreen) {
+
+    .project-details {
+
+        &__content {
+
+            &-title {
+                font-size: 2.75rem;
+            }
+
+            &-description {
+                font-size: 1rem;
+            }
+
+            &-readme {
+
+                &-content {
+                    padding: 1.75rem 2rem;
+                }
+            }
+        }
+
+        &-image {
+            height: 350px;
+        }
+    }
+}
+
+@media (max-width: $tabletScreen) {
+
+    .project-details {
+
+        &__header {
+
+            &-nav {
+                padding: 1rem 0;
+            }
+        }
+
+        &__pub {
+            font-size: 0.8rem;
+            padding: 0.55rem 0.85rem;
+        }
+
+        &__content {
+
+            padding: 0.75rem 0;
+
+            &-title {
+                font-size: 2.25rem;
+            }
+
+            &-description {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            &-details {
+                margin: 1.5rem 0;
+
+                &--item {
+                    padding: 0.85rem 0.5rem;
+
+                    &-title {
+                        font-size: 0.75rem;
+                    }
+
+                    &-text {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &-readme {
+
+                &-header {
+
+                    &--title {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                &-content {
+                    padding: 1.5rem;
+                }
+            }
+        }
+
+        &-image {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $mobileScreen) {
+
+    hr {
+        margin: 1.25rem 0;
+    }
+
+    .project-details {
+
+        &__header {
+
+            &-nav {
+                padding: 0.75rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        &__pub {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+        }
+
+        &__content {
+
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+
+            &-bouton {
+                gap: 0.75rem;
+                padding: 0.75rem 0;
+
+                > * {
+                    max-width: 100%;
+                }
+            }
+
+            &-title {
+                font-size: 2rem;
+                line-height: 1.15;
+                overflow-wrap: break-word;
+            }
+
+            &-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            &-technologies {
+                gap: 0.4rem;
+
+                &--item {
+                    padding: 0.4rem 0.75rem;
+                    font-size: 0.8rem;
+                }
+            }
+
+            &-details {
+                flex-direction: column;
+                margin: 1.25rem 0;
+                border-radius: 12px;
+
+                &--item {
+                    width: 100%;
+                    padding: 0.85rem;
+                    border-right: none;
+                    border-bottom: 1px solid $surface-2;
+
+                    &:last-child,
+                    &--last {
+                        border-bottom: none;
+                    }
+
+                    &-title {
+                        font-size: 0.75rem;
+                        margin-bottom: 0.25rem;
+                    }
+
+                    &-text {
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+
+            &-readme {
+                margin: 1.25rem 0;
+
+                &-header {
+                    gap: 0.4rem;
+
+                    &--title {
+                        font-size: 1.1rem;
+                        margin-right: 0.5rem;
+                    }
+
+                    &--hr {
+                        width: 100%;
+                    }
+                }
+
+                &-content {
+                    padding: 1.25rem;
+                    border-radius: 12px;
+
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    h2 {
+                        font-size: 1.25rem;
+                    }
+
+                    h3 {
+                        font-size: 1.1rem;
+                    }
+
+                    pre {
+                        padding: 0.75rem;
+                        font-size: 0.8rem;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+
+        &-image {
+            display: none;
+        }
+
+        &-readme--header {
+
+            &-hr {
+                width: 100%;
+            }
         }
     }
 }
