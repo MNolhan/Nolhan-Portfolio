@@ -12,6 +12,8 @@
     transition: all 0.3s ease;
 
     &-primary {
+        display: flex;
+        justify-content: center;
         background-color: $textred;
         color: $textColor;
         border: 1px solid $textred;

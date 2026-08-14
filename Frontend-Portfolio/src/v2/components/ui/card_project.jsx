@@ -3,7 +3,7 @@ import CardProjectComponent from "./card_project_component";
 import StarsIcon from "../Icon/stars-icons";
 import { useEffect, useState } from "react";
 
-export default function CardProject({ type, title, description, live_url, github_url,}){
+export default function CardProject({ id, type, title, description, live_url, github_url,}){
 
     const NomUtilisateur_Github = github_url.split("/")[3];
     const NomProjet_Github = github_url.split("/")[4];
@@ -43,6 +43,7 @@ export default function CardProject({ type, title, description, live_url, github
                 </p>
             </div>
 
+
             <p className="CardProject__description">{description}</p>
 
             <div className="CardProject__buttons">
@@ -54,8 +55,8 @@ export default function CardProject({ type, title, description, live_url, github
                 ) : null}
 
                 {github_url ? (
-                    <Bouton variant="secondary" as="a" href={github_url}>
-                        Github
+                    <Bouton variant="secondary" as="a" href={`/projects/${id}`}>
+                        Détails
                     </Bouton>
                 ) : null}
 

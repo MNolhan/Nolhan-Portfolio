@@ -24,6 +24,8 @@
 @use './layouts/__pagenotfound' as *;
 @use './components/__notification' as *;
 @use './layouts/__banniere' as *;
+@use './components/__card_project_component' as *;
+@use './pages/__projects_details' as *;
 
 *,
 *::before,

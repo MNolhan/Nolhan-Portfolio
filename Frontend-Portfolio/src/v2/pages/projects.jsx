@@ -17,9 +17,9 @@ export default function Projects(){
             const data = await response.json()
 
             if (response.ok) {
-            setProjects(data)
+                setProjects(data)
             } else {
-            setMessage('Erreur lors du chargement des projets')
+                setMessage('Erreur lors du chargement des projets')
             }
         } catch (error) {
             console.error(error)
@@ -58,7 +58,7 @@ export default function Projects(){
                     .filter((project) => filter === 'all' || project.type === filter)
                     .map((project) => (
                         <CardProject
-                            key={project.id}
+                            id={project.id}
                             github_url={project.github_url}
                             live_url={project.live_url}
                             type={project.type}
