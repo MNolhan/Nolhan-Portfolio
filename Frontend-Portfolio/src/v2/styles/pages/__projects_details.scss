@@ -208,7 +208,7 @@ hr {
         border: 1px solid $surface-2;
         border-radius: 16px;
         overflow: hidden;
-        height: 600px;
+        height: 650px;
         background: linear-gradient(
             120deg,
             rgba($textred, 0.2),
@@ -248,6 +248,36 @@ hr {
     }
 }
 
+@media (max-width: $wideScreen) {
+
+    .project-details {
+
+        &__content {
+
+            &-title {
+                font-size: 3.25rem;
+            }
+
+            &-description {
+                font-size: 1rem;
+            }
+
+            &-readme {
+
+                &-content {
+                    padding: 2rem 2.5rem;
+                }
+            }
+        }
+
+        &-image {
+            &__image {
+                height: 100%;
+            }
+        }
+    }
+}
+
 @media (max-width: $DesktopScreen) {
 
     .project-details {
@@ -271,7 +301,7 @@ hr {
         }
 
         &-image {
-            height: 450px;
+            height: 520px;
         }
     }
 }
