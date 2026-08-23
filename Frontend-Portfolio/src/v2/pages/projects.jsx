@@ -44,7 +44,7 @@ export default function Projects(){
 
                 <div className="projects__header">
                     <span className="projects__header-title">- Projets</span>
-                    <p className="projects__header-subtitle">Une sélection de mes <span className="projects__header-subtitle--red">réalisations</span></p>
+                    <p className="projects__header-subtitle">Une sélection de mes <span className="projects__header-subtitle--red">réalisations</span>.</p>
                 </div>
 
                 <div className="projects__filter">
