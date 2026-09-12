@@ -16,7 +16,7 @@ export default function Login() {
         const token = localStorage.getItem('token');
 
         try {
-        const response = await fetch(`${API_URL}/Login`, {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',

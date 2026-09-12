@@ -10,7 +10,9 @@ export default function Carroursel() {
     const [reload, setReload] = useState(null);
 
     useEffect(() => {
-        fetch(`${API_URL}/ReadReload`)
+        fetch(`${API_URL}/reload`, {
+            method: 'GET',
+        })
         .then((res) => res.json())
         .then((data) => setReload(data[0].nombre))
         .catch(() => setReload('ERROR'))

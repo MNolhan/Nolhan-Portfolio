@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_CAPTCHA_PUBLIC_KEY
 
 export default function Signup() {
     const navigate = useNavigate()
@@ -19,13 +18,13 @@ export default function Signup() {
         const token = localStorage.getItem('token');
 
         try {
-        const response = await fetch(`${API_URL}/CreateUser`, {
+        const response = await fetch(`${API_URL}/users`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
                 ...(token && { Authorization: `Bearer ${token}` })
              },
-            body: JSON.stringify({ name, firstname, email, password, captchaValue }),
+            body: JSON.stringify({ name, firstname, email, password }),
         })
 
         const data = await response.json()

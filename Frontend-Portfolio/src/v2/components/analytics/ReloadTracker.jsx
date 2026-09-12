@@ -5,7 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL
 export default function ReloadTracker() {
 
     useEffect(() => {
-        fetch(`${API_URL}/IncrementReload`, {
+        fetch(`${API_URL}/reload`, {
             method: "POST",
         })
         .then((res) => res.json())
