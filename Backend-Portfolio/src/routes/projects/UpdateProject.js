@@ -1,10 +1,6 @@
 import express from "express";
-import mysql from "mysql2/promise";
 import { z } from "zod";
-import { configDotenv } from "dotenv";
 import pool from '../../infra/db.js';
-
-configDotenv();
 
 const router = express.Router();
 
@@ -33,7 +29,7 @@ router.put("/", async (req, res) => {
 
     try {
         const [rows] = await pool.query(
-            `SELECT * FROM projects WHERE name = ?`, name
+            `SELECT * FROM projects WHERE name = ?`, [name]
         );
 
         if (rows.length === 0) {
@@ -78,7 +74,7 @@ router.put("/", async (req, res) => {
 
     } catch (error) {
         res.status(500);
-        res.json({ message: error.message });
+        res.json({ message: "Erreur Serveur lors de la mise à jour du projet" });
     }
 });
 

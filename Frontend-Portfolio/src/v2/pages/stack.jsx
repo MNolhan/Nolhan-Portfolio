@@ -8,7 +8,9 @@ export default function Stack(){
     const [Stack, setStack] = useState([])
 
     useEffect(() => {
-        fetch(`${API_URL}/ReadStack`)
+        fetch(`${API_URL}/stacks`, {
+            method: 'GET',
+        })
         .then((res) => res.json())
         .then((data) => setStack(data))
         .catch(() => setStack([]))

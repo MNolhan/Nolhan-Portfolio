@@ -11,7 +11,9 @@ export default function apropos() {
     let projets
 
     useEffect(() => {
-        fetch(`${API_URL}/CountProject`)
+        fetch(`${API_URL}/projects/count`, {
+            method: 'GET',
+        })
         .then((res) => res.json())
         .then((data) => setCount(data.count))
         .catch(() => setCount('ERROR'))
@@ -29,7 +31,9 @@ export default function apropos() {
     let stacks
 
     useEffect(() => {
-        fetch(`${API_URL}/CountStack`)
+        fetch(`${API_URL}/stacks/count`, {
+            method: 'GET',
+        })
         .then((res) => res.json())
         .then((data) => setCountStack(data.count))
         .catch(() => setCountStack('ERROR'))

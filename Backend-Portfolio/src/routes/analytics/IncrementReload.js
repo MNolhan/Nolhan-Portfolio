@@ -1,13 +1,12 @@
 import express from "express";
-import mysql from "mysql2/promise";
 import pool from '../../infra/db.js';
+import rateLimiter from '../../middlewares/RateLimiting.js';
 
 const router = express.Router();
 
-router.post("/", async (req , res) => {
+router.post("/", rateLimiter, async (req , res) => {
 
     try {
-
         const [rows] = await pool.execute(
             `UPDATE visits SET nombre = nombre + 1 WHERE id = 1`
         );
@@ -16,11 +15,9 @@ router.post("/", async (req , res) => {
         res.json({ message: "Le nombre de reloads a été incrémenté avec succès" });
 
     } catch (error) {
-
         res.status(500);
-        console.error('Erreur lors de l\'incrémentation du nombre de reloads :', error);
         res.json({ message: "Erreur Serveur lors de l'incrémentation du nombre de reloads" });
-
+        return;
     }
 
 });

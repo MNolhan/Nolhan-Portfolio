@@ -23,7 +23,9 @@ export default function ProjectDetails() {
 
         const fetchProjectDetails = async () => {
             try {
-                const response = await fetch(`${API_URL}/ReadProject/${id}`);
+                const response = await fetch(`${API_URL}/projects/${id}`, {
+                    method: 'GET',
+                });
                 const data = await response.json();
                 if (response.ok) {
                     setProject(data);

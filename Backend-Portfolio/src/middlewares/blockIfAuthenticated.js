@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
-import { configDotenv } from 'dotenv';
+import dotenv from 'dotenv';
 
-configDotenv();
+dotenv.config();
 
-const SecretKey = process.env.jwtKey;
+const SecretKey = process.env.JWTKEY;
 
 export default function blockIfAuthenticated(req, res, next) {
 

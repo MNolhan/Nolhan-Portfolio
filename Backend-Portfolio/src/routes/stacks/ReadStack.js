@@ -1,10 +1,5 @@
 import express from "express";
-import mysql from "mysql2/promise";
-import { z } from "zod";
-import { configDotenv } from "dotenv";
 import pool from '../../infra/db.js';
-
-configDotenv();
 
 const router = express.Router();
 
