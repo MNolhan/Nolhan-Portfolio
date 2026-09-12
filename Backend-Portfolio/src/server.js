@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 //Import Routes
@@ -20,40 +21,35 @@ import ReadReload from './routes/analytics/ReadReload.js';
 dotenv.config();
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', 'https://www.nolhandev.fr', 'https://nolhandev.fr'];
-
-app.use((req, res, next) => {
-    const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);
-    }
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(204);
-    }
-
-    next();
-});
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://www.nolhandev.fr', 'https://nolhandev.fr'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.use(express.json());
 
-//Routes
-app.use('/CreateUser', CreateUser);
-app.use('/Users', ReadUser);
-app.use('/UpdateUser', UpdateUser);
-app.use('/DeleteUser', DeleteUser);
-app.use('/Login', LoginUser);
-app.use('/CreateProject', CreateProject);
-app.use('/ReadProject', ReadProject);
-app.use('/UpdateProject', UpdateProject);
-app.use('/DeleteProject', DeleteProject);
-app.use('/CountProject', CountProject);
-app.use('/CountStack', CountStack);
-app.use('/ReadStack', ReadStack);
-app.use('/IncrementReload', IncrementReload);
-app.use('/ReadReload', ReadReload);
+//Routes Users
+app.use('/users', CreateUser);
+app.use('/users', ReadUser);
+app.use('/users', UpdateUser);
+app.use('/users', DeleteUser);
+app.use('/auth/login', LoginUser);
+
+//Routes Projects
+app.use('/projects/count', CountProject);
+app.use('/projects', CreateProject);
+app.use('/projects', ReadProject);
+app.use('/projects', UpdateProject);
+app.use('/projects', DeleteProject);
+
+//Routes Stacks
+app.use('/stacks/count', CountStack);
+app.use('/stacks', ReadStack);
+
+//Routes Analytics
+app.use('/reload', IncrementReload);
+app.use('/reload', ReadReload);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);

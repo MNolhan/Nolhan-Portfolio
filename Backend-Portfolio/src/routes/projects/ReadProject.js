@@ -1,10 +1,6 @@
 import express from "express";
-import mysql from "mysql2/promise";
 import { z } from "zod";
-import { configDotenv } from "dotenv";
 import pool from '../../infra/db.js';
-
-configDotenv();
 
 const router = express.Router();
 
@@ -22,7 +18,7 @@ router.get("/", async (req , res) => {
     } catch (error) {
 
         res.status(500);
-        res.json({ message : error.message });
+        res.json({ message : "Erreur Serveur lors de la lecture des projets" });
 
     }
 
@@ -52,7 +48,7 @@ router.get("/:id", async (req , res) => {
 
     } catch (error) {
         res.status(400);
-        res.json({ message: error.message });
+        res.json({ message: "Erreur Serveur lors de la lecture du projet" });
     }
 });
 

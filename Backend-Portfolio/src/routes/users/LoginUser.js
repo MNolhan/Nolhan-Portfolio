@@ -1,16 +1,15 @@
 import express from "express";
-import mysql from "mysql2/promise";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { configDotenv } from 'dotenv';
 import rateLimiter from "../../middlewares/RateLimiting.js";
 import pool from '../../infra/db.js';
 import blockIfAuthenticated from "../../middlewares/blockIfAuthenticated.js";
+import dotenv from 'dotenv';
 
-configDotenv();
+dotenv.config();
 
-const SecretKey = process.env.jwtKey;
+const SecretKey = process.env.JWTKEY;
 const router = express.Router();
 
 const PostSchema = z.object({
@@ -66,7 +65,7 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
     } catch (error) {
 
         res.status(500);
-        res.json({ message: error.message });
+        res.json({ message: "Erreur Serveur lors de la connexion" });
 
     }
 });

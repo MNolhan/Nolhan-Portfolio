@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
-import "dotenv/config";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default function auth(req, res, next) {
 
@@ -8,7 +10,7 @@ export default function auth(req, res, next) {
         const token = authHeader.slice(7);
 
         try {
-            const payload = jwt.verify(token, process.env.jwtKey);
+            const payload = jwt.verify(token, process.env.JWTKEY);
             req.user = payload;
             next();
 

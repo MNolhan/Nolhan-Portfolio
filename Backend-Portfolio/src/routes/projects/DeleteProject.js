@@ -1,10 +1,6 @@
 import express from "express";
-import mysql from "mysql2/promise";
 import { z } from "zod";
-import { configDotenv } from 'dotenv';
 import pool from '../../infra/db.js';
-
-configDotenv();
 
 const router = express.Router();
 
@@ -18,7 +14,8 @@ router.delete("/",  async (req, res) => {
     let name ;
 
     try {
-        ({name} = projectSchema.parse(req.body));
+        ({name} = projectSchema.parse(data));
+
     } catch (error) {
         res.status(400);
         res.json({ message: "Données invalides" });
@@ -26,9 +23,8 @@ router.delete("/",  async (req, res) => {
     }
 
     try {
-
         const [rows] = await pool.query(
-            `SELECT * FROM projects WHERE name = ?`, name
+            `SELECT * FROM projects WHERE name = ?`, [name]
         );
 
         if (rows.length === 0) {
@@ -38,15 +34,15 @@ router.delete("/",  async (req, res) => {
         }
 
         await pool.query(
-        `DELETE FROM projects WHERE name = ?`, name
+        `DELETE FROM projects WHERE name = ?`, [name]
         );
 
-    res.status(201);
-    res.json({ message : "Projet '" + data.name + "' Supprimé avec succès"});
+        res.status(204).send();
 
     } catch (error) {
         res.status(500);
-        res.json({ message : error.message });
+        res.json({ message : "Erreur Serveur lors de la suppression du projet" });
+        return;
     }
 });
 
