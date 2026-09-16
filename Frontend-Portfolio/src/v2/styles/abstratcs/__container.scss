@@ -4,15 +4,15 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 7rem 50px 5rem 50px;
+    padding: 7rem 50px $space-4xl 50px;
 
     @media (max-width: $wideScreen)  {
-        padding: 5rem 0px;
+        padding: $space-4xl 0px;
     }
 
     @media (max-width: $DesktopScreen)  {
         max-width: $LaptopScreen;
-        padding: 4rem 50px;
+        padding: $space-3xl 50px;
     }
 
     @media (max-width: $LaptopScreen)  {
@@ -22,11 +22,11 @@
 
     @media (max-width: $tabletScreen)  {
         max-width: $mobileScreen;
-        padding: 3rem 24px;
+        padding: $space-2xl 24px;
     }
 
     @media (max-width: $mobileScreen)  {
-        padding: 2rem 20px;
+        padding: $space-xl 20px;
     }
 }
 
@@ -34,15 +34,15 @@
     width: 100%;
     max-width: $DesktopScreen - 100px;
     margin: 0 auto;
-    padding: 5rem 50px;
+    padding: $space-4xl 50px;
 
     @media (max-width: $wideScreen)  {
-        padding: 5rem 0px;
+        padding: $space-4xl 0px;
     }
 
     @media (max-width: $DesktopScreen)  {
         max-width: $LaptopScreen;
-        padding: 4rem 50px;
+        padding: $space-3xl 50px;
     }
 
     @media (max-width: $LaptopScreen)  {
@@ -56,36 +56,36 @@
     }
 
     @media (max-width: $mobileScreen)  {
-        padding: 3rem 20px;
+        padding: $space-2xl 20px;
     }
 
     &-2{
         width: 100%;
         max-width: $DesktopScreen - 100px;
         margin: 0 auto;
-        padding: 1rem 50px;
+        padding: $space-md 50px;
 
         @media (max-width: $wideScreen)  {
-            padding: 2rem 0px;
+            padding: $space-xl 0px;
         }
 
         @media (max-width: $DesktopScreen)  {
             max-width: $LaptopScreen;
-            padding: 2rem 50px;
+            padding: $space-xl 50px;
         }
 
         @media (max-width: $LaptopScreen)  {
             max-width: $tabletScreen;
-            padding: 2rem 50px;
+            padding: $space-xl 50px;
         }
 
         @media (max-width: $tabletScreen)  {
             max-width: $mobileScreen;
-            padding: 1.5rem 24px;
+            padding: $space-lg 24px;
         }
 
         @media (max-width: $mobileScreen)  {
-            padding: 1rem 20px;
+            padding: $space-md 20px;
         }
     }
 }
@@ -109,7 +109,7 @@
 .footercontainer {
     width: 100%;
     max-width: 1400px;
-    margin: 5rem auto 0 auto;
+    margin: $space-4xl auto 0 auto;
     padding: 0 50px;
 
     @media (max-width: $tabletScreen)  {

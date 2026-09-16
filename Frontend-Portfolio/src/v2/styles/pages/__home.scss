@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
-    gap: 3rem;
+    gap: $space-2xl;
 
     &__left{
 
@@ -15,17 +15,17 @@
             gap: 9px;
             border: 1px solid $surface-2;
             border-radius: 25px;
-            padding: 0.65rem 1rem 0.65rem 1rem;
+            padding: 0.65rem $space-md 0.65rem $space-md;
             font-size: 0.875rem;
             font-family: $font-family;
             color: $textColor-dim;
-            margin: 0 0 2rem 0;
+            margin: 0 0 $space-xl 0;
 
             &--dot{
                 width: 7px;
                 height: 7px;
-                border-radius: 50%;
-                background: #3ddc84;
+                border-radius: $radius-full;
+                background: $statusgreen;
                 animation: pulse 2s infinite;
                 flex-shrink: 0;
             }
@@ -37,7 +37,7 @@
             font-family: $font-family;
             color: $textColor;
             line-height: 1;
-            font-weight: 1000;
+            font-weight: $fw-heavy;
 
             &--red{
                 color: $textred;
@@ -45,7 +45,7 @@
         }
         
         &-subtitle{
-            margin: 2rem 0 0 0;
+            margin: $space-xl 0 0 0;
             font-size: 1.75rem;
             font-family: $font-family;
             color: $textColor-dim;
@@ -55,7 +55,7 @@
                 color: $textred-soft;
                 font-family: $font-family-secondary;
                 font-style: italic;
-                font-weight: 400;
+                font-weight: $fw-regular;
                 margin: 0 0 0 0.1rem;
             }
         }
@@ -71,8 +71,8 @@
         &-bouton{
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: $space-md;
+            margin: $space-xl 0;
         }
 
         &-contact{
@@ -107,7 +107,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 34% 66% 67% 33% / 45% 40% 60% 55%;
-            border: 2px solid rgba(255,255,255,.08);
+            border: 2px solid rgba($white,.08);
         }
 
         &--chip{
@@ -115,13 +115,13 @@
             padding: 9px 14px;
             border-radius: 100px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: $fw-semibold;
             background: rgba(20,20,24,.85);
             border: 1px solid $surface-2;
             backdrop-filter: blur(8px);
             color: $textColor;
             font-family: $font-family;
-            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+            box-shadow: 0 10px 30px rgba($black,.35);
             animation: chipFloat 5s ease-in-out infinite;
         }
 
@@ -178,13 +178,13 @@
 
 @keyframes pulse{
     0%{
-        box-shadow: 0 0 0 0 rgba(61, 220, 132, 0.5);
+        box-shadow: 0 0 0 0 rgba($statusgreen, 0.5);
     }
     70%{
-        box-shadow: 0 0 0 8px rgba(61, 220, 132, 0);
+        box-shadow: 0 0 0 8px rgba($statusgreen, 0);
     }
     100%{
-        box-shadow: 0 0 0 0 rgba(61, 220, 132, 0);
+        box-shadow: 0 0 0 0 rgba($statusgreen, 0);
     }
 }
 
@@ -220,7 +220,7 @@
 
 @media (max-width: $wideScreen){
     .home{
-        gap: 2rem;
+        gap: $space-xl;
 
         &__left{
 
@@ -241,7 +241,7 @@
             }
 
             &-bouton{
-                gap: 0.75rem;
+                gap: $space-sm;
             }
 
             &-contact{
@@ -278,7 +278,7 @@
             }
 
             &-bouton{
-                gap: 0.5rem;
+                gap: $space-xs;
             }
 
             &-contact{
@@ -296,13 +296,13 @@
 @media (max-width: $tabletScreen){
     .home{
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: $space-3xl;
 
         &__left{
             text-align: center;
 
             &-pub{
-                margin: 0 auto 1.5rem auto;
+                margin: 0 auto $space-lg auto;
             }
 
             &-title{
@@ -320,7 +320,7 @@
 
             &-bouton{
                 justify-content: center;
-                gap: 0.5rem;
+                gap: $space-xs;
             }
         }
 
@@ -330,7 +330,7 @@
         }
 
         &__scroll{
-            margin: 5rem 0 0 0;
+            margin: $space-4xl 0 0 0;
         }
     }
 }

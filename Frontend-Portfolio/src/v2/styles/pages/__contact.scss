@@ -8,10 +8,10 @@
     background: radial-gradient(circle at 50% 10%, rgba($textred-soft, 0.12), $bg-soft 60%), none;
     border-radius: 30px;
     border: 1px solid $surface-2;
-    padding: 5rem 0;
+    padding: $space-4xl 0;
     margin: 0 auto;
     width: 80%;
-    transition: all 0.3s ease-in-out;
+    transition: $transition-base;
 
     &__header{
         display: flex;
@@ -24,23 +24,23 @@
             font-family: $font-family;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 400;
-            margin-bottom: 2rem;
+            font-weight: $fw-regular;
+            margin-bottom: $space-xl;
         }
 
         &-subtitle{
             font-size: 3.25rem;
             color: $textColor;
             font-family: $font-family;
-            font-weight: 1000;
-            margin: 0.5rem 0 0 0;
-            margin-bottom: 2rem;
+            font-weight: $fw-heavy;
+            margin: $space-xs 0 0 0;
+            margin-bottom: $space-xl;
 
             &--red{
                 color: $textred-soft;
                 font-family: $font-family-secondary;
                 font-style: italic;
-                font-weight: 400;
+                font-weight: $fw-regular;
             }
         }
     }
@@ -55,7 +55,7 @@
             font-size: 1.10rem;
             color: $textColor-dim;
             font-family: $font-family;
-            font-weight: 400;
+            font-weight: $fw-regular;
             line-height: 30px;
             text-align: center;
 
@@ -63,7 +63,7 @@
                 font-size: 0.75rem;
                 color: $textColor-dim;
                 font-family: $font-family;
-                font-weight: 400;
+                font-weight: $fw-regular;
                 line-height: 30px;
             }
         }
@@ -76,9 +76,9 @@
                 font-size: 3rem;
                 color: $textColor;
                 font-family: $font-family;
-                font-weight: 600;
+                font-weight: $fw-semibold;
                 line-height: 30px;
-                transition: all 0.5s ease-in-out;
+                transition: $transition-slow;
 
                 &:hover{
                     color: $textred-soft;
@@ -100,19 +100,19 @@ hr{
     width: 100%;
     height: 0;
     border: 1px solid $textColor-faint;
-    margin: 0.5rem 0 1rem 0;
+    margin: $space-xs 0 $space-md 0;
 }
 
 @media (max-width: $wideScreen){
     .contact{
         width: 75%;
-        padding: 3rem 0;
+        padding: $space-2xl 0;
 
         &__header{
 
             &-subtitle{
                 font-size: 2.5rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: $space-lg;
             }
         }
 
@@ -131,13 +131,13 @@ hr{
 @media (max-width: $DesktopScreen){
     .contact{
         width: 80%;
-        padding: 3rem 0;
+        padding: $space-2xl 0;
 
         &__header{
 
             &-subtitle{
                 font-size: 2.25rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: $space-lg;
             }
         }
 
@@ -156,18 +156,18 @@ hr{
 @media (max-width: $LaptopScreen){
     .contact{
         width: 90%;
-        padding: 2rem 0;
+        padding: $space-xl 0;
 
         &__header{
 
             &-title{
                 font-size: 0.75rem;
-                margin-top: 1.5rem;
+                margin-top: $space-lg;
             }
 
             &-subtitle{
                 font-size: 2rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: $space-lg;
             }
         }
 
@@ -186,7 +186,7 @@ hr{
 @media (max-width: $tabletScreen){
     .contact{
         width: 100%;
-        padding: 1.5rem 0;
+        padding: $space-lg 0;
 
         &__header{
             &-subtitle{
@@ -209,7 +209,7 @@ hr{
 @media (max-width: $mobileScreen){
     .contact{
         width: 100%;
-        padding: 1rem 0;
+        padding: $space-md 0;
 
         &__header{
             &-subtitle{
@@ -221,7 +221,7 @@ hr{
             &-text{
                 font-size: 0.75rem;
                 line-height: 20px;
-                padding: 0 1rem;
+                padding: 0 $space-md;
 
                 &--small{
                     text-align: center;
@@ -240,6 +240,6 @@ hr{
         width: 75%;
         height: 0;
         border: 1px solid $textColor-faint;
-        margin: 0.5rem 0 1rem 0;
+        margin: $space-xs 0 $space-md 0;
     }
 }

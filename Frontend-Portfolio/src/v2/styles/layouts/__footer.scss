@@ -6,8 +6,8 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid $surface-2;
-    gap: 1rem 2rem;
-    padding: 1.5rem 5rem;
+    gap: $space-md $space-xl;
+    padding: $space-lg $space-4xl;
     background-color: rgba($bg, 0.5);
 
     &__credit {
@@ -20,7 +20,7 @@
         }
 
         &--red{
-            font-weight: 700;
+            font-weight: $fw-bold;
             color : $textred;
         }
     }
@@ -28,16 +28,16 @@
     &__social {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: $space-md;
 
         &--link{
             text-decoration: none;
             font-family: $font-family;
             color: $textColor-dim;
             border: 1px solid $surface-2;
-            padding: 0.5rem;
+            padding: $space-xs;
             border-radius: 0.5rem;
-            transition: all 0.3s ease-in-out;
+            transition: $transition-base;
 
             &:hover{
                 transform: translateY(-0.1rem);
@@ -54,7 +54,7 @@
             display: flex;
             text-decoration: none;
             color: $textColor-dim;
-            transition: all 0.3s ease-in-out;
+            transition: $transition-base;
 
             &:hover{
                 color: $textred-soft;
@@ -68,7 +68,7 @@
     .footer{
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: $space-lg;
 
         &__credit{
             text-align: center;
@@ -80,7 +80,7 @@
 
         &__nav{
             justify-content: center;
-            gap: 1rem;
+            gap: $space-md;
         }
     }
 }

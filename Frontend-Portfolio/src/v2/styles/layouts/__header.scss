@@ -6,14 +6,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem 2rem;
-    padding: 1.5rem 0;
+    gap: $space-md $space-xl;
+    padding: $space-lg 0;
     background-color: rgba($bg, 0.5);
 
     &__menu{
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem 50px;
+        gap: $space-sm 50px;
         justify-content: center;
 
         &--links{
@@ -24,7 +24,7 @@
             color: $textColor-dim;
             font-family: $font-family;
             font-size: 0.875rem;
-            transition: all 0.3s ease-in-out;
+            transition: $transition-base;
 
             &::after{
                 content: '';
@@ -59,7 +59,7 @@
         color: $textColor;
         font-family: $font-family;
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: $fw-bold;
         z-index: 7;
 
         &--red{
@@ -70,7 +70,7 @@
     &__auth{
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
+        gap: $space-sm;
         flex-shrink: 0;
     }
 
@@ -122,7 +122,7 @@
 @media (max-width: $DesktopScreen)  {
     .nav{
         &__menu{
-            gap: 0.75rem 20px;
+            gap: $space-sm 20px;
 
             &--links{
                 font-size: 0.75rem;
@@ -141,7 +141,7 @@
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: $space-xl;
             background-color: $bg;
             z-index: 5;
 
@@ -155,12 +155,12 @@
 
             &--auth{
                 display: block;
-                margin-top: 1rem;
+                margin-top: $space-md;
 
                 .nav__auth{
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    gap: $space-md;
                     width: 100%;
                 }
             }
@@ -186,7 +186,7 @@
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: $space-xl;
             background-color: $bg;
             z-index: 5;
 
@@ -200,12 +200,12 @@
 
             &--auth{
                 display: block;
-                margin-top: 1rem;
+                margin-top: $space-md;
 
                 .nav__auth{
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    gap: $space-md;
                     width: 100%;
                 }
             }

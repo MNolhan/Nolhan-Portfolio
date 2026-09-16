@@ -6,8 +6,8 @@
     width: 65%;
     background-color: $bg-soft;
     padding: 2.5rem 3.5rem;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
+    border-radius: $radius-lg;
+    transition: $transition-base;
 
     &-header{
         display: flex;
@@ -18,7 +18,7 @@
     &-type{
         color: $textred-soft;
         font-family: $font-family;
-        font-weight: 500;
+        font-weight: $fw-medium;
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -28,15 +28,15 @@
         font-size: 2rem;
         color: $textColor;
         font-family: $font-family;
-        font-weight: 700;
-        margin: 0.5rem 0 0 0;
+        font-weight: $fw-bold;
+        margin: $space-xs 0 0 0;
     }
 
     &-description{
         font-size: 1.10rem;
         color: $textColor-dim;
         font-family: $font-family;
-        font-weight: 400;
+        font-weight: $fw-regular;
         line-height: 30px;
     }
 
@@ -46,38 +46,38 @@
     }
 
     &-red{
-    background: radial-gradient(circle at 85% 15%, rgba(239, 59, 59, 0.22), transparent 60%), #141417;
+    background: radial-gradient(circle at 85% 15%, rgba($textred, 0.22), transparent 60%), $surface;
     }
 
     &-purple{
-        background: radial-gradient(circle at 85% 15%, rgba(107, 63, 184, 0.22), transparent 60%), #141417;
+        background: radial-gradient(circle at 85% 15%, rgba(107, 63, 184, 0.22), transparent 60%), $surface;
     }
 
     &-blue{
-        background: radial-gradient(circle at 85% 15%, rgba(61, 150, 220, 0.20), transparent 60%), #141417;
+        background: radial-gradient(circle at 85% 15%, rgba(61, 150, 220, 0.20), transparent 60%), $surface;
     }
 
     &-green{
-        background: radial-gradient(circle at 85% 15%, rgba(61, 220, 132, 0.18), transparent 60%), #141417;
+        background: radial-gradient(circle at 85% 15%, rgba($statusgreen, 0.18), transparent 60%), $surface;
     }
 
     &-amber{
-        background: radial-gradient(circle at 85% 15%, rgba(240, 180, 60, 0.18), transparent 60%), #141417;
+        background: radial-gradient(circle at 85% 15%, rgba(240, 180, 60, 0.18), transparent 60%), $surface;
     }
 
     &-red-strong{
-        background: radial-gradient(circle at 85% 15%, rgba(239, 59, 59, 0.25), transparent 60%), #141417;
+        background: radial-gradient(circle at 85% 15%, rgba($textred, 0.25), transparent 60%), $surface;
     }
 
     &:hover{
         transform: translateY(-5px);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 10px 20px rgba($black, 0.2);
     }
 }
 
 @media (max-width: $wideScreen){
     .cardservices{
-        padding: 1.5rem 2rem;
+        padding: $space-lg $space-xl;
 
         &-title{
             font-size: 1.75rem;
@@ -92,7 +92,7 @@
 @media (max-width: $LaptopScreen){
     .cardservices{
         width: 75%;
-        padding: 1.5rem 2rem;
+        padding: $space-lg $space-xl;
 
         &-title{
             font-size: 1.5rem;
@@ -107,7 +107,7 @@
 @media (max-width: $tabletScreen){
     .cardservices{
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: $space-lg $space-xl;
 
         &-title{
             font-size: 1.25rem;
