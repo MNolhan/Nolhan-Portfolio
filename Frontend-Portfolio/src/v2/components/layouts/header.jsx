@@ -9,7 +9,6 @@ export default function Header() {
     // Menu
 
     const [isOpen, setIsOpen] = useState(false)
-    const [user, setUser] = useState(null);
     const closeMenu = () => setIsOpen(false)
 
     const token = localStorage.getItem('token')
@@ -18,6 +17,11 @@ export default function Header() {
         document.body.style.overflow = isOpen ? 'hidden' : ''
         return () => { document.body.style.overflow = '' }
     }, [isOpen])
+
+
+    // User Button
+
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         if (!token) return
@@ -31,6 +35,8 @@ export default function Header() {
             const data = await response.json()
             if (response.ok) {
                 setUser(data[0])
+            } else {
+                localStorage.removeItem('token')
             }
         }
         Read();
