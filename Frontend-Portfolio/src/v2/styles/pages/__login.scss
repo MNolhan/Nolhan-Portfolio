@@ -13,6 +13,7 @@
         &-nav{
             display: flex;
             gap: $space-xs;
+            max-width: 160px;
             align-items: center;
             width: 100%;
             text-decoration: none;

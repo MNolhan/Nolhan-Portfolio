@@ -1,6 +1,6 @@
 @use '../abstratcs/_variables' as *;
 
-.signup{
+.profil{
     font-family: $font-family;
     min-height: 95vh;
     display: flex;
@@ -11,8 +11,8 @@
         display: flex;
 
         &-nav{
-            display: flex;
             max-width: 160px;
+            display: flex;
             gap: $space-xs;
             align-items: center;
             width: 100%;
@@ -63,6 +63,9 @@
         }
 
         &-subtitle{
+            display: flex;
+            justify-content: center;
+            text-align: center;
             font-size: 1rem;
             font-weight: $fw-regular;
             margin: $space-xs 0 $space-lg 0;
@@ -105,13 +108,6 @@
                 }
             }
 
-            &--captcha{
-                display: flex;
-                margin: $space-xs 0;
-                justify-content: center;
-                margin-bottom: $space-md;
-            }
-
             &--button{
                 padding: 0.875rem;
                 font-size: 1rem;
@@ -146,7 +142,7 @@
 }
 
 @media (max-width: $wideScreen){
-    .signup{
+    .profil{
         &__content{
             margin: 0 auto $space-3xl auto;
         }
@@ -154,7 +150,7 @@
 }
 
 @media (max-width: $tabletScreen){
-    .signup{
+    .profil{
         &__content{
             margin: 0 auto $space-xl auto;
             width: 90%;
@@ -163,7 +159,7 @@
 }
 
 @media (max-width: $mobileScreen){
-    .signup{
+    .profil{
         &__content{
             width: 100%;
             

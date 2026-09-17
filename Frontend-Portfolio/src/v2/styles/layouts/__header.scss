@@ -72,6 +72,66 @@
         flex-wrap: wrap;
         gap: $space-sm;
         flex-shrink: 0;
+
+        &--dropdown &--dropdown--link{
+            padding: $space-sm;
+        }
+
+        &--dropdown{
+            position: absolute;
+            background-color: $bg-soft;
+            top: 110%;
+            left: 0; 
+
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $surface;
+            border-radius: $space-xs;
+            opacity: 0;
+            overflow: hidden;
+            width: 90.38px; // Largeur du bouton Profil
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.25s ease-in-out,
+                        transform 0.25s ease-in-out,
+                        visibility 0.25s ease-in-out;
+
+            &--link{
+                font-family: $font-family;
+                display: flex;
+                justify-content: center;
+                padding: $space-xs $space-sm;
+                color: $textColor;
+                text-decoration: none;
+
+                &:hover{
+                    background-color: $surface-2;
+                    color: $textred-soft;
+                    cursor: pointer;
+                }
+
+                &-logout{
+                    background-color: $textred;
+                    color: $textColor;
+
+                    &:hover{
+                        background-color: $textred-soft;
+                        color: $textColor;
+                    }
+                }
+            }
+        }
+
+        &--profile{
+            position: relative;
+            display: inline-block;
+        }
+
+        &--profile:hover &--dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     }
 
     &__burger{
