@@ -2,7 +2,7 @@
 
 .profil{
     font-family: $font-family;
-    min-height: 95vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,9 +11,9 @@
         display: flex;
 
         &-nav{
-            max-width: 160px;
             display: flex;
             gap: $space-xs;
+            max-width: 160px;
             align-items: center;
             width: 100%;
             text-decoration: none;
@@ -137,18 +137,9 @@
     }
 }
 
-@media (max-width: $wideScreen){
-    .profil{
-        &__content{
-            margin: 0 auto $space-3xl auto;
-        }
-    }
-}
-
 @media (max-width: $tabletScreen){
     .profil{
         &__content{
-            margin: 0 auto $space-xl auto;
             width: 90%;
         }
     }
@@ -158,7 +149,7 @@
     .profil{
         &__content{
             width: 100%;
-            
+
             &-title{
             font-size: 1.5rem;
             margin: $space-xs 0 0 0;
