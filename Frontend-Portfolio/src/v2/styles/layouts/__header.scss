@@ -81,15 +81,14 @@
             position: absolute;
             background-color: $bg-soft;
             top: 110%;
-            left: 0; 
-
+            left: 0;
             display: flex;
             flex-direction: column;
             border: 1px solid $surface;
             border-radius: $space-xs;
             opacity: 0;
             overflow: hidden;
-            width: 90.38px; // Largeur du bouton Profil
+            width : max-content;
             visibility: hidden;
             transform: translateY(-10px);
             transition: opacity 0.25s ease-in-out,

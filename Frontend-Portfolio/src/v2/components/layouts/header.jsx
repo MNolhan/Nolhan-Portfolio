@@ -1,21 +1,44 @@
 import Bouton from "../ui/bouton";
 import { useState, useEffect } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL
+
 export default function Header() {
 
     // Menu
 
     const [isOpen, setIsOpen] = useState(false)
+    const [user, setUser] = useState(null);
     const closeMenu = () => setIsOpen(false)
+
+    const token = localStorage.getItem('token')
 
     useEffect(() => {
         document.body.style.overflow = isOpen ? 'hidden' : ''
         return () => { document.body.style.overflow = '' }
     }, [isOpen])
 
+    useEffect(() => {
+        if (!token) return
+
+        const Read = async () => {
+            const response = await fetch(`${API_URL}/users/me`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            const data = await response.json()
+            if (response.ok) {
+                setUser(data[0])
+            }
+        }
+        Read();
+    }, [token])
+
     let userbutton;
 
-    if(!localStorage.getItem('token')) {
+    if (!token) {
+
         userbutton = (
             <div className="nav__auth">
                 <Bouton variant="secondary" as="a" href="/login">
@@ -26,14 +49,20 @@ export default function Header() {
                     </Bouton>
                 </div>
             )
+
+    } else if (!user) {
+
+        userbutton = null
+
     } else {
+
         userbutton = (
             <div className="nav__auth">
                 <div className="nav__auth--profile">
-                    <Bouton variant="secondary" as="a">Profil</Bouton>
+                    <Bouton variant="secondary" as="a">{user?.firstname}</Bouton>
                     <div className="nav__auth--dropdown">
                         <a href="/profil" className="nav__auth--dropdown--link">
-                            Settings
+                            Paramètres
                         </a>
                         <a 
                             onClick={() => 
@@ -48,6 +77,7 @@ export default function Header() {
                 </div>
             </div>
         )
+
     }
 
 

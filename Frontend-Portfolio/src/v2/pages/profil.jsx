@@ -16,6 +16,7 @@ export default function Profil() {
         const fetchUser = async () => {
             try {
                 const response = await fetch(`${API_URL}/users/me`, {
+                    method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -83,15 +84,15 @@ export default function Profil() {
 
                     <form className="profil__content-form" onSubmit={handleSubmit}>
                         <div className="profil__content-form--group">
-                            <label htmlFor="firstname" className="profil__content-form--label">Prénom</label>
+                            <label htmlFor="firstname" className="profil__content-form--label">Votre Prénom</label>
                             <input type="text" id="firstname" name="firstname" className="profil__content-form--input" placeholder={user?.firstname} value={firstname} onChange={(e) => setFirstname(e.target.value)} />
                         </div>
                         <div className="profil__content-form--group">
-                            <label htmlFor="name" className="profil__content-form--label">Nom</label>
+                            <label htmlFor="name" className="profil__content-form--label">Votre Nom</label>
                             <input type="text" id="name" name="name" className="profil__content-form--input" placeholder={user?.name} value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className="profil__content-form--group">
-                            <label htmlFor="email" className="profil__content-form--label">Email</label>
+                            <label htmlFor="email" className="profil__content-form--label">Votre Email</label>
                             <input type="email" id="email" name="email" className="profil__content-form--input" placeholder={user?.email} value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <button type="submit" className="profil__content-form--button">Confirmer la modification</button>
