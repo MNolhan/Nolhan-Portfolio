@@ -1,5 +1,6 @@
 import Bouton from "../ui/bouton";
 import { useState, useEffect } from "react";
+import PersonneIcon from "../Icon/personne-icon";
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -59,9 +60,12 @@ export default function Header() {
         userbutton = (
             <div className="nav__auth">
                 <div className="nav__auth--profile">
-                    <Bouton variant="secondary" as="a">{user?.firstname}</Bouton>
+                    <Bouton variant="secondary" as="a"><PersonneIcon /> {user?.firstname}</Bouton>
                     <div className="nav__auth--dropdown">
                         <a href="/profil" className="nav__auth--dropdown--link">
+                            Profil
+                        </a>
+                        <a href="#" className="nav__auth--dropdown--link">
                             Paramètres
                         </a>
                         <a 
