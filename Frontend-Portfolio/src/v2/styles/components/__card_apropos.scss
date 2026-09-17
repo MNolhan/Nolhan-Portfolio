@@ -6,24 +6,24 @@
     background-color: $bg-soft;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 2rem;
-    border-radius: 20px;
+    padding: $space-lg $space-xl;
+    border-radius: $radius-lg;
     border : 1px solid $surface-2;
-    transition: all 0.5s ease-in-out;
+    transition: $transition-slow;
 
     &-title{
         font-size: 2rem;
         color: $textColor;
         font-family: $font-family;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+        font-weight: $fw-bold;
+        margin-bottom: $space-xs;
     }
 
     &-description{
         font-size: 0.875rem;
         color: $textColor-dim;
         font-family: $font-family;
-        font-weight: 400;
+        font-weight: $fw-regular;
         line-height: 1.5rem;
     }
 
@@ -57,7 +57,7 @@
 @media (max-width: $wideScreen){
     .cardapropos{
         height: 200px;
-        padding: 1rem 1.5rem;
+        padding: $space-md $space-lg;
 
         &-title{
             font-size: 1.75rem;
@@ -82,7 +82,7 @@
 @media (max-width: $LaptopScreen){
     .cardapropos{
         height: 150px;
-        padding: 1rem 1.5rem;
+        padding: $space-md $space-lg;
 
         &-title{
             font-size: 1.5rem;
@@ -107,7 +107,7 @@
 @media (max-width: $tabletScreen){
     .cardapropos{
         height: 130px;
-        padding: 1rem 1.5rem;
+        padding: $space-md $space-lg;
 
         &-title{
             font-size: 1.25rem;

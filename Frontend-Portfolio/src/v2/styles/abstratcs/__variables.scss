@@ -20,8 +20,43 @@ $textColor-faint: #6e6d6a;
 $textred: #ef3b3b;
 $textred-soft: #ff6b5b;
 
+$statusgreen: #3ddc84;
+$white: #fff;
+$black: #000;
+
+// -- Radius --
+
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 20px;
+$radius-full: 50%;
+
+// -- Transitions --
+
+$transition-base: all 0.3s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
+
 // -- Fonts --
 
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap');
 $font-family: "Bricolage Grotesque", sans-serif;
 $font-family-secondary: "Instrument Serif", serif;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+$fw-heavy: 1000;
+
+// -- Spacing --
+
+$space-xs: 0.5rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+$space-4xl: 5rem;

@@ -3,7 +3,7 @@
 .carrousel {
     background-color: $bg-soft;
     border: 1px solid $surface-2;
-    margin: 5rem 0;
+    margin: $space-4xl 0;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -21,7 +21,7 @@
 
     &__card {
         font-family: $font-family-secondary;
-        font-weight: 400;
+        font-weight: $fw-regular;
         font-style: italic;
         display: flex;
         justify-content: center;
@@ -32,8 +32,8 @@
         font-size: xx-large;
         font-size: 1.25rem;
         min-height: 25px;
-        font-weight: 400;
-        transition: all 0.3s ease-in-out;
+        font-weight: $fw-regular;
+        transition: $transition-base;
 
         &:hover{
             cursor: pointer;

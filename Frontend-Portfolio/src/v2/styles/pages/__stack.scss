@@ -9,21 +9,21 @@
             font-family: $font-family;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: $fw-regular;
         }
 
         &-subtitle{
             font-size: 3.25rem;
             color: $textColor;
             font-family: $font-family;
-            font-weight: 1000;
-            margin: 0.5rem 0 4rem 0;
+            font-weight: $fw-heavy;
+            margin: $space-xs 0 $space-3xl 0;
 
             &--red{
                 color: $textred-soft;
                 font-family: $font-family-secondary;
                 font-style: italic;
-                font-weight: 400;
+                font-weight: $fw-regular;
             }
         }
     }
@@ -31,28 +31,28 @@
     &__content{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 2rem;
+        gap: $space-xl;
 
         &-title{
             font-size: 1.25rem;
             color: $textColor;
             font-family: $font-family;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-weight: $fw-bold;
+            margin-bottom: $space-md;
 
             &--red{
                 color: $textred-soft;
                 font-family: $font-family;
-                font-weight: 400;
+                font-weight: $fw-regular;
                 font-size: 0.875rem;
-                margin: 0 0.75rem 0 0;
+                margin: 0 $space-sm 0 0;
             }
         }
 
         &--list{
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: $space-xs;
         }
     }
 }
@@ -61,7 +61,7 @@ hr{
     border: 0;
     height: 3px;
     background-color: $surface-2;
-    margin: 0 0 1rem 0;
+    margin: 0 0 $space-md 0;
 }
 
 @media (max-width: $wideScreen){
@@ -71,12 +71,12 @@ hr{
 
             &-subtitle{
                 font-size: 2.5rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: $space-lg;
             }
         }
 
         &__content{
-            gap: 1.5rem;
+            gap: $space-lg;
         }
     }
 }
@@ -88,12 +88,12 @@ hr{
 
             &-subtitle{
                 font-size: 2rem;
-                margin-bottom: 1rem;
+                margin-bottom: $space-md;
             }
         }
 
         &__content{
-            gap: 1rem;
+            gap: $space-md;
         }
     }
 }
@@ -103,13 +103,13 @@ hr{
         &__header{
             &-subtitle{
                 font-size: 1.75rem;
-                margin-bottom: 1rem;
+                margin-bottom: $space-md;
             }
         }
 
         &__content{
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: $space-md;
         }
     }
 }
@@ -119,13 +119,13 @@ hr{
         &__header{
             &-subtitle{
                 font-size: 1.5rem;
-                margin-bottom: 1rem;
+                margin-bottom: $space-md;
             }
         }
 
         &__content{
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: $space-md;
         }
     }
 }

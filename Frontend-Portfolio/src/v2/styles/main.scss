@@ -26,6 +26,7 @@
 @use './layouts/__banniere' as *;
 @use './components/__card_project_component' as *;
 @use './pages/__projects_details' as *;
+@use './pages/__profil' as *;
 
 *,
 *::before,
@@ -35,7 +36,7 @@
 
 ::selection{
     background-color: $textred-soft;
-    color: #fff;
+    color: $white;
 }
 
 body {

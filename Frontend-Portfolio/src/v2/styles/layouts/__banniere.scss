@@ -17,14 +17,14 @@
         display: flex;
         text-align: center;
         font-family: $font-family;
-        font-weight: 400;
+        font-weight: $fw-regular;
         font-style: italic;
         color: $textColor-dim;
         font-size: large;
-        margin: 0.5rem 1rem;
+        margin: $space-xs $space-md;
         font-size: 0.875rem;
-        font-weight: 400;
-        transition: all 0.3s ease-in-out;
+        font-weight: $fw-regular;
+        transition: $transition-base;
 
         &:hover{
             cursor: pointer;

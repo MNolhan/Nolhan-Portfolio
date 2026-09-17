@@ -6,14 +6,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem 2rem;
-    padding: 1.5rem 0;
+    gap: $space-md $space-xl;
+    padding: $space-lg 0;
     background-color: rgba($bg, 0.5);
 
     &__menu{
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem 50px;
+        gap: $space-sm 50px;
         justify-content: center;
 
         &--links{
@@ -24,7 +24,7 @@
             color: $textColor-dim;
             font-family: $font-family;
             font-size: 0.875rem;
-            transition: all 0.3s ease-in-out;
+            transition: $transition-base;
 
             &::after{
                 content: '';
@@ -59,7 +59,7 @@
         color: $textColor;
         font-family: $font-family;
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: $fw-bold;
         z-index: 7;
 
         &--red{
@@ -70,8 +70,67 @@
     &__auth{
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
+        gap: $space-sm;
         flex-shrink: 0;
+
+        &--dropdown &--dropdown--link{
+            padding: $space-sm;
+        }
+
+        &--dropdown{
+            position: absolute;
+            background-color: $bg-soft;
+            top: 110%;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $surface;
+            border-radius: $space-xs;
+            opacity: 0;
+            overflow: hidden;
+            width : 130px;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.25s ease-in-out,
+                        transform 0.25s ease-in-out,
+                        visibility 0.25s ease-in-out;
+
+            &--link{
+                font-family: $font-family;
+                display: flex;
+                justify-content: center;
+                padding: $space-xs $space-sm;
+                color: $textColor;
+                text-decoration: none;
+
+                &:hover{
+                    background-color: $surface-2;
+                    color: $textred-soft;
+                    cursor: pointer;
+                }
+
+                &-logout{
+                    background-color: $textred;
+                    color: $textColor;
+
+                    &:hover{
+                        background-color: $textred-soft;
+                        color: $textColor;
+                    }
+                }
+            }
+        }
+
+        &--profile{
+            position: relative;
+            display: inline-block;
+        }
+
+        &--profile:hover &--dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     }
 
     &__burger{
@@ -122,7 +181,7 @@
 @media (max-width: $DesktopScreen)  {
     .nav{
         &__menu{
-            gap: 0.75rem 20px;
+            gap: $space-sm 20px;
 
             &--links{
                 font-size: 0.75rem;
@@ -141,7 +200,7 @@
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: $space-xl;
             background-color: $bg;
             z-index: 5;
 
@@ -155,12 +214,12 @@
 
             &--auth{
                 display: block;
-                margin-top: 1rem;
+                margin-top: $space-md;
 
                 .nav__auth{
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    gap: $space-md;
                     width: 100%;
                 }
             }
@@ -186,7 +245,7 @@
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: $space-xl;
             background-color: $bg;
             z-index: 5;
 
@@ -200,12 +259,12 @@
 
             &--auth{
                 display: block;
-                margin-top: 1rem;
+                margin-top: $space-md;
 
                 .nav__auth{
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    gap: $space-md;
                     width: 100%;
                 }
             }

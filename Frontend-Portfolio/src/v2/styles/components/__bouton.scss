@@ -3,10 +3,10 @@
 .btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    border-radius: 20px;
+    gap: $space-xs;
+    font-weight: $fw-medium;
+    padding: $space-sm $space-lg;
+    border-radius: $radius-lg;
     text-decoration: none;
     font-family: $font-family;
     transition: all 0.3s ease;
@@ -37,14 +37,14 @@
 
 @media (max-width: $wideScreen) {
     .btn {
-        padding: 0.75rem 1rem;
+        padding: $space-sm $space-md;
         font-size: 0.875rem;
     }
 }
 
 @media (max-width: $DesktopScreen) {
     .btn {
-        padding: 0.5rem 1rem;
+        padding: $space-xs $space-md;
         font-size: 0.8rem;
     }
 }

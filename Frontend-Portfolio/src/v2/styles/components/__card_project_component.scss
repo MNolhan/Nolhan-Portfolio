@@ -3,7 +3,7 @@
 .CardProjectComponent{
     background: $bg-soft;
     border: 1px solid $surface-2;
-    border-radius: 16px;
+    border-radius: $radius-md;
     overflow: hidden;
 
     &__header{
@@ -16,7 +16,7 @@
         &--dot{
             width: 9px;
             height: 9px;
-            border-radius: 50%;
+            border-radius: $radius-full;
             background: $textColor-faint;
         }
     }
@@ -35,7 +35,7 @@
         color: $textColor-dim;
         font-family: $font-family;
         font-size: 13px;
-        font-weight: 400;
+        font-weight: $fw-regular;
         padding: 8px 16px;
         border-radius: 100px;
         backdrop-filter: blur(6px);
@@ -44,7 +44,7 @@
 
     &__main-card{
         height: 60px;
-        border-radius: 10px;
+        border-radius: $radius-sm;
         background: linear-gradient(120deg, rgba($textred, 0.2), rgba($textred-soft, 0.2));
     }
 
@@ -56,7 +56,7 @@
         &-sub{
             flex: 1;
             height: 48px;
-            border-radius: 10px;
+            border-radius: $radius-sm;
             background: $surface-2;
         }
     }

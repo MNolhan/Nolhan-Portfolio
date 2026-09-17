@@ -7,15 +7,15 @@
     width: 65%;
     background-color: $bg-soft;
     padding: 2.5rem 3.5rem;
-    border-radius: 20px;
-    transition: all 0.5s ease-in-out;
+    border-radius: $radius-lg;
+    transition: $transition-slow;
     text-align: center;
     border: 1px solid $surface-2;
 
     &__date{
         color: $textred-soft;
         font-family: $font-family;
-        font-weight: 500;
+        font-weight: $fw-medium;
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -25,15 +25,15 @@
         font-size: 2rem;
         color: $textColor;
         font-family: $font-family;
-        font-weight: 700;
-        margin: 0.5rem 0 0 0;
+        font-weight: $fw-bold;
+        margin: $space-xs 0 0 0;
     }
 
     &__sub{
         font-size: 1.10rem;
         color: $textColor-dim;
         font-family: $font-family;
-        font-weight: 400;
+        font-weight: $fw-regular;
         line-height: 30px;
     }
 
@@ -41,7 +41,7 @@
         font-size: 1.10rem;
         color: $textColor-dim;
         font-family: $font-family;
-        font-weight: 400;
+        font-weight: $fw-regular;
         line-height: 30px;
     }
 
@@ -53,7 +53,7 @@
 
 @media (max-width: $wideScreen){
     .CardParcours{
-        padding: 1rem 1.5rem;
+        padding: $space-md $space-lg;
 
         &__title{
             font-size: 1.5rem;
@@ -72,7 +72,7 @@
 @media (max-width: $LaptopScreen){
     .CardParcours{
         width: 75%;
-        padding: 1rem 1rem;
+        padding: $space-md $space-md;
 
         &__title{
             font-size: 1.25rem;
@@ -91,7 +91,7 @@
 @media (max-width: $tabletScreen){
     .CardParcours{
         width: 100%;
-        padding: 0.75rem 1rem;
+        padding: $space-sm $space-md;
 
         &__title{
             font-size: 1.125rem;
