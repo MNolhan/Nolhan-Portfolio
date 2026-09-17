@@ -126,16 +126,12 @@
                     cursor: pointer;
                 }
             }
-        }
 
-        &-noaccount{
-            font-size: 0.875rem;
-            font-weight: $fw-regular;
-            margin: $space-xs 0 $space-lg 0;
-            color: $textColor-dim;
-
-            &--red{
-                color : $textred-soft
+            &--message{
+                margin: 40px 0 0 0;
+                display : flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
