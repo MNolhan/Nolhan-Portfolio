@@ -51,7 +51,7 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
 
                 const payload = { userId: user.id, email: user.email, name : user.name, firstname : user.firstname, role : user.role }; 
 
-                const token = jwt.sign(payload, SecretKey, { expiresIn: "1h" });
+                const token = jwt.sign(payload, SecretKey);
                 res.json({ token });
                 return;
 

@@ -35,8 +35,6 @@ export default function Header() {
             const data = await response.json()
             if (response.ok) {
                 setUser(data[0])
-            } else {
-                localStorage.removeItem('token')
             }
         }
         Read();
@@ -56,10 +54,6 @@ export default function Header() {
                     </Bouton>
                 </div>
             )
-
-    } else if (!user) {
-
-        userbutton = null
 
     } else {
 
