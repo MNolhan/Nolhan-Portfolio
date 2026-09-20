@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ArrowLeftIcon from '../components/Icon/arrowleft-icon';
 import ArrowRightIcon from '../components/Icon/arrowright-icon';
+import HeaderBack from '../components/layouts/headerback';
 import Bouton from '../components/ui/bouton';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -72,9 +72,7 @@ export default function ProjectDetails() {
     return (
         <div className="detailsprojectcontainer">
 
-            <div className="project-details__header">
-                <a className="project-details__header-nav" href="/"><ArrowLeftIcon /> <span>Retourner au site</span></a>
-            </div>
+            <HeaderBack />
 
             <div className="container--small-2">
 
