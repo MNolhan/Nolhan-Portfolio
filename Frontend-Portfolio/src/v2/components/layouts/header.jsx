@@ -20,27 +20,8 @@ export default function Header() {
 
 
     // User Button
-
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        if (!token) return
-
-        const Read = async () => {
-            const response = await fetch(`${API_URL}/users/me`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            const data = await response.json()
-            if (response.ok) {
-                setUser(data[0])
-            }
-        }
-        Read();
-    }, [token])
-
     let userbutton;
+
 
     if (!token) {
 
@@ -60,7 +41,7 @@ export default function Header() {
         userbutton = (
             <div className="nav__auth">
                 <div className="nav__auth--profile">
-                    <Bouton variant="secondary" as="a"><PersonneIcon /> {user?.firstname}</Bouton>
+                    <Bouton variant="secondary" as="a"><PersonneIcon /> Compte</Bouton>
                     <div className="nav__auth--dropdown">
                         <a href="/profil" className="nav__auth--dropdown--link">
                             Profil
