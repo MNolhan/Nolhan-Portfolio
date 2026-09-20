@@ -1,6 +1,6 @@
-import ArrowLeftIcon from "../components/Icon/arrowleft-icon";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderBack from '../components/layouts/headerback';
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -51,9 +51,7 @@ export default function Signup() {
         <div className="authcontainer">
             <div className="signup">
 
-                <div className="signup__header">
-                    <a className="signup__header-nav" href="/"><ArrowLeftIcon /> <span>Retourner au site</span></a>
-                </div>
+                <HeaderBack />
 
                 <div className="signup__content">
                     <h2 className="signup__content-logo">Nolhan<span className="signup__content-logo--red">Dev</span>.</h2>

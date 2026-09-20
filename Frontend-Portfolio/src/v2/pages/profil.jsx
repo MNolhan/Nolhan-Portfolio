@@ -1,6 +1,5 @@
-import React from 'react';
-import ArrowLeftIcon from '../components/Icon/arrowleft-icon';
 import { useState, useEffect } from 'react';
+import HeaderBack from '../components/layouts/headerback';
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -74,7 +73,7 @@ export default function Profil() {
             <div className="profil">
 
                 <div className="profil__header">
-                    <a className="profil__header-nav" href="/"><ArrowLeftIcon /> <span>Retourner au site</span></a>
+                    <HeaderBack />
                 </div>
 
                 <div className="profil__content">
