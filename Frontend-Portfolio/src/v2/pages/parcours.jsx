@@ -13,21 +13,21 @@ export default function Parcours(){
                 <div className="parcours__timeline">
                     <CardParcours
                         date="2023 - 2025"
-                        title="Bac+1 & Bac+2"
-                        sub="ESGI - Nantes"
+                        title="Tronc commun informatique"
+                        sub="1re & 2e année à l'ESGI"
                         description="Formation aux fondamentaux du développement informatique : algorithmique, programmation orientée objet, bases de données et premiers projets web en groupe."
-                    />
-                    <CardParcours
-                        date="2025 - 2026"
-                        title="Bachelor Ingénierie du Web"
-                        sub="ESGI - Nantes"
-                        description="Spécialisation en développement web full-stack : architectures modernes, frameworks front-end et back-end, méthodologies de gestion de projet."
                     />
                     <CardParcours
                         date="2024 - 2026"
                         title="Développeur Low-Code"
                         sub="SKF Saint-Cyr-sur-Loire"
                         description="Alternance en développement d'applications métier low-code, au service d'un environnement industriel — automatisation de processus internes et intégration avec les systèmes existants."
+                    />
+                    <CardParcours
+                        date="2025 - 2026"
+                        title="Spécialisation Ingénierie du Web"
+                        sub="3e année à l'ESGI"
+                        description="Spécialisation en développement web full-stack : architectures modernes, frameworks front-end et back-end, méthodologies de gestion de projet."
                     />
                 </div>
             </div>
