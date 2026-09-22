@@ -35,6 +35,7 @@
         font-family: $font-family;
         font-weight: $fw-bold;
         margin: $space-xs 0 0 0;
+        transition: $transition-base;
     }
 
     &__sub{
@@ -56,8 +57,13 @@
     }
 
     &:hover{
+        .CardParcours__title{
+            color: $textred-soft;
+        }
+
         transform: scale(1.02);
         transition: $transition-base;
+        cursor: pointer;
     }
 }
 
