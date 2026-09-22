@@ -34,10 +34,10 @@
     width: 100%;
     max-width: $DesktopScreen - 100px;
     margin: 0 auto;
-    padding: $space-4xl 50px;
+    padding: $space-4xl 50px $space-5xl 50px;
 
     @media (max-width: $wideScreen)  {
-        padding: $space-4xl 0px;
+        padding: $space-5xl 0px;
     }
 
     @media (max-width: $DesktopScreen)  {
@@ -109,7 +109,7 @@
 .footercontainer {
     width: 100%;
     max-width: 1400px;
-    margin: $space-4xl auto 0 auto;
+    margin: $space-2xl auto 0 auto;
     padding: 0 50px;
 
     @media (max-width: $tabletScreen)  {
