@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { ensureRedisConnected } from './infra/RedisClient.js';
 
 //Import Routes
 import CreateUser from './routes/users/CreateUser.js';
@@ -20,6 +21,8 @@ import ReadReload from './routes/analytics/ReadReload.js';
 
 dotenv.config();
 const app = express();
+
+app.set('trust proxy', 1);
 
 app.use(cors({
     origin: ['http://localhost:5173', 'https://www.nolhandev.fr', 'https://nolhandev.fr'],
@@ -54,3 +57,9 @@ app.use('/reload', ReadReload);
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
+
+try {
+    await ensureRedisConnected();
+} catch (error) {
+    console.error("Erreur lors de la connexion à Redis:", error);
+}
