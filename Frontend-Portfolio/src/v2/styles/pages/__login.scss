@@ -160,9 +160,10 @@
     }
 }
 
-
 input[type="checkbox"] {
-  accent-color: $textred;
+    accent-color: $textred;
+    width: 1rem;
+    height: 1rem;
 }
 
 
