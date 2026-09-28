@@ -60,6 +60,7 @@ export default function Projects(){
                     .filter((project) => filter === 'all' || project.type === filter)
                     .map((project) => (
                         <CardProject
+                            key={project.id}
                             id={project.id}
                             github_url={project.github_url}
                             live_url={project.live_url}
