@@ -17,7 +17,7 @@ router.get("/", async (req , res) => {
     } catch (error) {
 
         res.status(500);
-        res.json({ message : error.message });
+        res.json({ message : "Erreur lors de la récupération des stacks" });
 
     }
 
