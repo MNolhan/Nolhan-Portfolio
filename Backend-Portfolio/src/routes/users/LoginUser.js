@@ -12,7 +12,7 @@ dotenv.config();
 const SecretKey = process.env.JWTKEY;
 const router = express.Router();
 
-const PostSchema = z.object({
+const LoginSchema = z.object({
     email: z.string().email(),
     password: z.string().min(6),
 });
@@ -22,7 +22,7 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
     let email, password;
 
     try {
-        ({ email, password } = PostSchema.parse(req.body));
+        ({ email, password } = LoginSchema.parse(req.body));
     } catch (error) {
         res.status(400);
         res.json({ message: "Données de connexion invalides" });
@@ -37,8 +37,8 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
         );
 
         if (rows.length === 0) { 
-            res.status(404);
-            res.json({ message : "Aucun compte n'a été enregistré avec cette adresse Mail" });
+            res.status(401);
+            res.json({ message : "Email ou mot de passe incorrect" });
             return;
 
         } else { 
@@ -57,7 +57,7 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
 
             } else {
                 res.status(401);
-                res.json({ message: "Mot de passe incorrect" });
+                res.json({ message: "Email ou mot de passe incorrect" });
                 return;
             }
         }

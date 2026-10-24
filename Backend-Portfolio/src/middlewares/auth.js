@@ -7,6 +7,13 @@ export default function auth(req, res, next) {
 
     try {
         const authHeader = req.headers.authorization;
+
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            res.status(401);
+            res.json({ message: "Authentification requise" });
+            return;
+        }
+
         const token = authHeader.slice(7);
 
         try {
