@@ -4,9 +4,12 @@ import pool from '../../infra/db.js';
 
 const router = express.Router();
 
+const idSchema = z.object({
+    id : z.number().int().positive()
+});
+
 const projectSchema = z.object({
-    name: z.string().min(1),
-    newName: z.string().min(1).optional(),
+    name: z.string().min(1).optional(),
     type: z.enum(["Développement Web", "Développement Application", "Autres"]).optional(),
     description: z.string().min(1).optional(),
     thumbnail: z.string().url().optional(),
@@ -15,11 +18,20 @@ const projectSchema = z.object({
     featured: z.boolean().optional(),
 });
 
-router.put("/", async (req, res) => {
-    let name, newName, type, description, thumbnail, github_url, technologies, featured;
+router.put("/:id", async (req, res) => {
+    let id;
+    let name, type, description, thumbnail, github_url, technologies, featured;
 
     try {
-        ({ name, newName, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body));
+        ({ id } = idSchema.parse({ id: Number(req.params.id) }));
+    } catch (error) {
+        res.status(400);
+        res.json({ message: "ID de projet invalide" });
+        return;
+    }
+
+    try {
+        ({ name, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body ?? {}));
     } catch (error) {
         return res.status(400).json({
             message: "Données invalides",
@@ -29,15 +41,15 @@ router.put("/", async (req, res) => {
 
     try {
         const [rows] = await pool.query(
-            `SELECT * FROM projects WHERE name = ?`, [name]
+            `SELECT * FROM projects WHERE id = ?`, [id]
         );
 
         if (rows.length === 0) {
-            return res.status(404).json({ message: "Projet '" + name + "' introuvable" });
+            return res.status(404).json({ message: "Projet introuvable" });
         }
 
         const fields = {
-            name: newName,
+            name,
             type,
             description,
             thumbnail,
@@ -62,19 +74,26 @@ router.put("/", async (req, res) => {
             return;
         }
 
-        values.push(name);
+        values.push(id);
 
         await pool.execute(
-            `UPDATE projects SET ${updates.join(", ")} WHERE name = ?`, values
+            `UPDATE projects SET ${updates.join(", ")} WHERE id = ?`, values
         );
 
         res.status(200)
-        res.json({ message: "Projet '" + name + "' mis à jour avec succès" });
+        res.json({ message: "Projet mis à jour avec succès" });
         return;
 
     } catch (error) {
+
+        if (error.code === 'ER_DUP_ENTRY') {
+            res.status(409);
+            res.json({ message: "Un projet avec ce nom existe déjà" });
+            return;
+        }
+
         console.error("Erreur lors de la mise à jour du projet :", error);
-        
+
         res.status(500);
         res.json({ message: "Erreur Serveur lors de la mise à jour du projet" });
     }
