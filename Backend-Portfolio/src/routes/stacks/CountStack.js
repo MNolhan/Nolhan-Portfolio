@@ -15,8 +15,10 @@ router.get("/", async (req, res) => {
         res.json({ count: rows[0].NumberOfStack });
 
     } catch (error) {
+        console.error("Erreur lors de la récupération du nombre de stacks :", error);
+        
         res.status(500);
-        res.json({ message : "ERROR" });
+        res.json({ message : "Erreur lors de la récupération du nombre de stacks" });
         return;
     }
 

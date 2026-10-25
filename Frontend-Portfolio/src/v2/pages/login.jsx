@@ -8,6 +8,7 @@ export default function Login() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState('')
 
     const handleSubmit = async (e) => {
@@ -56,16 +57,25 @@ export default function Login() {
                     <p className="login__content-subtitle">Veuillez vous connecter pour continuer.</p>
 
                     <form className="login__content-form" onSubmit={handleSubmit}>
+
                         <div className="login__content-form--group">
                             <label htmlFor="email" className="login__content-form--label">Email</label>
                             <input type="email" id="email" name="email" className="login__content-form--input" placeholder="Entrez votre email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </div>
+
                         <div className="login__content-form--group">
                             <label htmlFor="password" className="login__content-form--label">Mot de passe</label>
-                            <input type="password" id="password" name="password" className="login__content-form--input" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <input type={showPassword ? "text" : "password"} id="password" name="password" className="login__content-form--input" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <div className="login__content-form--showpassword">
+                                <input type="checkbox" id="showPassword" onChange={(e) => setShowPassword(e.target.checked)} />
+                                <label htmlFor="showPassword" className="login__content-form--label-mdp">Afficher le mot de passe</label>
+                            </div>
                         </div>
+
                         <button type="submit" className="login__content-form--button">Se connecter</button>
+
                     </form>
+
                     {message && <p className="login__content-message">{message}</p>}
                     <p className="login__content-noaccount"> Pas encore de compte ? <a className="login__content-noaccount--red" href="/signup">Créer un compte</a></p>
                 </div>

@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
         res.json({ count: rows[0].NumberOfProjects });
 
     } catch (error) {
+        console.error("Erreur lors du comptage des projets :", error);
 
         res.status(500);
         res.json({ message : "Erreur Serveur lors du comptage des projets" });

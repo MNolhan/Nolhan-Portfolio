@@ -46,9 +46,6 @@ export default function Header() {
                         <a href="/profil" className="nav__auth--dropdown--link">
                             Profil
                         </a>
-                        <a href="#" className="nav__auth--dropdown--link">
-                            Paramètres
-                        </a>
                         <a 
                             onClick={() => 
                                 {localStorage.removeItem('token')

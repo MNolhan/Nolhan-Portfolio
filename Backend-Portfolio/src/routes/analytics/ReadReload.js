@@ -11,9 +11,11 @@ router.get("/", async (req , res) => {
         );
 
         res.status(200);
-        res.json(rows);
+        res.json({ count : rows[0].nombre });
 
     } catch (error) {
+        console.error("Erreur lors de la lecture du nombre de reloads :", error);
+
         res.status(500);
         res.json({ message : "Erreur Serveur lors de la lecture du nombre de reloads" });
         return;

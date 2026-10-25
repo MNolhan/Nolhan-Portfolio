@@ -10,6 +10,7 @@ export default function Signup() {
     const [firstname, setFirstname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState('')
 
     const handleSubmit = async (e) => {
@@ -47,6 +48,15 @@ export default function Signup() {
         }
     }
 
+    function ShowPassWord() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
     return (
         <div className="authcontainer">
             <div className="signup">
@@ -59,24 +69,35 @@ export default function Signup() {
                     <p className="signup__content-subtitle">Veuillez créer un compte pour continuer.</p>
 
                     <form className="signup__content-form" onSubmit={handleSubmit}>
+
                         <div className="signup__content-form--group">
                             <label htmlFor="firstname" className="signup__content-form--label">Prénom</label>
                             <input type="text" id="firstname" name="firstname" className="signup__content-form--input" placeholder="Entrez votre prénom" value={firstname} onChange={(e) => setFirstname(e.target.value)} required />
                         </div>
+
                         <div className="signup__content-form--group">
                             <label htmlFor="name" className="signup__content-form--label">Nom</label>
                             <input type="text" id="name" name="name" className="signup__content-form--input" placeholder="Entrez votre nom" value={name} onChange={(e) => setName(e.target.value)} required />
                         </div>
+
                         <div className="signup__content-form--group">
                             <label htmlFor="email" className="signup__content-form--label">Email</label>
                             <input type="email" id="email" name="email" className="signup__content-form--input" placeholder="Entrez votre email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </div>
+
                         <div className="signup__content-form--group">
                             <label htmlFor="password" className="signup__content-form--label">Mot de passe</label>
-                            <input type="password" id="password" name="password" className="signup__content-form--input" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <input type={showPassword ? "text" : "password"} id="password" name="password" className="signup__content-form--input" placeholder="Entrez votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <div className="login__content-form--showpassword">
+                                <input type="checkbox" id="showPassword" onChange={(e) => setShowPassword(e.target.checked)} />
+                                <label htmlFor="showPassword" className="login__content-form--label-mdp">Afficher le mot de passe</label>
+                            </div>
                         </div>
+
                         <button type="submit" className="signup__content-form--button">S'inscrire</button>
+
                     </form>
+
                     {message && <p className="signup__content-message">{message}</p>}
                     <p className="signup__content-noaccount"> Déjà un compte ? <a className="signup__content-noaccount--red" href="/login">Se connecter</a></p>
                 </div>

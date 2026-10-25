@@ -14,7 +14,7 @@ export default function Carroursel() {
             method: 'GET',
         })
         .then((res) => res.json())
-        .then((data) => setReload(data[0].nombre))
+        .then((data) => setReload(data.count))
         .catch(() => setReload('ERROR'))
     }, [])
 

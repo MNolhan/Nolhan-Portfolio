@@ -6,7 +6,7 @@ import blockIfAuthenticated from "../../middlewares/blockIfAuthenticated.js";
 
 const router = express.Router();
 
-const userSchema = z.object({
+const CreateUserSchema = z.object({
     name : z.string().min(1),
     firstname : z.string().min(1),
     email : z.string().email(),
@@ -18,7 +18,7 @@ router.post("/", blockIfAuthenticated, async (req, res) => {
     let name, firstname, email, password;
 
     try {
-        ({ name, firstname, email, password} = userSchema.parse(req.body));
+        ({ name, firstname, email, password} = CreateUserSchema.parse(req.body));
     } catch (error) {
         res.status(400);
         res.json({ message: "Données invalides" });
@@ -38,6 +38,15 @@ router.post("/", blockIfAuthenticated, async (req, res) => {
         res.json({ message: "L'utilisateur a été créé avec succès", id: result.insertId });
 
     } catch (error) {
+
+        if (error.code === 'ER_DUP_ENTRY') {
+            console.error("Erreur lors de la création de l'utilisateur :", error);
+            res.status(409);
+            res.json({ message: "L'email est déjà utilisé" });
+            return;
+        }
+
+        console.error("Erreur lors de la création de l'utilisateur :", error);
 
         res.status(500)
         res.json({ message: "Erreur Serveur lors de la création de l'utilisateur" });

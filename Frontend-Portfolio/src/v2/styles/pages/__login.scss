@@ -1,4 +1,4 @@
-@use '../abstratcs/_variables' as *;
+@use '../abstracts/_variables' as *;
 
 .login{
     font-family: $font-family;
@@ -88,6 +88,14 @@
                 color: $textColor-dim;
                 text-transform: uppercase;
                 margin-bottom: $space-xs;
+
+                &-mdp{
+                    font-family: $font-family;
+                    font-size: 0.875rem;
+                    font-weight: $fw-bold;
+                    color: $textColor-dim;
+                    text-transform: uppercase;
+                }
             }
 
             &--input{
@@ -103,6 +111,14 @@
                     outline: none;
                     border-color: $textred-soft;
                 }
+            }
+
+            &--showpassword{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: $space-xs;
+                margin-top: $space-xs;
             }
 
             &--button{
@@ -125,6 +141,12 @@
             }
         }
 
+        &-message{
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         &-noaccount{
             font-size: 0.875rem;
             font-weight: $fw-regular;
@@ -137,6 +159,13 @@
         }
     }
 }
+
+input[type="checkbox"] {
+    accent-color: $textred;
+    width: 1rem;
+    height: 1rem;
+}
+
 
 @media (max-width: $tabletScreen){
     .login{

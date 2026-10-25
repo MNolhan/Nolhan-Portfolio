@@ -5,7 +5,7 @@ export default function EcommerceIcon() {
       width="30"
       height="30"
       fill="currentColor"
-      class="bi bi-rocket-takeoff"
+      className="bi bi-rocket-takeoff"
       viewBox="0 0 16 16"
     >
       <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532" />

@@ -1,4 +1,4 @@
-@use '../abstratcs/_variables' as *;
+@use '../abstracts/_variables' as *;
 
 .signup{
     font-family: $font-family;
@@ -132,6 +132,12 @@
             }
         }
 
+        &-message{
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         &-noaccount{
             font-size: 0.875rem;
             font-weight: $fw-regular;
@@ -143,6 +149,10 @@
             }
         }
     }
+}
+
+input[type="checkbox"] {
+  accent-color: $textred;
 }
 
 @media (max-width: $wideScreen){

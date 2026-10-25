@@ -16,6 +16,7 @@ router.get("/", async (req , res) => {
         res.json(rows);
 
     } catch (error) {
+        console.error("Erreur lors de la lecture des projets :", error);
 
         res.status(500);
         res.json({ message : "Erreur Serveur lors de la lecture des projets" });
@@ -29,9 +30,18 @@ const idSchema = z.object({
 });
 
 router.get("/:id", async (req , res) => {
-    try {
 
-        const parsedId = idSchema.parse({ id: Number(req.params.id) });
+    let parsedId;
+    
+    try {
+        ({parsedId} = idSchema.parse({ id: Number(req.params.id) }));
+    } catch (error) {
+        res.status(400);
+        res.json({ message: "ID de projet invalide" });
+        return;
+    }
+    
+    try {
 
         const [rows] = await pool.execute(
             `Select * from projects where id = ?`, [parsedId.id]
@@ -39,7 +49,7 @@ router.get("/:id", async (req , res) => {
 
         if (rows.length === 0) {
             res.status(404);
-            res.json({ message: "Project not found" });
+            res.json({ message: "Projet non trouvé" });
             return;
         }
 
@@ -47,7 +57,9 @@ router.get("/:id", async (req , res) => {
         res.json(rows[0]);
 
     } catch (error) {
-        res.status(400);
+        console.error("Erreur lors de la lecture du projet :", error);
+
+        res.status(500);
         res.json({ message: "Erreur Serveur lors de la lecture du projet" });
     }
 });
