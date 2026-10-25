@@ -47,6 +47,8 @@ router.post("/", async (req, res) => {
         });
 
     } catch (error) {
+        console.error("Erreur lors de la création du projet :", error);
+        
         res.status(500);
         res.json({ message : "Erreur Serveur lors de la création du projet" });
     }

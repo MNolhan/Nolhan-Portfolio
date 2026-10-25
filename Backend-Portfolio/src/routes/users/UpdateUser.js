@@ -64,12 +64,15 @@ router.patch("/", auth, async (req, res) => {
         res.json({ message: "Informations de l'utilisateur mises à jour avec succès" });
 
     } catch (err) {
-
+        
         if (err.code === 'ER_DUP_ENTRY') {
+            console.error("Erreur lors de la mise à jour des informations de l'utilisateur :", err);
             res.status(409);
             res.json({ message: "L'email est déjà utilisé" });
             return;
         }
+
+        console.error("Erreur lors de la mise à jour des informations de l'utilisateur :", err);
 
         res.status(500);
         res.json({ message: "Erreur lors de la mise à jour des informations de l'utilisateur" });

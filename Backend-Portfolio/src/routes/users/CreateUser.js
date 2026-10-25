@@ -40,10 +40,13 @@ router.post("/", blockIfAuthenticated, async (req, res) => {
     } catch (error) {
 
         if (error.code === 'ER_DUP_ENTRY') {
+            console.error("Erreur lors de la création de l'utilisateur :", error);
             res.status(409);
             res.json({ message: "L'email est déjà utilisé" });
             return;
         }
+
+        console.error("Erreur lors de la création de l'utilisateur :", error);
 
         res.status(500)
         res.json({ message: "Erreur Serveur lors de la création de l'utilisateur" });

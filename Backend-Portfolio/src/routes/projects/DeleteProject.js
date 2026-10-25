@@ -40,6 +40,8 @@ router.delete("/",  async (req, res) => {
         res.status(204).send();
 
     } catch (error) {
+        console.error("Erreur lors de la suppression du projet :", error);
+        
         res.status(500);
         res.json({ message : "Erreur Serveur lors de la suppression du projet" });
         return;

@@ -14,6 +14,8 @@ router.delete("/", auth, async (req, res) => {
         res.status(204).send();
         
     } catch (err) {
+        console.error("Erreur lors de la suppression du compte :", err);
+
         res.status(500);
         res.json({ message: "Erreur lors de la suppression du compte" });
         return;

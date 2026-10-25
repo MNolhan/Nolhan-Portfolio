@@ -21,6 +21,8 @@ router.get("/me", auth, async (req, res) => {
         res.json(rows);
 
     } catch (err) {
+        console.error("Erreur lors de la lecture de l'utilisateur :", err);
+        
         res.status(500);
         res.json({ message: "Erreur Serveur lors de la lecture de l'utilisateur" });
     }

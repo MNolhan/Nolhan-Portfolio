@@ -63,7 +63,8 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
         }
 
     } catch (error) {
-
+        console.error("Erreur lors de la connexion de l'utilisateur :", error);
+        
         res.status(500);
         res.json({ message: "Erreur Serveur lors de la connexion de l'utilisateur" });
 

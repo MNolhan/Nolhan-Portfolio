@@ -73,6 +73,8 @@ router.put("/", async (req, res) => {
         return;
 
     } catch (error) {
+        console.error("Erreur lors de la mise à jour du projet :", error);
+        
         res.status(500);
         res.json({ message: "Erreur Serveur lors de la mise à jour du projet" });
     }

@@ -47,6 +47,8 @@ router.get("/:id", async (req , res) => {
         res.json(rows[0]);
 
     } catch (error) {
+        console.error("Erreur lors de la lecture du projet :", error);
+        
         res.status(400);
         res.json({ message: "Erreur Serveur lors de la lecture du projet" });
     }
