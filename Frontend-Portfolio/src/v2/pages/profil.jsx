@@ -23,7 +23,7 @@ export default function Profil() {
 
                 const data = await response.json();
                 if (response.ok) {
-                    setUser(data[0]);
+                    setUser(data);
                 }
 
             } catch (err) {

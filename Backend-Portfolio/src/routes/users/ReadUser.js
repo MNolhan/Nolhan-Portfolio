@@ -18,7 +18,7 @@ router.get("/me", auth, async (req, res) => {
         }
 
         res.status(200);
-        res.json(rows);
+        res.json(rows[0]);
 
     } catch (err) {
         console.error("Erreur lors de la lecture de l'utilisateur :", err);
