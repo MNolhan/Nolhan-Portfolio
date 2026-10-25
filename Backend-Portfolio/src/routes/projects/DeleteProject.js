@@ -15,7 +15,6 @@ router.delete("/",  async (req, res) => {
 
     try {
         ({name} = projectSchema.parse(data));
-
     } catch (error) {
         res.status(400);
         res.json({ message: "Données invalides" });
@@ -41,7 +40,7 @@ router.delete("/",  async (req, res) => {
 
     } catch (error) {
         console.error("Erreur lors de la suppression du projet :", error);
-        
+
         res.status(500);
         res.json({ message : "Erreur Serveur lors de la suppression du projet" });
         return;

@@ -5,9 +5,6 @@ import jwt from "jsonwebtoken";
 import rateLimiter from "../../middlewares/RateLimiting.js";
 import pool from '../../infra/db.js';
 import blockIfAuthenticated from "../../middlewares/blockIfAuthenticated.js";
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const SecretKey = process.env.JWTKEY;
 const router = express.Router();
@@ -64,7 +61,7 @@ router.post("/", rateLimiter, blockIfAuthenticated, async (req, res) => {
 
     } catch (error) {
         console.error("Erreur lors de la connexion de l'utilisateur :", error);
-        
+
         res.status(500);
         res.json({ message: "Erreur Serveur lors de la connexion de l'utilisateur" });
 

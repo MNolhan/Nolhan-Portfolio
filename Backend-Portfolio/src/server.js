@@ -1,6 +1,6 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import { ensureRedisConnected } from './infra/RedisClient.js';
 
 //Import Routes
@@ -19,7 +19,6 @@ import ReadStack from './routes/stacks/ReadStack.js';
 import IncrementReload from './routes/analytics/IncrementReload.js';
 import ReadReload from './routes/analytics/ReadReload.js';
 
-dotenv.config();
 const app = express();
 
 app.set('trust proxy', 1);
