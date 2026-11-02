@@ -34,7 +34,7 @@ router.get("/:id", async (req , res) => {
     let parsedId;
     
     try {
-        ({parsedId} = idSchema.parse({ id: Number(req.params.id) }));
+        ({id : parsedId} = idSchema.parse({ id: Number(req.params.id) }));
     } catch (error) {
         res.status(400);
         res.json({ message: "ID de projet invalide" });
@@ -44,7 +44,7 @@ router.get("/:id", async (req , res) => {
     try {
 
         const [rows] = await pool.execute(
-            `Select * from projects where id = ?`, [parsedId.id]
+            `Select * from projects where id = ?`, [parsedId]
         );
 
         if (rows.length === 0) {
