@@ -1,0 +1,33 @@
+@use '../abstracts/_variables' as *;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: $z-loader;
+  background: $bg-soft;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+  opacity: 1;
+  visibility: visible;
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__text {
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    font-family: $font-family;
+    color: $textColor;
+
+    span {
+      color: $textred;
+    }
+  }
+}

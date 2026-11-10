@@ -1,0 +1,67 @@
+@use '../abstracts/_variables' as *;
+
+.carrousel {
+  background-color: $bg-soft;
+  border: $border;
+  margin: $space-4xl 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+
+  > * {
+    flex: 0 0 100%;
+  }
+
+  &__group {
+    display: flex;
+    padding: $space-xs;
+    will-change: transform;
+    animation: scrolling 50s linear infinite;
+  }
+
+  &__card {
+    font-family: $font-family-secondary;
+    font-weight: $fw-regular;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $textColor-dim;
+    padding: $space-xs;
+    font-size: $fs-4xl;
+    font-size: $fs-xl;
+    min-height: 25px;
+    font-weight: $fw-regular;
+    transition: $transition-base;
+
+    &:hover {
+      cursor: pointer;
+      color: $textColor;
+    }
+  }
+
+  &__separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1px;
+    color: transparent;
+    margin: 0;
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .carrousel {
+    display: none;
+  }
+}

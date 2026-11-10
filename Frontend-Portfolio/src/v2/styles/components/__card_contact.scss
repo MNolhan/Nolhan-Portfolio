@@ -1,0 +1,84 @@
+@use '../abstracts/_variables' as *;
+
+.card-contact {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  color: $textColor;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-lg $space-xl;
+  background-color: $bg-soft;
+  border-radius: $radius-lg;
+  border: $border;
+  transition: $transition-base;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    font-family: $font-family;
+    font-size: $fs-md;
+    font-weight: $fw-bold;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    border-color: $textred-soft;
+  }
+
+  &:hover &__icon {
+    color: $textColor;
+  }
+
+  &__icon {
+    color: $textColor-dim;
+    display: flex;
+    align-items: center;
+    transition: $transition-base;
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .card-contact {
+    padding: $space-md $space-lg;
+
+    &__value {
+      font-size: $fs-sm;
+    }
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  .card-contact {
+    padding: $space-md;
+
+    &__value {
+      overflow-wrap: anywhere;
+    }
+  }
+}

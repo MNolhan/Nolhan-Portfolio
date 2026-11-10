@@ -1,0 +1,11 @@
+export default function serviceCard({ Icone, children, description }) {
+  return (
+    <div className="serviceCard">
+      <div className="serviceCard__icone">
+        <Icone />
+      </div>
+      <h3 className="serviceCard__title">{children}</h3>
+      <p className="serviceCard__description">{description}</p>
+    </div>
+  )
+}

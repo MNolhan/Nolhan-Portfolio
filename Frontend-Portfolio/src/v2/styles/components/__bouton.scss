@@ -1,0 +1,43 @@
+@use '../abstracts/_variables' as *;
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-weight: $fw-medium;
+  padding: $space-sm $space-lg;
+  border-radius: $radius-lg;
+  text-decoration: none;
+  font-family: $font-family;
+  transition: all 0.3s ease;
+
+  &--primary {
+    display: flex;
+    justify-content: center;
+    background-color: $textred;
+    color: $textColor;
+    border: 1px solid $textred;
+  }
+
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: $border;
+    color: $textColor;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $textred;
+    border: 1px solid $textred;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .btn {
+    padding: $space-sm $space-md;
+    font-size: $fs-sm;
+  }
+}

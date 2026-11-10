@@ -1,0 +1,24 @@
+import express from "express";
+import pool from '../../infra/db.js';
+
+const router = express.Router();
+
+router.get("/", async (req, res) => {
+
+    try {
+        const [rows] = await pool.query(
+            `SELECT COUNT(id) AS NumberOfProjects FROM projects;`
+        );
+
+        res.status(200);
+        res.json({ count: rows[0].NumberOfProjects });
+
+    } catch (error) {
+        console.error("Erreur lors du comptage des projets :", error);
+        res.status(500);
+        res.json({ message : "Erreur Serveur lors du comptage des projets" });
+    }
+
+});
+
+export default router;

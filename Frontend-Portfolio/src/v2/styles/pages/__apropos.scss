@@ -1,0 +1,125 @@
+@use '../abstracts/_variables' as *;
+
+.apropos {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-xl-plus 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-4xl;
+  }
+
+  &__description {
+    font-size: $fs-lg;
+    color: $textColor-dim;
+    font-family: $font-family;
+    font-weight: $fw-regular;
+    line-height: $lh-relaxed;
+  }
+
+  &__right {
+    margin-top: $space-xl;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    gap: $space-xl;
+    justify-items: center;
+  }
+
+  &__strong {
+    color: $textColor;
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .apropos {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__content {
+      gap: $space-xl;
+    }
+
+    &__description {
+      font-size: $fs-md;
+    }
+
+    &__right {
+      margin-top: $space-sm;
+      grid-template-columns: 1fr 1fr;
+      gap: $space-md;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .apropos {
+    &__title {
+      font-size: $fs-4xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: $space-xl;
+    }
+
+    &__right {
+      margin-top: 0;
+      grid-template-columns: 1fr 1fr;
+      gap: $space-md;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .apropos {
+    &__title {
+      font-size: $fs-3xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: $space-md;
+    }
+
+    &__left {
+      display: flex;
+      text-align: justify;
+    }
+
+    &__description {
+      font-size: $fs-sm;
+    }
+
+    &__right {
+      grid-template-columns: 1fr;
+      gap: $space-md;
+    }
+  }
+}

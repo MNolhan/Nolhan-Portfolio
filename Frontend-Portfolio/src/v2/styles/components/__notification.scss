@@ -1,0 +1,59 @@
+@use '../abstracts/_variables' as *;
+
+.notification {
+  pointer-events: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: $space-md $space-lg;
+  background: $bg-soft;
+  color: $textColor;
+  border: $border;
+  border-left: 5px solid $textred-soft;
+  border-radius: $radius-lg;
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  font-family: $font-family;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-xs;
+  }
+
+  &__title {
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    margin-bottom: $space-xs;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-medium;
+    }
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    font-size: $fs-xl;
+    cursor: pointer;
+    color: $textColor-dim;
+  }
+
+  &__message {
+    font-size: $fs-md;
+    font-weight: $fw-medium;
+  }
+
+  &.notification--show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}

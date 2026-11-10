@@ -1,0 +1,77 @@
+@use './abstracts/_variables' as *;
+@use './components/__button' as *;
+@use './components/__card' as *;
+@use './components/__input' as *;
+@use './components/__authpopup' as *;
+@use './abstracts/_container' as *;
+@use './layouts/__header' as *;
+@use './layouts/__footer' as *;
+@use './pages/_home' as *;
+@use './pages/_aboutme' as *;
+@use './components/_serviceCard' as *;
+@use './components/_scrollwatcher' as *;
+@use './pages/_service' as *;
+@use './pages/_project' as *;
+@use './components/_projectCard' as *;
+@use './pages/_contact' as *;
+@use './components/_contactCard' as *;
+@use './components/__panel' as *;
+
+body {
+  margin: 0;
+  background-color: $dark-bg;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+@media screen and (max-width: $mediascreen-xl) {
+  .page {
+    gap: 7.5rem;
+  }
+}
+
+@media screen and (max-width: $mediascreen-m) {
+  .page {
+    gap: 5rem;
+  }
+}
+
+// -- Scrollbar --
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary-background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-background-color;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($primary-color, 0.25);
+}
+
+// -- Animation Scroll --
+@keyframes reveal-blur-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}

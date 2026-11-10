@@ -1,0 +1,116 @@
+@use '../abstracts/_variables' as *;
+
+.stack {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-3xl 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $space-xl;
+  }
+
+  &__category {
+    font-size: $fs-xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-bold;
+    margin-bottom: $space-md;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family;
+      font-weight: $fw-regular;
+      font-size: $fs-sm;
+      margin: 0 $space-sm 0 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+}
+
+hr {
+  border: 0;
+  height: 3px;
+  background-color: $surface-2;
+  margin: 0 0 $space-md 0;
+}
+
+@media (max-width: $wideScreen) {
+  .stack {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__content {
+      gap: $space-lg;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .stack {
+    &__title {
+      font-size: $fs-4xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      gap: $space-md;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .stack {
+    &__title {
+      font-size: $fs-3xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: $space-md;
+    }
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  .stack {
+    &__title {
+      font-size: $fs-2xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: $space-md;
+    }
+  }
+}

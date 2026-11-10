@@ -1,0 +1,59 @@
+import express from "express";
+import { z } from "zod";
+import pool from '../../infra/db.js';
+import auth from '../../middlewares/auth.js';
+import admin from '../../middlewares/admin.js';
+
+const router = express.Router();
+
+const projectSchema = z.object({
+    name: z.string().min(1),
+    type: z.enum(["Développement Web", "Développement Application", "Autres"]).default("Autres"),
+    description: z.string().min(1),
+    thumbnail: z.string().url().optional(),
+    github_url: z.string().url().optional(),
+    technologies: z.array(z.string()).optional(),
+    featured: z.boolean().default(false),
+});
+
+router.post("/", auth, admin, async (req, res) => {
+    let name, type, description, thumbnail, github_url, technologies, featured;
+
+    try {
+        ({ name, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body));
+    } catch (error) {
+        res.status(400)
+        res.json({ 
+            message: "Données invalides", 
+            errors: error.flatten().fieldErrors 
+        });
+    }
+
+    try {
+        const [result] = await pool.execute(
+            `INSERT INTO projects (name, type, description, thumbnail, github_url, technologies, featured)
+             VALUES (?, ?, ?, ?, ?, ?, ?)`,
+            [
+                name,
+                type,
+                description,
+                thumbnail,
+                github_url,
+                technologies,
+                featured,
+            ]
+        );
+
+        return res.status(201).json({ 
+            message: "Projet créé avec succès", 
+            id: result.insertId 
+        });
+
+    } catch (error) {
+        console.error("Erreur lors de la création du projet :", error);
+        res.status(500);
+        res.json({ message : "Erreur Serveur lors de la création du projet" });
+    }
+});
+
+export default router;

@@ -1,0 +1,125 @@
+@use '../abstracts/_variables' as *;
+
+.card-apropos {
+  width: 100%;
+  height: 200px;
+  background-color: $bg-soft;
+  display: flex;
+  flex-direction: column;
+  padding: $space-lg $space-xl;
+  border-radius: $radius-lg;
+  border: $border;
+  transition: $transition-slow;
+  cursor: pointer;
+
+  &__title {
+    font-size: $fs-4xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-bold;
+    margin-bottom: $space-xs;
+
+    &--red {
+      font-size: $fs-sm;
+    }
+  }
+
+  &__description {
+    font-size: $fs-sm;
+    color: $textColor-dim;
+    font-family: $font-family;
+    font-weight: $fw-regular;
+    line-height: $lh-relaxed;
+
+    &--red {
+      font-size: $fs-4xl;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      color: $textColor;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $textred-soft;
+    transform: scale(1.01);
+  }
+
+  &--red {
+    background: linear-gradient(0.9turn, $textred, $textred-soft);
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .card-apropos {
+    height: 200px;
+    padding: $space-md $space-lg;
+
+    &__title {
+      font-size: $fs-3xl;
+
+      &--red {
+        font-size: $fs-xs;
+      }
+    }
+
+    &__description {
+      font-size: $fs-xs;
+
+      &--red {
+        font-size: $fs-2xl;
+      }
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .card-apropos {
+    height: 150px;
+    padding: $space-md $space-lg;
+
+    &__title {
+      font-size: $fs-2xl;
+
+      &--red {
+        font-size: $fs-xs;
+      }
+    }
+
+    &__description {
+      font-size: $fs-xs;
+
+      &--red {
+        font-size: $fs-xl;
+      }
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .card-apropos {
+    height: 130px;
+    padding: $space-md $space-lg;
+
+    &__title {
+      font-size: $fs-xl;
+
+      &--red {
+        font-size: $fs-xs;
+      }
+    }
+
+    &__description {
+      font-size: $fs-sm;
+
+      &--red {
+        font-size: $fs-md;
+      }
+    }
+  }
+}

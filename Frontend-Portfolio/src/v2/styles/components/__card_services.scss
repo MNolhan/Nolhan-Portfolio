@@ -1,0 +1,167 @@
+@use '../abstracts/_variables' as *;
+
+.card-services {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  background-color: $bg-soft;
+  padding: $space-xl-plus $space-2xl-plus;
+  border-radius: $radius-lg;
+  transition: $transition-base;
+
+  animation: apparitionCarte linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__type {
+    color: $textred-soft;
+    font-family: $font-family;
+    font-weight: $fw-medium;
+    font-size: $fs-xs;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+  }
+
+  &__title {
+    font-size: $fs-4xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-bold;
+    margin: $space-xs 0 0 0;
+  }
+
+  &__description {
+    font-size: $fs-lg;
+    color: $textColor-dim;
+    font-family: $font-family;
+    font-weight: $fw-regular;
+    line-height: $lh-relaxed;
+  }
+
+  &__icon {
+    font-size: $fs-5xl;
+    color: $textColor;
+  }
+
+  &--red {
+    background:
+      radial-gradient(circle at 85% 15%, rgba($textred, 0.22), transparent 60%),
+      $surface;
+
+    &-strong {
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba($textred, 0.25),
+          transparent 60%
+        ),
+        $surface;
+    }
+  }
+
+  &--purple {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(107, 63, 184, 0.22),
+        transparent 60%
+      ),
+      $surface;
+  }
+
+  &--blue {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(61, 150, 220, 0.2),
+        transparent 60%
+      ),
+      $surface;
+  }
+
+  &--green {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba($statusgreen, 0.18),
+        transparent 60%
+      ),
+      $surface;
+  }
+
+  &--amber {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(240, 180, 60, 0.18),
+        transparent 60%
+      ),
+      $surface;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba($black, 0.2);
+  }
+}
+
+@keyframes apparitionCarte {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .card-services {
+    padding: $space-lg $space-xl;
+
+    &__title {
+      font-size: $fs-3xl;
+    }
+
+    &__description {
+      font-size: $fs-sm;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .card-services {
+    width: 75%;
+    padding: $space-lg $space-xl;
+
+    &__title {
+      font-size: $fs-2xl;
+    }
+
+    &__description {
+      font-size: $fs-sm;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .card-services {
+    width: 100%;
+    padding: $space-lg $space-xl;
+
+    &__title {
+      font-size: $fs-xl;
+    }
+
+    &__description {
+      font-size: $fs-xs;
+    }
+  }
+}

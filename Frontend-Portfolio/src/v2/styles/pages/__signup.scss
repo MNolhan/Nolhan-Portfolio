@@ -1,0 +1,181 @@
+@use '../abstracts/_variables' as *;
+
+.signup {
+  font-family: $font-family;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-soft;
+    border: $border;
+    border-radius: $radius-lg;
+    width: 30rem;
+    margin: auto;
+    padding: $space-xl;
+    color: $textColor;
+  }
+
+  &__logo {
+    font-size: $fs-xl;
+
+    &-accent {
+      color: $textred;
+    }
+  }
+
+  &__title {
+    font-size: $fs-4xl;
+    font-weight: $fw-semibold;
+    margin: $space-md 0 0 0;
+    font-weight: $fw-extrabold;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__subtitle {
+    font-size: $fs-md;
+    font-weight: $fw-regular;
+    margin: $space-xs 0 $space-lg 0;
+    color: $textColor-dim;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: $space-md 0 $space-md 0;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $space-lg;
+  }
+
+  &__label {
+    font-family: $font-family;
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    color: $textColor-dim;
+    text-transform: uppercase;
+    margin-bottom: $space-xs;
+  }
+
+  &__input {
+    padding: $space-sm;
+    border-radius: $radius-input;
+    border: $border;
+    background-color: $surface;
+    color: $textColor;
+    font-family: $font-family;
+    font-size: $fs-md;
+
+    &:focus {
+      outline: none;
+      border-color: $textred-soft;
+    }
+  }
+
+  &__submit {
+    padding: $space-md;
+    font-size: $fs-md;
+    font-family: $font-family;
+    background-color: $textred;
+    border: 1px solid $textred;
+    border-radius: $radius-lg;
+    color: $textColor;
+    font-weight: $fw-bold;
+    margin-top: $space-md;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $textred-soft;
+      transform: scale(1.025);
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: $textred-soft;
+      opacity: 0.6;
+    }
+  }
+
+  &__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__switch {
+    font-size: $fs-sm;
+    font-weight: $fw-regular;
+    margin: $space-xs 0 $space-lg 0;
+    color: $textColor-dim;
+
+    &-accent {
+      color: $textred-soft;
+    }
+  }
+}
+
+input[type='checkbox'] {
+  accent-color: $textred;
+}
+
+@media (max-width: $wideScreen) {
+  .signup {
+    &__content {
+      margin: 0 auto $space-3xl auto;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .signup {
+    &__content {
+      margin: 0 auto $space-xl auto;
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  .signup {
+    &__content {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: $fs-2xl;
+      margin: $space-xs 0 0 0;
+    }
+
+    &__subtitle {
+      font-size: $fs-sm;
+      margin: $space-xs 0 $space-md 0;
+    }
+
+    &__submit {
+      padding: $space-sm;
+      font-size: $fs-sm;
+    }
+
+    &__label {
+      font-size: $fs-xs;
+    }
+
+    &__input {
+      font-size: $fs-sm;
+    }
+  }
+}

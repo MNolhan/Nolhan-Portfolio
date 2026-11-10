@@ -1,0 +1,94 @@
+@use '../abstracts/_variables' as *;
+
+.card-project-component {
+  background: $bg-soft;
+  border: $border;
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    gap: $space-2xs;
+    padding: $space-sm $space-md;
+    background: $surface-2;
+    border-bottom: $border;
+  }
+
+  &__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: $radius-circle;
+    background: $textColor-faint;
+  }
+
+  &__content {
+    position: relative;
+    padding: $space-lg;
+  }
+
+  &__type {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    background: $bg;
+    border: $border;
+    color: $textColor-dim;
+    font-family: $font-family;
+    font-size: $fs-sm;
+    font-weight: $fw-regular;
+    padding: $space-xs $space-md;
+    border-radius: $radius-pill;
+    backdrop-filter: blur(6px);
+    z-index: $z-base;
+  }
+
+  &__main {
+    height: 60px;
+    border-radius: $radius-sm;
+    background: linear-gradient(
+      120deg,
+      rgba($textred, 0.2),
+      rgba($textred-soft, 0.2)
+    );
+  }
+
+  &__card {
+    display: flex;
+    gap: $space-sm;
+    margin-top: $space-sm;
+
+    &-sub {
+      flex: 1;
+      height: 48px;
+      border-radius: $radius-sm;
+      background: $surface-2;
+    }
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .card-project-component {
+    &__content {
+      padding: $space-md;
+    }
+
+    &__type {
+      top: -30px;
+      right: 12px;
+      font-size: $fs-xs;
+      padding: $space-2xs $space-sm;
+    }
+
+    &__main {
+      height: 40px;
+    }
+
+    &__card {
+      margin-top: $space-xs;
+
+      &-sub {
+        height: 32px;
+      }
+    }
+  }
+}

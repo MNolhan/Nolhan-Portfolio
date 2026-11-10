@@ -1,0 +1,133 @@
+@use '../abstracts/_variables' as *;
+
+.projects {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-xl-plus 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__filter {
+    display: flex;
+    margin: 0 0 $space-lg 0;
+    gap: $space-md;
+
+    & button {
+      background-color: $bg-soft;
+      border: $border;
+      padding: $space-xs $space-md;
+      border-radius: $radius-lg;
+      font-family: $font-family;
+      font-size: $fs-md;
+      color: $textColor-dim;
+
+      &:hover {
+        color: $textColor;
+        cursor: pointer;
+      }
+
+      &.active {
+        font-weight: $fw-semibold;
+        color: $textred;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-xl;
+  }
+
+  &__message {
+    display: flex;
+    justify-content: center;
+    font-size: $fs-2xl;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .projects {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__cards {
+      gap: $space-lg;
+    }
+
+    &__message {
+      font-size: $fs-xl;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .projects {
+    &__title {
+      font-size: $fs-4xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__message {
+      font-size: $fs-lg;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .projects {
+    &__title {
+      font-size: $fs-3xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__filter {
+      justify-content: center;
+
+      & button {
+        padding: $space-xs $space-sm;
+        font-size: $fs-sm;
+      }
+    }
+
+    &__message {
+      font-size: $fs-md;
+    }
+  }
+}

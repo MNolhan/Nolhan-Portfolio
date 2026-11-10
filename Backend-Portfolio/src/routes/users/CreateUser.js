@@ -1,0 +1,56 @@
+import express from "express";
+import { z } from "zod";
+import bcrypt from "bcrypt";
+import pool from '../../infra/db.js';
+import blockIfAuthenticated from "../../middlewares/blockIfAuthenticated.js";
+import rateLimiter from "../../middlewares/RateLimiting.js";
+
+const router = express.Router();
+
+const CreateUserSchema = z.object({
+    name : z.string().min(1),
+    firstname : z.string().min(1),
+    email : z.string().email(),
+    password : z.string().min(6),
+});
+
+router.post("/", rateLimiter(3, 3600), blockIfAuthenticated, async (req, res) => {
+
+    let name, firstname, email, password;
+
+    try {
+        ({ name, firstname, email, password} = CreateUserSchema.parse(req.body));
+    } catch (error) {
+        console.error("Données utilisateur invalides :", error);
+        res.status(400);
+        res.json({ message: "Données invalides" });
+    }
+
+    try {
+        const hashpassword = await bcrypt.hash(password, 10);
+
+        const [result] = await pool.query(
+            "INSERT INTO users (name, firstname, email, password) VALUES (?, ?, ?, ?)",
+            [name, firstname, email, hashpassword]
+        );
+
+        res.status(201);
+        res.json({ message: "L'utilisateur a été créé avec succès", id: result.insertId });
+
+    } catch (error) {
+
+        if (error.code === 'ER_DUP_ENTRY') {
+            console.error("Erreur lors de la création de l'utilisateur :", error);
+            res.status(409);
+            res.json({ message: "L'email est déjà utilisé" });
+            return;
+        }
+
+        console.error("Erreur lors de la création de l'utilisateur :", error);
+        res.status(500)
+        res.json({ message: "Erreur Serveur lors de la création de l'utilisateur" });
+
+    }
+});
+
+export default router;

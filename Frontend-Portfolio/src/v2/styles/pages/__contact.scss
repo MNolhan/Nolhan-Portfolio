@@ -1,0 +1,298 @@
+@use '../abstracts/_variables' as *;
+
+.contact {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-xl-plus 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-md;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    color: $textColor;
+    font-family: $font-family;
+    gap: $space-md;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    color: $textColor;
+    font-family: $font-family;
+    gap: $space-md;
+  }
+}
+
+.contact-card {
+  border: $border;
+  border-radius: $radius-lg;
+  background-color: $bg-soft;
+  padding: $space-lg $space-xl;
+
+  &__header {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    border-radius: $radius-pill;
+    font-size: $fs-md;
+    font-family: $font-family;
+    color: $textColor;
+    padding-bottom: $space-sm;
+    margin: 0;
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: $radius-circle;
+    background: $statusgreen;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    max-width: 90%;
+    margin: 0;
+    font-size: $fs-md;
+    font-family: $font-family;
+    color: $textColor-dim;
+  }
+
+  &__divider {
+    width: 100%;
+    border: 0;
+    border-top: $border;
+    margin: $space-md 0;
+  }
+
+  &__location {
+    max-width: 90%;
+    margin: 0;
+    font-size: $fs-md;
+    font-family: $font-family;
+    color: $textColor-dim;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  border: $border;
+  border-radius: $radius-lg;
+  background-color: $bg-soft;
+  padding: $space-lg $space-xl;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+  &__title {
+    margin: 0;
+    padding: $space-sm 0 0 0;
+    font-size: $fs-2xl;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $textColor-dim;
+    margin-bottom: $space-md;
+    max-width: 90%;
+    font-size: $fs-sm;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-md;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-family: $font-family;
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    color: $textColor-dim;
+    text-transform: uppercase;
+    margin-bottom: $space-xs;
+  }
+
+  &__response {
+    align-self: center;
+    font-size: $fs-sm;
+    color: $textColor-dim;
+    margin-top: $space-md;
+    margin-bottom: $space-sm;
+  }
+
+  &__input {
+    padding: $space-sm;
+    border-radius: $radius-input;
+    border: $border;
+    background-color: $surface;
+    color: $textColor;
+    font-family: $font-family;
+    font-size: $fs-md;
+
+    &:focus {
+      outline: none;
+      border-color: $textred-soft;
+    }
+
+    &--textarea {
+      padding: $space-sm;
+      border-radius: $radius-input;
+      border: $border;
+      background-color: $surface;
+      color: $textColor;
+      font-family: $font-family;
+      font-size: $fs-md;
+      height: 150px;
+      width: 100%;
+      resize: none;
+
+      &:focus {
+        outline: none;
+        border-color: $textred-soft;
+      }
+    }
+  }
+
+  &__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-sm;
+    padding: $space-md;
+    font-size: $fs-md;
+    font-family: $font-family;
+    background-color: $textred;
+    border: 1px solid $textred;
+    border-radius: $radius-lg;
+    color: $textColor;
+    font-weight: $fw-bold;
+    margin-top: $space-md;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $textred-soft;
+      transform: scale(1.025);
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: $textred-soft;
+      opacity: 0.6;
+    }
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .contact {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-lg;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .contact {
+    &__title {
+      font-size: $fs-4xl;
+      margin-bottom: $space-md;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-card {
+    &__info,
+    &__location {
+      font-size: $fs-sm;
+    }
+  }
+
+  .contact-form {
+    &__title {
+      font-size: $fs-xl;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .contact {
+    &__title {
+      font-size: $fs-3xl;
+    }
+  }
+
+  .contact-form {
+    &__row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  .contact {
+    &__title {
+      font-size: $fs-2xl;
+    }
+  }
+
+  .contact-card {
+    &__header {
+      font-size: $fs-sm;
+    }
+  }
+
+  .contact-form {
+    &__title {
+      font-size: $fs-lg;
+    }
+
+    &__subtitle,
+    &__label {
+      font-size: $fs-xs;
+    }
+
+    &__submit {
+      font-size: $fs-sm;
+    }
+  }
+}

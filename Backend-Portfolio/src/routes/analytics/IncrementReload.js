@@ -1,0 +1,25 @@
+import express from "express";
+import pool from '../../infra/db.js';
+import rateLimiter from '../../middlewares/RateLimiting.js';
+
+const router = express.Router();
+
+router.post("/", rateLimiter, async (req , res) => {
+
+    try {
+        const [rows] = await pool.execute(
+            `UPDATE visits SET nombre = nombre + 1 WHERE id = 1`
+        );
+
+        res.status(200);
+        res.json({ message: "Le nombre de reloads a été incrémenté avec succès" });
+
+    } catch (error) {
+        console.error("Erreur lors de l'incrémentation du nombre de reloads :", error);
+        res.status(500);
+        res.json({ message: "Erreur Serveur lors de l'incrémentation du nombre de reloads" });
+    }
+
+});
+
+export default router; 

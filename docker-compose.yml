@@ -1,0 +1,49 @@
+services:
+  frontend:
+    build:
+      context: ./Frontend-Portfolio
+      args:
+        VITE_API_URL: http://localhost:3000
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: Backend-Portfolio
+    ports: 
+      - "3000:3000"
+    env_file:
+      - ./Backend-Portfolio/.env
+    environment:
+      DB_HOST: mysql
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - portfolio_mysql:/var/lib/mysql
+
+  redis:
+    image: redis:7
+    container_name: portfolio-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - portfolio_redis:/data
+
+volumes:
+  portfolio_mysql:
+    external: true
+    name: backend-portfolio_mysql_portfolio
+  portfolio_redis:
+    external: true
+    name: backend-portfolio_redis_portfolio

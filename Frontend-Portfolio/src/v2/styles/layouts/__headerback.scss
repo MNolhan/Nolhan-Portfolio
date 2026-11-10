@@ -1,0 +1,32 @@
+@use '../abstracts/_variables' as *;
+
+.header-back {
+  display: flex;
+  font-family: $font-family;
+
+  &__nav {
+    display: flex;
+    gap: $space-xs;
+    max-width: 160px;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: $textColor-dim;
+    padding: $space-lg 0;
+    transition: $transition-base;
+    margin: 0 0 0 $space-lg;
+
+    &:hover {
+      color: $textred-soft;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .header-back {
+    &__nav {
+      margin: 0;
+    }
+  }
+}

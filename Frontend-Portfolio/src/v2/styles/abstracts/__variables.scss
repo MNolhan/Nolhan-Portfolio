@@ -1,0 +1,113 @@
+// -- Screen Sizes --
+
+$mobileScreen: 480px;
+$tabletScreen: 768px;
+$LaptopScreen: 1024px;
+$DesktopScreen: 1280px;
+$wideScreen: 1540px;
+
+// -- Colors --
+
+$bg: #0a0a0c;
+$bg-soft: #101013;
+$surface: #141417;
+$surface-2: #1a1a1f;
+
+$textColor: #f2f1ee;
+$textColor-dim: #a6a5a1;
+$textColor-faint: #6e6d6a;
+
+$textred: #ef3b3b;
+$textred-soft: #ff6b5b;
+
+$statusgreen: #3ddc84;
+$white: #fff;
+$black: #000;
+
+// -- Radius --
+
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 20px;
+
+// -- Transitions --
+
+$transition-base: all 0.3s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
+$transition-superslow: all 1s ease-in-out;
+
+// -- Fonts --
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap');
+$font-family: 'Bricolage Grotesque', sans-serif;
+$font-family-secondary: 'Instrument Serif', serif;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+
+// -- Spacing --
+
+$space-2xs: 0.25rem;
+$space-xs: 0.5rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-xl-plus: 2.5rem;
+$space-2xl: 3rem;
+$space-2xl-plus: 3.5rem;
+$space-3xl: 4rem;
+$space-4xl: 5rem;
+$space-5xl: 6rem;
+$space-6xl: 7rem;
+$space-7xl: 8rem;
+
+// -- Font sizes --
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
+$fs-md: 1rem;
+$fs-lg: 1.125rem;
+$fs-xl: 1.25rem;
+$fs-2xl: 1.5rem;
+$fs-3xl: 1.75rem;
+$fs-4xl: 2rem;
+$fs-5xl: 2.5rem;
+$fs-6xl: 3rem;
+$fs-7xl: 3.25rem;
+$fs-hero: 5rem;
+
+// -- Line heights --
+$lh-tight: 1;
+$lh-snug: 1.15;
+$lh-base: 1.5;
+$lh-relaxed: 1.75;
+
+// -- Letter spacing --
+$ls-wide: 1px;
+
+// -- Radius (formes) --
+$radius-pill: 999px;
+$radius-circle: 50%;
+$radius-input: 15px;
+
+// -- Borders --
+$border: 1px solid $surface-2;
+
+// -- Shadows --
+$shadow-md: 0 10px 30px rgba($black, 0.35);
+
+// -- Layout --
+$nav-height: 90px;
+$gutter: 50px;
+$gutter-sm: 20px;
+
+// -- Z-index --
+$z-base: 2;
+$z-banner: 4;
+$z-dropdown: 5;
+$z-header: 7;
+$z-scrollwatcher: 1000;
+$z-loader: 9999;

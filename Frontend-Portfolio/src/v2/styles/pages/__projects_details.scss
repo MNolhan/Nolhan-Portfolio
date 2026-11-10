@@ -1,0 +1,464 @@
+@use '../abstracts/_variables' as *;
+
+hr {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: $surface-2;
+  margin: $space-xl 0;
+}
+
+.project-details {
+  &__badge {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    border: $border;
+    border-radius: $radius-pill;
+    padding: $space-sm $space-md;
+    font-size: $fs-sm;
+    font-family: $font-family;
+    color: $textColor-dim;
+    margin: $space-md 0 0;
+
+    &-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: $radius-circle;
+      background: $statusgreen;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+  }
+
+  &__content {
+    font-family: $font-family;
+    color: $textColor-dim;
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    padding: $space-md 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $space-md;
+    padding: $space-md 0;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: $fs-7xl;
+    font-weight: $fw-extrabold;
+    color: $textColor;
+    line-height: $lh-snug;
+
+    &-accent {
+      font-family: $font-family-secondary;
+      font-style: italic;
+      color: $textred-soft;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__description {
+    font-size: $fs-md;
+    max-width: 600px;
+    line-height: $lh-base;
+    color: $textColor-dim;
+    margin: 0;
+  }
+
+  &__techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+  }
+
+  &__tech {
+    background-color: $bg-soft;
+    color: $textColor-dim;
+    padding: $space-xs $space-md;
+    border-radius: $radius-lg;
+    font-size: $fs-sm;
+    border: $border;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $surface-2;
+      color: $textColor;
+      cursor: pointer;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: $bg-soft;
+    border: $border;
+    border-radius: $radius-md;
+    margin: $space-xl 0;
+    overflow: hidden;
+  }
+
+  &__detail {
+    padding: $space-md;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-right: $border;
+
+    &--last {
+      border-right: none;
+    }
+
+    &-title {
+      font-size: $fs-sm;
+      color: $textColor-dim;
+      margin: 0 0 $space-xs;
+    }
+
+    &-text {
+      font-size: $fs-lg;
+      color: $textColor;
+      margin: 0;
+      word-break: break-word;
+    }
+  }
+
+  &__readme {
+    font-family: $font-family;
+    color: $textColor-dim;
+    line-height: $lh-base;
+    margin: $space-xl 0;
+
+    h1,
+    h2,
+    h3 {
+      color: $textColor;
+    }
+
+    pre {
+      background-color: $surface-2;
+      padding: $space-md;
+      border-radius: $radius-sm;
+      border: 1px solid rgba($textColor-faint, 0.2);
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: $fs-2xl;
+      margin: 0 $space-md 0 0;
+      white-space: nowrap;
+    }
+
+    &-content {
+      background-color: $bg-soft;
+      border: $border;
+      border-radius: $radius-md;
+      padding: $space-xl $space-2xl;
+      overflow: hidden;
+    }
+  }
+}
+
+.project-image {
+  border: $border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  height: 650px;
+  background: linear-gradient(120deg, rgba($textred, 0.2), rgba($bg-soft, 0.2));
+
+  &__image {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+  }
+
+  &__header {
+    display: flex;
+    gap: $space-2xs;
+    padding: $space-sm $space-md;
+    background: $surface-2;
+    border-bottom: $border;
+  }
+
+  &__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: $radius-circle;
+    background: $textColor-faint;
+  }
+}
+
+.project-readme__header {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.project-readme__hr {
+  width: 10%;
+}
+
+@media (max-width: $wideScreen) {
+  .project-details {
+    &__title {
+      font-size: $fs-7xl;
+    }
+
+    &__description {
+      font-size: $fs-md;
+    }
+
+    &__readme {
+      &-content {
+        padding: $space-xl $space-xl-plus;
+      }
+    }
+  }
+
+  .project-image {
+    &__image {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: $DesktopScreen) {
+  .project-details {
+    &__title {
+      font-size: $fs-6xl;
+    }
+
+    &__description {
+      font-size: $fs-md;
+    }
+
+    &__readme {
+      &-content {
+        padding: $space-xl $space-xl-plus;
+      }
+    }
+  }
+
+  .project-image {
+    height: 520px;
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .project-details {
+    &__title {
+      font-size: $fs-6xl;
+    }
+
+    &__description {
+      font-size: $fs-md;
+    }
+
+    &__readme {
+      &-content {
+        padding: $space-xl;
+      }
+    }
+  }
+
+  .project-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .project-details {
+    &__badge {
+      font-size: $fs-xs;
+      padding: $space-xs $space-sm;
+    }
+
+    &__content {
+      padding: $space-sm 0;
+    }
+
+    &__title {
+      font-size: $fs-4xl;
+    }
+
+    &__description {
+      font-size: $fs-md;
+      max-width: 100%;
+    }
+
+    &__details {
+      margin: $space-lg 0;
+    }
+
+    &__detail {
+      padding: $space-sm $space-xs;
+
+      &-title {
+        font-size: $fs-xs;
+      }
+
+      &-text {
+        font-size: $fs-md;
+      }
+    }
+
+    &__readme {
+      &-title {
+        font-size: $fs-xl;
+      }
+
+      &-content {
+        padding: $space-lg;
+
+        & ul,
+        & li {
+          list-style: none;
+          padding-left: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .project-image {
+    display: none;
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  hr {
+    margin: $space-lg 0;
+  }
+
+  .project-details {
+    &__nav {
+      font-size: $fs-sm;
+    }
+
+    &__badge {
+      margin-top: $space-xs;
+      font-size: $fs-xs;
+      padding: $space-xs $space-sm;
+    }
+
+    &__content {
+      gap: $space-sm;
+      padding: $space-xs 0;
+    }
+
+    &__actions {
+      gap: $space-sm;
+      padding: $space-sm 0;
+
+      > * {
+        max-width: 100%;
+      }
+    }
+
+    &__title {
+      font-size: $fs-4xl;
+      line-height: $lh-snug;
+      overflow-wrap: break-word;
+    }
+
+    &__description {
+      font-size: $fs-md;
+      line-height: $lh-base;
+    }
+
+    &__techs {
+      gap: $space-2xs;
+    }
+
+    &__tech {
+      padding: $space-2xs $space-sm;
+      font-size: $fs-xs;
+    }
+
+    &__details {
+      flex-direction: column;
+      margin: $space-lg 0;
+      border-radius: $radius-sm;
+    }
+
+    &__detail {
+      width: 100%;
+      padding: $space-sm;
+      border-right: none;
+      border-bottom: $border;
+
+      &:last-child,
+      &--last {
+        border-bottom: none;
+      }
+
+      &-title {
+        font-size: $fs-xs;
+        margin-bottom: $space-2xs;
+      }
+
+      &-text {
+        font-size: $fs-md;
+      }
+    }
+
+    &__readme {
+      margin: $space-lg 0;
+
+      &-header {
+        gap: $space-2xs;
+      }
+
+      &-title {
+        font-size: $fs-lg;
+        margin-right: $space-xs;
+      }
+
+      &-hr {
+        width: 100%;
+      }
+
+      &-content {
+        padding: $space-lg;
+        border-radius: $radius-sm;
+
+        h1 {
+          font-size: $fs-2xl;
+        }
+
+        h2 {
+          font-size: $fs-xl;
+        }
+
+        h3 {
+          font-size: $fs-lg;
+        }
+
+        pre {
+          padding: $space-sm;
+          font-size: $fs-xs;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .project-image {
+    display: none;
+  }
+
+  .project-readme__hr {
+    width: 100%;
+  }
+}

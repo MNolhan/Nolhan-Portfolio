@@ -1,0 +1,38 @@
+@use '../abstracts/_variables' as *;
+
+.page-not-found {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-md;
+  height: 100vh;
+  text-align: center;
+
+  &__logo {
+    font-family: $font-family;
+    font-size: $fs-4xl;
+    color: $textColor;
+    margin: 0;
+
+    &-accent {
+      color: $textred;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-size: $fs-6xl;
+    font-weight: $fw-bold;
+    margin: $space-xl 0 0 0;
+    color: $textColor-dim;
+  }
+
+  &__message {
+    font-family: $font-family;
+    font-size: $fs-2xl;
+    margin: 0 0 $space-xl 0;
+    color: $textColor-dim;
+  }
+}

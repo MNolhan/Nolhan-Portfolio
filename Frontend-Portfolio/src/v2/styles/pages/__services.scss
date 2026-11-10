@@ -1,0 +1,73 @@
+@use '../abstracts/_variables' as *;
+
+.services {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-3xl 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2xl;
+    align-items: center;
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .services {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__content {
+      gap: $space-xl;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .services {
+    &__title {
+      font-size: $fs-4xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__content {
+      gap: $space-lg;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .services {
+    &__title {
+      font-size: $fs-3xl;
+      margin-bottom: $space-lg;
+    }
+
+    &__content {
+      gap: $space-md;
+    }
+  }
+}

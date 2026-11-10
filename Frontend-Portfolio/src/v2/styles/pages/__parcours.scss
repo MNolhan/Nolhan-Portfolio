@@ -1,0 +1,90 @@
+@use '../abstracts/_variables' as *;
+
+.parcours {
+  &__label {
+    font-size: $fs-xs;
+    color: $textColor-dim;
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: $ls-wide;
+    font-weight: $fw-regular;
+    display: block;
+  }
+
+  &__title {
+    font-size: $fs-7xl;
+    color: $textColor;
+    font-family: $font-family;
+    font-weight: $fw-extrabold;
+    margin: $space-xs 0 $space-xs 0;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__intro {
+    font-size: $fs-md;
+    color: $textColor-dim;
+    font-family: $font-family;
+    margin-bottom: $space-2xl;
+    margin-top: 0;
+  }
+
+  &__divider {
+    width: 100%;
+    margin: 0;
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3xl;
+    align-items: center;
+  }
+}
+
+@media (max-width: $wideScreen) {
+  .parcours {
+    &__title {
+      font-size: $fs-5xl;
+      margin-bottom: $space-sm;
+    }
+
+    &__timeline {
+      gap: $space-lg;
+    }
+  }
+}
+
+@media (max-width: $LaptopScreen) {
+  .parcours {
+    &__title {
+      font-size: $fs-4xl;
+    }
+
+    &__intro {
+      margin-bottom: $space-xl;
+      font-size: $fs-sm;
+    }
+
+    &__timeline {
+      gap: $space-md;
+    }
+  }
+}
+
+@media (max-width: $tabletScreen) {
+  .parcours {
+    &__title {
+      font-size: $fs-3xl;
+    }
+
+    &__timeline {
+      gap: $space-sm;
+    }
+  }
+}

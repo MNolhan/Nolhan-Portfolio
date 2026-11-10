@@ -1,0 +1,173 @@
+@use '_variables' as *;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-6xl $gutter $space-4xl $gutter;
+
+  @media (max-width: $wideScreen) {
+    padding: $space-4xl 0px;
+  }
+
+  @media (max-width: $DesktopScreen) {
+    max-width: $LaptopScreen;
+    padding: $space-3xl $gutter;
+  }
+
+  @media (max-width: $LaptopScreen) {
+    max-width: $tabletScreen;
+    padding: $space-2xl-plus $gutter;
+  }
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: $space-2xl $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: $space-xl $gutter-sm;
+  }
+}
+
+.container--small {
+  width: 100%;
+  max-width: $DesktopScreen - 100px;
+  margin: 0 auto;
+  padding: $space-6xl $gutter $space-5xl $gutter;
+
+  @media (max-width: $wideScreen) {
+    padding: $space-5xl 0px;
+  }
+
+  @media (max-width: $DesktopScreen) {
+    max-width: $LaptopScreen;
+    padding: $space-3xl $gutter;
+  }
+
+  @media (max-width: $LaptopScreen) {
+    max-width: $tabletScreen;
+    padding: $space-2xl-plus $gutter;
+  }
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: $space-2xl-plus $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: $space-2xl $gutter-sm;
+  }
+
+  &-2 {
+    width: 100%;
+    max-width: $DesktopScreen - 100px;
+    margin: 0 auto;
+    padding: $space-md $gutter;
+
+    @media (max-width: $wideScreen) {
+      padding: $space-xl 0px;
+    }
+
+    @media (max-width: $DesktopScreen) {
+      max-width: $LaptopScreen;
+      padding: $space-xl $gutter;
+    }
+
+    @media (max-width: $LaptopScreen) {
+      max-width: $tabletScreen;
+      padding: $space-xl $gutter;
+    }
+
+    @media (max-width: $tabletScreen) {
+      max-width: $mobileScreen;
+      padding: $space-lg $space-lg;
+    }
+
+    @media (max-width: $mobileScreen) {
+      padding: $space-md $gutter-sm;
+    }
+  }
+}
+
+.navcontainer {
+  width: 100%;
+  max-width: $DesktopScreen + 400px;
+  margin: 0 auto;
+  padding: 0 $gutter;
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: 0 $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: 0 $gutter-sm;
+  }
+}
+
+.footercontainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: $space-2xl auto 0 auto;
+  padding: 0 $gutter;
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: 0 $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: 0 $gutter-sm;
+  }
+}
+
+.authcontainer {
+  width: 100%;
+  max-width: $DesktopScreen + 575px;
+  margin: 0 auto;
+  padding: 0;
+
+  @media (max-width: $wideScreen) {
+    padding: 0 $gutter;
+  }
+
+  @media (max-width: $LaptopScreen) {
+    max-width: $tabletScreen;
+    padding: 0 $gutter;
+  }
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: 0 $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: 0 $gutter-sm;
+  }
+}
+
+.detailsprojectcontainer {
+  width: 100%;
+  max-width: $DesktopScreen + 575px;
+  margin: 0 auto;
+  padding: 0;
+
+  @media (max-width: $wideScreen) {
+    padding: 0 $gutter;
+  }
+
+  @media (max-width: $LaptopScreen) {
+    max-width: $tabletScreen;
+    padding: 0 $gutter;
+  }
+
+  @media (max-width: $tabletScreen) {
+    max-width: $mobileScreen;
+    padding: 0 $space-lg;
+  }
+
+  @media (max-width: $mobileScreen) {
+    padding: 0 $gutter-sm;
+  }
+}

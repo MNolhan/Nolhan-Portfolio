@@ -1,0 +1,18 @@
+@use '../abstracts/_variables' as *;
+
+.scroll-watcher {
+  height: 3px;
+  position: fixed;
+  top: 0;
+  z-index: $z-scrollwatcher;
+  background: linear-gradient(to right, $textred, $textred-soft);
+  width: 0%;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    width: 100%;
+  }
+}

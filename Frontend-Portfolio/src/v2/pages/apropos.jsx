@@ -1,0 +1,114 @@
+import CardApropos from '../components/ui/card_apropos'
+import { useState, useEffect } from 'react'
+
+const API_URL = import.meta.env.VITE_API_URL
+
+export default function apropos() {
+  // -- Count Project
+
+  const [count, setCount] = useState('')
+  let projets
+
+  useEffect(() => {
+    fetch(`${API_URL}/projects/count`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => setCount(data.count))
+      .catch(() => setCount('ERROR'))
+  }, [])
+
+  if (count > 1) {
+    projets = 'Projets réalisés'
+  } else {
+    projets = 'Projet réalisé'
+  }
+
+  // -- Count Stack
+
+  const [countStack, setCountStack] = useState('')
+  let stacks
+
+  useEffect(() => {
+    fetch(`${API_URL}/stacks/count`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => setCountStack(data.count))
+      .catch(() => setCountStack('ERROR'))
+  }, [])
+
+  if (countStack > 1) {
+    stacks = 'Technologies maîtrisées'
+  } else {
+    stacks = 'Technologie maîtrisée'
+  }
+
+  // -- Years of Experience
+
+  const startDate = new Date('2023-10-01')
+  const today = new Date()
+
+  let yearsExperience = today.getFullYear() - startDate.getFullYear()
+
+  if (
+    today.getMonth() < startDate.getMonth() ||
+    (today.getMonth() === startDate.getMonth() &&
+      today.getDate() < startDate.getDate())
+  ) {
+    yearsExperience--
+  }
+
+  let message
+
+  if (yearsExperience > 1) {
+    message = "Années d'expériences"
+  } else {
+    message = "Année d'expérience"
+  }
+
+  return (
+    <div className="container--small" id="apropos">
+      <div className="apropos__header">
+        <h1 className="apropos__label">- À Propos</h1>
+        <p className="apropos__title">
+          {' '}
+          Je rends <span className="apropos__title-accent">simple</span> ce qui
+          est <br></br> complexe à construire.
+        </p>
+      </div>
+
+      <div className="apropos__content">
+        <div className="apropos__left">
+          <p className="apropos__description">
+            Passionné par le développement web depuis plusieurs années, je me
+            suis spécialisé dans la conception d'applications modernes,
+            performantes et évolutives — en explorant aussi bien le front-end
+            que le back-end.<br></br>
+            <br></br>
+            Je travaille principalement avec{' '}
+            <strong className="apropos__strong">React</strong>,{' '}
+            <strong className="apropos__strong">Node.js</strong> et{' '}
+            <strong className="apropos__strong">Laravel</strong>, avec une
+            attention constante portée à la qualité du code, à la maintenabilité
+            et aux bonnes pratiques. Un bon produit ne se limite pas à
+            fonctionner : il doit être clair, rapide et agréable à utiliser.
+            <br></br>
+            <br></br>
+            Curieux et toujours en quête d'amélioration, j'aime relever des
+            défis techniques et travailler sur des projets qui demandent de la
+            réflexion, de l'architecture et de la créativité.
+          </p>
+        </div>
+        <div className="apropos__right">
+          <CardApropos Description={projets}>{count}</CardApropos>
+          <CardApropos Description={message}>{yearsExperience}</CardApropos>
+          <CardApropos Description={stacks}>{countStack}</CardApropos>
+          <CardApropos variant="red" Description="Full-Stack">
+            Focus
+          </CardApropos>
+        </div>
+      </div>
+    </div>
+  )
+}
