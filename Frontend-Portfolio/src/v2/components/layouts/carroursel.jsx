@@ -35,36 +35,20 @@ export default function Carroursel() {
   return (
     <div className="carrousel">
       <div className="carrousel__group">
-        <div className="carrousel__card image">
-          Nombre de refresh total du site : {reload}
-        </div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">
-          Portfolio en ligne depuis {nbjour} {message}
-        </div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">Basé à Tours, France</div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">Code depuis 2023</div>
-        <p className="carrousel__separator">•</p>
+
+        <div className="carrousel__card image">Nombre de refresh : {reload}</div>
+        <div className="carrousel__card">Portfolio en ligne depuis {nbjour} {message}</div>
+        <div className="carrousel__card">Nolhan Code depuis 2023</div>
         <div className="carrousel__card">Du besoin métier au déploiement</div>
-        <p className="carrousel__separator">•</p>
+        
       </div>
       <div aria-hidden className="carrousel__group">
-        <div className="carrousel__card image">
-          Nombre de refresh total du site : {reload}
-        </div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">
-          Portfolio en ligne depuis {nbjour} {message}
-        </div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">Basé à Tours, France</div>
-        <p className="carrousel__separator">•</p>
-        <div className="carrousel__card">Code depuis 2023</div>
-        <p className="carrousel__separator">•</p>
+
+        <div className="carrousel__card image">Nombre de refresh : {reload}</div>
+        <div className="carrousel__card">Portfolio en ligne depuis {nbjour} {message}</div>
+        <div className="carrousel__card">Nolhan Code depuis 2023</div>
         <div className="carrousel__card">Du besoin métier au déploiement</div>
-        <p className="carrousel__separator">•</p>
+        
       </div>
     </div>
   )
