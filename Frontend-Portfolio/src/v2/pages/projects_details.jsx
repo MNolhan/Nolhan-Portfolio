@@ -138,12 +138,20 @@ export default function ProjectDetails() {
                     {new Date(project.created_at).toLocaleDateString()}
                   </p>
                 </div>
-                <div className="project-details__detail project-details__detail--last">
+                <div className="project-details__detail">
                   <h3 className="project-details__detail-title">
-                    Date de la dernière Mise à jour
+                    Nombre de technologies utilisées
                   </h3>
                   <p className="project-details__detail-text">
-                    {new Date(project.updated_at).toLocaleDateString()}
+                    {project.technologies.length}
+                  </p>
+                </div>
+                <div className="project-details__detail project-details__detail--last">
+                  <h3 className="project-details__detail-title">
+                    Statut du projet
+                  </h3>
+                  <p className="project-details__detail-text">
+                    {project.status}
                   </p>
                 </div>
               </div>
