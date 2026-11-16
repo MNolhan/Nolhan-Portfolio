@@ -21,6 +21,7 @@ export default function UpdateProject() {
   const [technologies, setTechnologies] = useState([])
   const [techInput, setTechInput] = useState('')
   const [message, setMessage] = useState('')
+  const [messageType, setMessageType] = useState('')
 
   // -- Lecture du Projet
 
@@ -44,9 +45,12 @@ export default function UpdateProject() {
         }
 
         setMessage(data.message)
+        setMessageType('error')
+
       } catch (error) {
         console.error(error)
         setMessage('Impossible de contacter le serveur.')
+        setMessageType('error')
       }
     }
 
@@ -71,7 +75,6 @@ export default function UpdateProject() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // On n'envoie que les champs remplis
     const payload = {}
 
     if (name.trim()) payload.name = name.trim()
@@ -95,6 +98,7 @@ export default function UpdateProject() {
 
       if (response.ok) {
         setMessage('Projet mis à jour avec succès !')
+        setMessageType('success')
         setTimeout(() => {
           navigate(`/projects/${id}`)
         }, 1500)
@@ -102,9 +106,12 @@ export default function UpdateProject() {
       }
 
       setMessage(data.message)
+      setMessageType('error')
+
     } catch (error) {
       console.error('Erreur:', error)
       setMessage('Impossible de contacter le serveur.')
+      setMessageType('error')
     }
   }
 
@@ -206,7 +213,7 @@ export default function UpdateProject() {
               </div>
             </section>
 
-            {message && <p className="update-project__message">{message}</p>}
+            {message && <p className={`update-project__message update-project__message--${messageType}`}>{message}</p>}
 
             <div className="update-project__actions">
               <Bouton as="a" href="/" variant="secondary">

@@ -208,6 +208,21 @@
       cursor: pointer;
     }
   }
+
+  &__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $fw-bold;
+
+    &--success {
+      color: $textColor;
+    }
+
+    &--error {
+      color: $textred-soft;
+    }
+  }
 }
 
 // Select & Option

@@ -17,6 +17,8 @@ export default function CreateProject() {
   const [newTechnology, setNewTechnology] = useState("")
   const [technologies, setTechnologies] = useState([])
   const [message, setMessage] = useState("")
+  const [messageType, setMessageType] = useState("") 
+
   const navigate = useNavigate()
 
   const addTechnology = () => {
@@ -54,6 +56,7 @@ export default function CreateProject() {
 
       if (response.ok) {
         setMessage('Projet créé avec succès !')
+        setMessageType('success')
         setName('')
         setType('Autres')
         setDescription('')
@@ -68,10 +71,13 @@ export default function CreateProject() {
         return
       }
 
+      setMessageType('error')
       setMessage(data.message)
+
     } catch (error) {
       console.error('Erreur:', error)
       setMessage('Impossible de contacter le serveur.')
+      setMessageType('error')
     }
   }
 
@@ -163,7 +169,7 @@ export default function CreateProject() {
                 <button type="button" className="create-project__add-button" onClick={addTechnology}>+ Ajouter</button>
               </div>
 
-              {message && <p className="create-project__message">{message}</p>}
+              {message && <p className={`create-project__message create-project__message--${messageType}`}>{message}</p>}
 
             </section>
 
