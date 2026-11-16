@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext.jsx'
 import { useParams } from 'react-router-dom'
 import ArrowRightIcon from '../components/Icon/arrowright-icon'
 import HeaderBack from '../components/layouts/headerback'
@@ -6,6 +8,9 @@ import Bouton from '../components/ui/bouton'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Footer from '../components/layouts/footer'
+import UpdateIcon from '../components/Icon/update-icon'
+import TrashIcon from '../components/Icon/trash-icon'
+import ArrowLeftIcon from '../components/Icon/arrowleft-icon'
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -14,6 +19,15 @@ export default function ProjectDetails() {
   const [project, setProject] = useState(null)
   const [readme, setReadme] = useState(null)
   const [message, setMessage] = useState('')
+
+  const navigate = useNavigate()
+  const dialogRef = useRef(null)
+  const contentRef = useRef(null)
+  const confirmRef = useRef(null)
+
+  // Test pour savoir si l'utilisateur est admin
+  
+  const { isAdmin } = useAuth()
 
   // -- Récupération des détails du projet
 
@@ -25,12 +39,18 @@ export default function ProjectDetails() {
         const response = await fetch(`${API_URL}/projects/${id}`, {
           method: 'GET',
         })
+
         const data = await response.json()
+
         if (response.ok) {
           setProject(data)
-        } else {
-          setMessage(data.message)
-        }
+        } else if (response.status === 404) {
+          navigate('/Projet-non-trouve')
+          return
+        } 
+
+        console.log(data.message)
+
       } catch (error) {
         setMessage(error.message)
       }
@@ -39,6 +59,33 @@ export default function ProjectDetails() {
     fetchProjectDetails()
   }, [id])
 
+  // -- Suppression du projet
+
+  const deleteProject = async () => {
+    try {
+        const response = await fetch(`${API_URL}/projects/${id}`, {
+            method: 'DELETE',
+            credentials: 'include',
+        })
+
+        if (response.ok) {
+            contentRef.current.style.display = "none";
+            confirmRef.current.style.display = "flex";
+            setTimeout(() => {
+              dialogRef.current.close()
+              navigate("/")
+            }, 2000);
+            return;
+        }
+
+        const data = await response.json()
+        console.log(data.message)
+
+    } catch (error) {
+        console.log(error.message)
+    } 
+  }
+
   // -- Récupération du README du projet depuis GitHub
 
   useEffect(() => {
@@ -46,7 +93,6 @@ export default function ProjectDetails() {
 
     const NomUtilisateur_Github = project.github_url.split('/')[3]
     const NomProjet_Github = project.github_url.split('/')[4]
-
     const repository = `https://api.github.com/repos/${NomUtilisateur_Github}/${NomProjet_Github}/readme`
 
     const fetchReadme = async () => {
@@ -54,13 +100,16 @@ export default function ProjectDetails() {
         const response = await fetch(repository, {
           headers: { Accept: 'application/vnd.github.raw+json' },
         })
+
         if (response.ok) {
           setReadme(await response.text())
         } else {
-          setMessage('README introuvable')
+          setReadme("Aucun README disponible pour ce projet.")
         }
+
       } catch (error) {
-        setMessage(error.message)
+        console.log(error.message)
+        setReadme("Impossible de charger le README.")
       }
     }
 
@@ -74,12 +123,42 @@ export default function ProjectDetails() {
         <HeaderBack />
 
         <div className="container--small-2">
-          {project ? (
+
+          {project && (
             <div className="project-details__content">
-              <p className="project-details__badge">
-                <span className="project-details__badge-dot"></span>
-                Disponible
-              </p>
+
+              <div className="project-details__toolbar">
+                <p className="project-details__badge">
+                  <span className="project-details__badge-dot"></span>
+                  Disponible
+                </p>
+                {isAdmin && (
+                  <div className="project-details__admin">
+                    <a href={`/projects/${project.id}/edit`} className="project-details__admin-button project-details__update"><UpdateIcon /> Mettre à jour le projet</a>
+                    <button command="show-modal" commandfor="delete-dialog" className="project-details__admin-button project-details__delete"><TrashIcon /> Supprimer le projet</button>
+                  </div>
+                )}
+              </div>
+
+              <dialog ref={dialogRef} className="project-details__dialog" id="delete-dialog">
+                <div ref={contentRef}>
+                  <div className="project-details__dialog-icon"> <TrashIcon /> </div>
+                  <h1 className="project-details__dialog-title">Supprimer le <span className="project-details__dialog-title--accent">projet</span> ?</h1>
+                  <p className="project-details__dialog-text">"{project.name}" sera définitivement supprimé supprimé du site. Cette action est irréversible.</p>
+                  <div className="project-details__dialog-actions">
+                    <Bouton variant="secondary" commandfor="delete-dialog" command="close">
+                      <ArrowLeftIcon /> Annuler
+                    </Bouton>
+                    <Bouton variant="primary" onClick={deleteProject}>
+                      <TrashIcon /> Supprimer définitivement
+                    </Bouton>
+                  </div>
+                </div>
+                <div ref={confirmRef} className="project-details__delete-confirmation">
+                  <div className="project-details__dialog-icon"> <TrashIcon /> </div>
+                  <p className="project-details__dialog-text">Le projet a été supprimé avec succès.</p>
+                </div>
+              </dialog>
 
               <h1 className="project-details__title">
                 {project.name}{' '}
@@ -138,12 +217,20 @@ export default function ProjectDetails() {
                     {new Date(project.created_at).toLocaleDateString()}
                   </p>
                 </div>
-                <div className="project-details__detail project-details__detail--last">
+                <div className="project-details__detail">
                   <h3 className="project-details__detail-title">
-                    Date de la dernière Mise à jour
+                    Nombre de technologies utilisées
                   </h3>
                   <p className="project-details__detail-text">
-                    {new Date(project.updated_at).toLocaleDateString()}
+                    {project.technologies.length}
+                  </p>
+                </div>
+                <div className="project-details__detail project-details__detail--last">
+                  <h3 className="project-details__detail-title">
+                    Statut du projet
+                  </h3>
+                  <p className="project-details__detail-text">
+                    {project.status}
                   </p>
                 </div>
               </div>
@@ -157,21 +244,18 @@ export default function ProjectDetails() {
                 </div>
 
                 <div className="project-details__readme-content">
-                  {readme ? (
+                  {readme && (
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {readme}
                     </ReactMarkdown>
-                  ) : (
-                    <p>Loading README...</p>
                   )}
                 </div>
               </div>
             </div>
-          ) : (
-            <p>Loading project details...</p>
           )}
 
-          {message && <p>{message}</p>}
+          <p className="project-details__message">{message}</p>
+
         </div>
         <Footer />
       </div>

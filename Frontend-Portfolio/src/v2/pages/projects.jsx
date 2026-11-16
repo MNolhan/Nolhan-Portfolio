@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react'
 import CardProject from '../components/ui/card_project'
+import PlusIcon from '../components/Icon/plus-icon'
+import { useAuth } from '../context/AuthContext.jsx'
 
 const API_URL = import.meta.env.VITE_API_URL
 
 export default function Projects() {
+
+  // Test pour savoir si l'utilisateur est connecté
+
+  const { isAdmin } = useAuth()
+
   // Lire les Projets
 
   const [projects, setProjects] = useState([])
-  const [message, setMessage] = useState('')
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -20,11 +26,11 @@ export default function Projects() {
         if (response.ok) {
           setProjects(data)
         } else {
-          setMessage('Erreur lors du chargement des projets')
+          console.error('Erreur lors du chargement des projets')
         }
       } catch (error) {
         console.error(error)
-        setMessage('Impossible de contacter le serveur.')
+        console.error('Impossible de contacter le serveur.')
       }
     }
 
@@ -50,25 +56,30 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="projects__filter">
-          <button
-            className={filter === 'all' ? 'active' : ''}
-            onClick={() => handleFilterChange('all')}
-          >
-            Tous
-          </button>
-          <button
-            className={filter === 'Développement Web' ? 'active' : ''}
-            onClick={() => handleFilterChange('Développement Web')}
-          >
-            Web
-          </button>
-          <button
-            className={filter === 'Développement Application' ? 'active' : ''}
-            onClick={() => handleFilterChange('Développement Application')}
-          >
-            Mobile
-          </button>
+        <div className="projects__toolbar">
+          <div className="projects__filter">
+            <button
+              className={`projects__toolbar-button ${filter === 'all' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('all')}
+            >
+              Tous
+            </button>
+            <button
+              className={`projects__toolbar-button ${filter === 'Développement Web' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('Développement Web')}
+            >
+              Web
+            </button>
+            <button 
+              className={`projects__toolbar-button ${filter === 'Développement Application' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('Développement Application')}
+            >
+              Mobile
+            </button>
+          </div>
+          {isAdmin && (
+            <a href="/projects/new" className="projects__toolbar-button projects__add"><PlusIcon /> Ajouter un projet</a>
+          )}
         </div>
 
         <div className="projects__cards">

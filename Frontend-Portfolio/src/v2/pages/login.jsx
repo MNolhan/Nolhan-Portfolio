@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HeaderBack from '../components/layouts/headerback'
+import { useAuth } from '../context/AuthContext.jsx'
+import Bouton from '../components/ui/bouton.jsx'
 
 const API_URL = import.meta.env.VITE_API_URL
 
 export default function Login() {
   const navigate = useNavigate()
+  const { refreshUser } = useAuth()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -32,16 +36,18 @@ export default function Login() {
         setMessage(data.message || 'Connexion réussie !')
         setEmail('')
         setPassword('')
-        setTimeout(() => {
+        setTimeout(async() => {
+          await refreshUser()
           navigate('/')
         }, 1000)
         return
+
       } else {
         setPassword('')
         setMessage(data.message || 'Une erreur est survenue')
       }
+
     } catch (error) {
-      console.error('Error during login:', error)
       setMessage('Impossible de contacter le serveur.')
     } finally {
       ISSubmitting(false)
@@ -112,9 +118,10 @@ export default function Login() {
                 </div>
               </div>
 
-              <button type="submit" disabled={submit} className="login__submit">
+              <Bouton type="submit" disabled={submit} variant="primary">
                 Se connecter
-              </button>
+              </Bouton>
+
             </form>
 
             {message && <p className="login__message">{message}</p>}

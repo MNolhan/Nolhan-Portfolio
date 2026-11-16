@@ -20,7 +20,7 @@ hr {
     font-size: $fs-sm;
     font-family: $font-family;
     color: $textColor-dim;
-    margin: $space-md 0 0;
+    margin: 0;
 
     &-dot {
       width: 7px;
@@ -30,6 +30,115 @@ hr {
       animation: pulse 2s infinite;
       flex-shrink: 0;
     }
+  }
+
+  &__toolbar {
+    margin: $space-md 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-md;
+    padding: $space-md 0;
+    flex-wrap: wrap;
+  }
+
+  &__dialog {
+    background-color: $bg-soft;
+    border : $border;
+    padding : $space-xl;
+    border-radius: $radius-md;
+
+    &[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $fs-7xl;
+      margin: 0 0 $space-md 0;
+      background-color: rgba($textred, 0.15);
+      color: $textred;
+      width: 48px;
+      height: 48px;
+      padding: $space-xs;
+      border-radius: $radius-circle;
+    }
+
+    &-title {
+      color : $textColor;
+      font-size: $fs-3xl;
+      font-weight: $fw-bold;
+      margin: 0 0 $space-md 0;
+
+      &--accent {
+        font-family: $font-family-secondary;
+        font-style: italic;
+        color: $textred-soft;
+        font-weight: $fw-regular;
+      }
+    }
+
+    &-text {
+      max-width: 350px;
+      font-size: $fs-md;
+      color: $textColor-dim;
+      margin: 0 0 $space-md 0;
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      gap: $space-md;
+      padding: $space-md 0 0 0;
+    }
+
+    &::backdrop {
+      background-color: rgba($bg, 0.9);
+    }
+  }
+
+  &__delete-confirmation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-md;
+    text-align: center;
+  }
+
+  &__admin {
+    display: flex;
+    gap: $space-md;
+
+    &-button {
+      background-color: $bg-soft;
+      border: $border;
+      padding: $space-xs $space-md;
+      border-radius: $radius-lg;
+      font-family: $font-family;
+      font-size: $fs-md;
+      color: $textColor-dim;
+      text-decoration: none;
+
+      &:hover {
+        color: $textColor;
+        cursor: pointer;
+      }
+
+      &.active {
+        font-weight: $fw-semibold;
+        color: $textred;
+      }
+    }
+  }
+
+  &__update, &__delete {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
   }
 
   &__content {
@@ -168,6 +277,13 @@ hr {
       overflow: hidden;
     }
   }
+
+  &__message{
+    color : $textColor;
+    font-size: $fs-md;
+    font-weight: $fw-semibold;
+    font-family: $font-family;
+  }
 }
 
 .project-image {
@@ -282,6 +398,10 @@ hr {
     &__badge {
       font-size: $fs-xs;
       padding: $space-xs $space-sm;
+    }
+
+    &__message {
+      font-size: $fs-xs;
     }
 
     &__content {

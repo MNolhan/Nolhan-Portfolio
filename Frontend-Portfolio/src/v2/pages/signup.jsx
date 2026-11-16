@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HeaderBack from '../components/layouts/headerback'
 import confetti from 'canvas-confetti'
+import Bouton from '../components/ui/bouton.jsx'
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -159,9 +160,10 @@ export default function Signup() {
                 </div>
               </div>
 
-              <button type="submit" disabled={submit} className="signup__submit">
+              <Bouton type="submit" disabled={submit} variant="primary">
                 S'inscrire
-              </button>
+              </Bouton>
+
             </form>
 
             {message && <p className="signup__message">{message}</p>}

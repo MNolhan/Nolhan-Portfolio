@@ -1,66 +1,31 @@
 import Bouton from '../ui/bouton'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useAuth } from '../../context/AuthContext.jsx'
 import PersonneIcon from '../Icon/personne-icon'
 
 const API_URL = import.meta.env.VITE_API_URL
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isLogged, setIsLogged] = useState(false)
   const closeMenu = () => setIsOpen(false)
 
   // Test pour savoir si l'utilisateur est connecté
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const read = await fetch(`${API_URL}/users/me`, {
-          method: 'GET',
-          credentials: 'include',
-        })
-
-        if (read.ok) {
-          setIsLogged(true)
-        }
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    fetchUser()
-  }, [])
+  const { isLogged, loading, logout } = useAuth()
 
   // --- Logout ---
 
   const handleLogout = async () => {
-    try {
-      const response = await fetch(`${API_URL}/auth/logout`, {
-        method: 'POST',
-        credentials: 'include',
-      })
-
-      if (response.ok) {
-        setIsLogged(false)
-        window.location.reload()
-      }
-    } catch (error) {
-      console.error('Error during logout:', error)
-    }
+    await logout()  
   }
-
-  // --- Menu ---
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
 
   // --- User Button ---
 
   let userbutton
 
-  if (!isLogged) {
+  if (loading) {
+    userbutton = null
+  } else if (!isLogged) {
     userbutton = (
       <div className="nav__auth">
         <Bouton variant="secondary" as="a" href="/login">
