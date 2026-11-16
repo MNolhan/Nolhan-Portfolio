@@ -154,16 +154,12 @@ export default function Contact() {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                disabled={submit}
-                className="contact-form__submit"
-              >
+              <Bouton type="submit" disabled={submit} variant="primary">
                 <span className="contact-form__button-text">
                   Envoyer le message
                 </span>
                 <ArrowRightIcon />
-              </button>
+              </Bouton>
 
               {responseMessage && (
                 <p className="contact-form__response">{responseMessage}</p>
