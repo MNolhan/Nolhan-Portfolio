@@ -9,7 +9,7 @@ router.get("/me", auth, async (req, res) => {
     try {
         const userId = req.user.userId;
 
-        const [rows] = await pool.query("SELECT name, firstname, email FROM users WHERE id = ?", [userId]);
+        const [rows] = await pool.query("SELECT name, firstname, email, role FROM users WHERE id = ?", [userId]);
 
         if (rows.length === 0) {
             res.status(404);

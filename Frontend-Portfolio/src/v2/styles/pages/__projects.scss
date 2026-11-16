@@ -25,12 +25,13 @@
     }
   }
 
-  &__filter {
+  &__toolbar {
     display: flex;
-    margin: 0 0 $space-lg 0;
-    gap: $space-md;
+    justify-content: space-between;
+    margin-bottom: $space-xl;
+    align-items: center;
 
-    & button {
+    &-button {
       background-color: $bg-soft;
       border: $border;
       padding: $space-xs $space-md;
@@ -49,6 +50,18 @@
         color: $textred;
       }
     }
+  }
+
+  &__filter {
+    display: flex;
+    gap: $space-md;
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    text-decoration: none;
   }
 
   &__cards {
@@ -117,13 +130,18 @@
       align-items: center;
     }
 
-    &__filter {
-      justify-content: center;
+    &__toolbar {
+      flex-direction: column;
+      gap: $space-md;
 
       & button {
         padding: $space-xs $space-sm;
         font-size: $fs-sm;
       }
+    }
+
+    &__filter {
+      justify-content: center;
     }
 
     &__message {

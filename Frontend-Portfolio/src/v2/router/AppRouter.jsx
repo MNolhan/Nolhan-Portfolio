@@ -13,11 +13,15 @@ import Footer from '../components/layouts/footer'
 import Login from '../pages/login'
 import Signup from '../pages/signup'
 import Carroursel from '../components/layouts/carroursel'
-import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
 import PagenotFound from '../components/layouts/pagenotfound'
 import ReloadTracker from '../components/analytics/ReloadTracker'
 import ProjectDetails from '../pages/projects_details'
 import Profil from '../pages/profil'
+import ProjectsCreate from '../pages/projects_create'
+import ProjectsEdit from '../pages/projects_edit'
+
+import PublicOnlyRoute from '../components/routing/PublicOnlyRoute'
+import AdminOnlyRoute from '../components/routing/AdminOnlyRoute'
 
 export default function AppRouter() {
   return (
@@ -48,6 +52,7 @@ export default function AppRouter() {
           element={
             <PublicOnlyRoute>
               <Login />
+              <Footer />
             </PublicOnlyRoute>
           }
         />
@@ -56,12 +61,31 @@ export default function AppRouter() {
           element={
             <PublicOnlyRoute>
               <Signup />
+              <Footer />
             </PublicOnlyRoute>
           }
         />
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/*" element={<PagenotFound />} />
+        <Route 
+          path="/projects/new"
+          element={
+            <AdminOnlyRoute>
+              <ProjectsCreate />
+              <Footer />
+            </AdminOnlyRoute>
+          }
+        />
+        <Route 
+          path="/projects/:id/edit"
+          element={
+            <AdminOnlyRoute>
+              <ProjectsEdit />
+              <Footer />
+            </AdminOnlyRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )

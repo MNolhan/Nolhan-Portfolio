@@ -1,0 +1,291 @@
+@use '../abstracts/_variables' as *;
+
+.create-project {
+  font-family: $font-family;
+  color: $textColor;
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: $space-2xl 0 $space-2xl 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $fs-7xl;
+    line-height: $lh-snug;
+    font-weight: $fw-extrabold;
+
+    &-accent {
+      color: $textred-soft;
+      font-family: $font-family-secondary;
+      font-style: italic;
+      font-weight: $fw-regular;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: $fs-md;
+    color: $textColor-dim;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    padding: $space-xl;
+    background-color: $bg-soft;
+    border: $border;
+    border-radius: $radius-lg;
+
+    &-title {
+      margin: 0;
+      font-size: $fs-xl;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-lg;
+
+    > * {
+      flex: 1 1 16rem;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__label {
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $textColor-dim;
+  }
+
+  &__input {
+    padding: $space-sm $space-md;
+    border-radius: $radius-input;
+    border: $border;
+    background-color: $surface;
+    color: $textColor;
+    font-family: $font-family;
+    font-size: $fs-md;
+    transition: $transition-base;
+
+    &::placeholder {
+      color: $textColor-faint;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $textred-soft;
+    }
+
+    &--textarea {
+      line-height: $lh-base;
+      resize: none;
+    }
+  }
+
+  &__techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+  }
+
+  &__tech {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-xs;
+    padding: $space-xs $space-xs $space-xs $space-md;
+    border-radius: $radius-pill;
+    background-color: $surface-2;
+    font-size: $fs-sm;
+
+    &-remove {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      border-radius: $radius-pill;
+      background: transparent;
+      color: $textColor-dim;
+      font-family: $font-family;
+      cursor: pointer;
+      transition: $transition-base;
+
+      &:hover {
+        color: $textred-soft;
+      }
+    }
+  }
+
+  &__add {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+
+    .create-project__input {
+      flex: 1 1 17rem;
+    }
+
+    &-button {
+      padding: $space-sm $space-lg;
+      border-radius: $radius-input;
+      border: $border;
+      background-color: $surface;
+      color: $textColor;
+      font-family: $font-family;
+      font-size: $fs-md;
+      font-weight: $fw-semibold;
+      cursor: pointer;
+      transition: $transition-base;
+
+      &:hover {
+        border-color: $textred-soft;
+        color: $textred-soft;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: $space-sm;
+  }
+
+  &__cancel {
+    padding: $space-sm $space-lg;
+    border: $border;
+    border-radius: $radius-lg;
+    color: $textColor;
+    text-decoration: none;
+    font-weight: $fw-semibold;
+    transition: $transition-base;
+
+    &:hover {
+      color: $textred-soft;
+      border-color: $textred-soft;
+    }
+  }
+
+  &__submit {
+    padding: $space-sm $space-lg;
+    border: 1px solid $textred;
+    border-radius: $radius-lg;
+    background-color: $textred;
+    color: $textColor;
+    font-family: $font-family;
+    font-size: $fs-md;
+    font-weight: $fw-bold;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $textred-soft;
+      transform: scale(1.025);
+      cursor: pointer;
+    }
+  }
+}
+
+// Select & Option
+
+select,
+select::picker(select) {
+  appearance: base-select;
+}
+
+select::picker(select) {
+  background: $surface;
+  border: $border;
+  border-radius: $radius-xs;
+  padding: $space-xs;
+  margin-top: 4px;
+  color: $textColor;
+}
+
+option {
+  padding: $space-xs $space-sm;
+  border-radius: $radius-xs;
+  color: $textColor;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $surface-2;
+    color: $textred-soft;
+    cursor: pointer;
+  }
+
+  &:checked {
+    font-weight: $fw-semibold;
+  }
+
+  &::checkmark {
+    color: $textred-soft;
+  }
+}
+
+select::picker-icon {
+  color: $textColor-dim;
+  transition: rotate 0.2s;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+@media (max-width: $tabletScreen) {
+  .create-project {
+    &__title {
+      font-size: $fs-5xl;
+    }
+
+    &__section {
+      padding: $space-lg;
+    }
+  }
+}
+
+@media (max-width: $mobileScreen) {
+  .create-project {
+    &__title {
+      font-size: $fs-3xl;
+    }
+
+    &__label {
+      font-size: $fs-xs;
+    }
+
+    &__input {
+      font-size: $fs-sm;
+    }
+
+    &__cancel,
+    &__submit {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+}

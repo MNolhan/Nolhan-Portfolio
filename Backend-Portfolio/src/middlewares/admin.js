@@ -1,8 +1,6 @@
-import jwt from "jsonwebtoken";
-
 export default function admin(req, res, next) {
     
-    if (req.user.role !== 'admin') {
+    if (req.user.role !== 'ADMIN') {
         res.status(403);
         res.json({ message: "Accès refusé" });
         return;

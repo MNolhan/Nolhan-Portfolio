@@ -28,6 +28,8 @@
 @use './pages/__profil' as *;
 @use './layouts/__headerback' as *;
 @use './components/__card_contact' as *;
+@use './pages/__projects_create' as *;
+@use './pages/__projects_edit' as *;
 
 *,
 *::before,
@@ -47,6 +49,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+button {
+  font: inherit;
 }
 
 // -- Scrollbar --

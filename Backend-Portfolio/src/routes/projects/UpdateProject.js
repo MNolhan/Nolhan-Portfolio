@@ -14,15 +14,17 @@ const projectSchema = z.object({
     name: z.string().min(1).optional(),
     type: z.enum(["Développement Web", "Développement Application", "Autres"]).optional(),
     description: z.string().min(1).optional(),
-    thumbnail: z.string().url().optional(),
-    github_url: z.string().url().optional(),
+    status: z.enum(["Terminé", "En cours", "Archivé"]).optional(),
+    thumbnail: z.string().nullable().optional(),
+    github_url: z.string().url().nullable().optional(),
+    live_url: z.string().url().nullable().optional(),
     technologies: z.array(z.string()).optional(),
     featured: z.boolean().optional(),
 });
 
 router.put("/:id", auth, admin, async (req, res) => {
     let id;
-    let name, type, description, thumbnail, github_url, technologies, featured;
+    let name, type, description, thumbnail, github_url, live_url, status, technologies, featured;
 
     try {
         ({ id } = idSchema.parse({ id: Number(req.params.id) }));
@@ -30,15 +32,17 @@ router.put("/:id", auth, admin, async (req, res) => {
         console.error("ID de projet invalide :", error);
         res.status(400);
         res.json({ message: "ID de projet invalide" });
+        return;
     }
 
     try {
-        ({ name, type, description, thumbnail, github_url, technologies, featured } = projectSchema.parse(req.body ?? {}));
+        ({ name, type, description, thumbnail, github_url, live_url, status, technologies, featured } = projectSchema.parse(req.body ?? {}));
     } catch (error) {
-        return res.status(400).json({
+        res.status(400).json({
             message: "Données invalides",
             errors: error.flatten().fieldErrors
         });
+        return;
     }
 
     try {
@@ -56,6 +60,8 @@ router.put("/:id", auth, admin, async (req, res) => {
             description,
             thumbnail,
             github_url,
+            live_url,
+            status,
             technologies,
             featured,
         };
@@ -66,7 +72,7 @@ router.put("/:id", auth, admin, async (req, res) => {
         for (const [column, value] of Object.entries(fields)) {
             if (value !== undefined) {
                 updates.push(`${column} = ?`);
-                values.push(value);
+                values.push(Array.isArray(value) ? JSON.stringify(value) : value);
             }
         }
 

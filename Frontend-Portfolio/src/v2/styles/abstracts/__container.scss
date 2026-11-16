@@ -122,32 +122,9 @@
   }
 }
 
-.authcontainer {
-  width: 100%;
-  max-width: $DesktopScreen + 575px;
-  margin: 0 auto;
-  padding: 0;
-
-  @media (max-width: $wideScreen) {
-    padding: 0 $gutter;
-  }
-
-  @media (max-width: $LaptopScreen) {
-    max-width: $tabletScreen;
-    padding: 0 $gutter;
-  }
-
-  @media (max-width: $tabletScreen) {
-    max-width: $mobileScreen;
-    padding: 0 $space-lg;
-  }
-
-  @media (max-width: $mobileScreen) {
-    padding: 0 $gutter-sm;
-  }
-}
-
-.detailsprojectcontainer {
+.authcontainer,
+.detailsprojectcontainer,
+.admincontainer {
   width: 100%;
   max-width: $DesktopScreen + 575px;
   margin: 0 auto;
